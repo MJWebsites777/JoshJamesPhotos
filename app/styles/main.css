@@ -100,10 +100,8 @@ body {
       text-align: center;
     }
       .galNav {
-        position: relative;
         color: #fff;
         font-family: Verdana;
-        font-size: 17pt;
         /*transform: scale(1,0.5);*/
         opacity: 0;
         /*-webkit-transition: opacity 500ms ease-in;
@@ -112,9 +110,17 @@ body {
               -ms-transition: opacity 500ms ease-in;
               transition: opacity 500ms ease-in;*/
       }
+      .galNav.top {
+        position: relative;
+      }
+      .galNav.btm {
+        position: absolute;
+        bottom: 0;
+      }
         .galNav h2 {
           display: inline-block;
           margin: 0 5%;
+          font-size: 30pt;
           cursor: pointer;
           -webkit-transition: text-shadow 200ms ease-in;
                   -moz-transition: text-shadow 200ms ease-in;
@@ -122,9 +128,17 @@ body {
                   -ms-transition: text-shadow 200ms ease-in;
                   transition: text-shadow 200ms ease-in;
         }
-          .galNav h2:hover {
+        .galNav h2:hover {
             text-shadow: 0 0 5px #fff;
           }
+
+        .galNav.top h2 {
+          margin: 0 12%;
+        }
+        .galNav.btm h2 {
+          margin: 0 5%;
+        }
+          
     .nav2 { /* BIO */
       transform-origin: 0 0;
       width: 50% !important;
