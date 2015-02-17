@@ -1,0 +1,10 @@
+<span class="galNav top"><h2 style="float: left;margin-left: 10%;opacity: inherit;">WEDDINGS</h2><h2 style="float: right;margin-right: 10%;opacity: inherit;">ARCHITECTURE</h2></span>
+          <div class="gallery">
+            <div class="image"></div>
+            <div class="overlay"></div>
+          </div>
+          <span class="galNav btm"><h2>LANDSCAPES</h2><h2>PORTRAITS</h2><h2>COMMERCIAL</h2></span>
+
+<canvas class="tile"></canvas><canvas class="tile"></canvas><canvas class="tile"></canvas><canvas class="tile"></canvas><canvas class="tile"></canvas><canvas class="tile"></canvas><canvas class="tile"></canvas><canvas class="tile"></canvas><canvas class="tile"></canvas><canvas class="tile"></canvas><canvas class="tile"></canvas><canvas class="tile"></canvas><canvas class="tile"></canvas><canvas class="tile"></canvas><canvas class="tile"></canvas><canvas class="tile"></canvas><canvas class="tile"></canvas><canvas class="tile"></canvas><canvas class="tile"></canvas><canvas class="tile"></canvas><canvas class="tile"></canvas><canvas class="tile"></canvas><canvas class="tile"></canvas><canvas class="tile"></canvas><canvas class="tile"></canvas>
+          <div class="bgOverlay"></div>
+

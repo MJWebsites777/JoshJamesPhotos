@@ -1,0 +1,277 @@
+/* line 2, ../scss/main.scss */
+html {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+}
+
+/* line 7, ../scss/main.scss */
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Background Styles */
+/* line 16, ../scss/main.scss */
+.background {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+
+/* line 21, ../scss/main.scss */
+.bgImg {
+  min-width: 100%;
+  min-height: 100%;
+  background-image: url(../images/cover.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  opacity: 0;
+  -webkit-transition: opacity 500ms ease-in;
+  -moz-transition: opacity 500ms ease-in;
+  -o-transition: opacity 500ms ease-in;
+  -ms-transition: opacity 500ms ease-in;
+  transition: opacity 500ms ease-in;
+}
+
+/* line 36, ../scss/main.scss */
+.bgOverlay {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 0 500px 200px #000;
+}
+
+/* line 43, ../scss/main.scss */
+.tile {
+  display: inline-block;
+  margin: 0;
+  margin-top: -4.5px;
+  width: 20%;
+}
+
+/* Navigation Styles */
+/* line 51, ../scss/main.scss */
+.nav {
+  width: 100%;
+  /* background-color: rgba(0,0,0,0.5); */
+  position: absolute;
+  opacity: 0;
+  -webkit-transition: opacity 500ms ease-in;
+  -moz-transition: opacity 500ms ease-in;
+  -o-transition: opacity 500ms ease-in;
+  -ms-transition: opacity 500ms ease-in;
+  transition: opacity 500ms ease-in;
+}
+
+/* line 62, ../scss/main.scss */
+.nav > div {
+  width: 100%;
+  height: 50%;
+  display: inline-block;
+  padding: 0;
+  margin: 0px;
+  background-color: #000;
+  opacity: 0.5;
+  -webkit-transition: transform 500ms ease-in, opacity 500ms ease-in;
+  -moz-transition: transform 500ms ease-in, opacity 500ms ease-in;
+  -o-transition: transform 500ms ease-in, opacity 500ms ease-in;
+  -ms-transition: transform 500ms ease-in, opacity 500ms ease-in;
+  transition: transform 500ms ease-in, opacity 500ms ease-in;
+}
+
+/* line 76, ../scss/main.scss */
+.navHover:hover {
+  opacity: 0.75;
+  cursor: pointer;
+}
+
+/* line 80, ../scss/main.scss */
+.navHover:hover h1 {
+  text-shadow: 0 0 10px #fff;
+}
+
+/* line 83, ../scss/main.scss */
+.nav > div h1 {
+  color: #fff;
+  font-family: Verdana;
+  font-size: 50pt;
+  position: relative;
+  text-shadow: 0 0 0px #fff;
+  -webkit-transition: text-shadow 300ms ease-in, transform 500ms ease-in, opacity 500ms ease-in;
+  -moz-transition: text-shadow 300ms ease-in, transform 500ms ease-in, opacity 500ms ease-in;
+  -o-transition: text-shadow 300ms ease-in, transform 500ms ease-in, opacity 500ms ease-in;
+  -ms-transition: text-shadow300ms ease-in, transform 500ms ease-in, opacity 500ms ease-in;
+  transition: text-shadow 300ms ease-in, transform 500ms ease-in, opacity 500ms ease-in;
+}
+
+/* line 95, ../scss/main.scss */
+.nav > div:hover h1 {
+  transform: translateY(50%);
+}
+
+/* line 98, ../scss/main.scss */
+.nav1 {
+  transform-origin: 0 0;
+  text-align: center;
+}
+
+/* line 102, ../scss/main.scss */
+.galNav {
+  position: relative;
+  transform: translateY(50%);
+  -webkit-transform: translateY(50%);
+  -moz-transform: translateY(50%);
+  -ms-transform: translateY(50%);
+  -o-transform: translateY(50%);
+  float: left;
+  z-index: 1000;
+  color: #fff;
+  font-family: Verdana;
+  text-align: left;
+  padding: 0 3%;
+  /*transform: scale(1,0.5);*/
+  opacity: 0;
+  /*-webkit-transition: opacity 500ms ease-in;
+        -moz-transition: opacity 500ms ease-in;
+        -o-transition: opacity 500ms ease-in;
+        -ms-transition: opacity 500ms ease-in;
+        transition: opacity 500ms ease-in;*/
+}
+
+/* line 123, ../scss/main.scss */
+.galNav h2 {
+  display: block;
+  margin: 10px 0;
+  font-size: 20pt;
+  cursor: pointer;
+  text-shadow: 0 0 10px #000;
+  -webkit-transition: text-shadow 200ms ease-in, transform 500ms ease-in-out;
+  -moz-transition: text-shadow 200ms ease-in, transform 500ms ease-in-out;
+  -o-transition: text-shadow 200ms ease-in, transform 500ms ease-in-out;
+  -ms-transition: text-shadow 200ms ease-in, transform 500ms ease-in-out;
+  transition: text-shadow 200ms ease-in, transform 500ms ease-in-out;
+}
+
+/* line 135, ../scss/main.scss */
+.galNav h2:hover {
+  text-shadow: 0 0 5px #fff;
+  transform: translateX(25%);
+  -webkit-transform: translateX(25%);
+  -moz-transform: translateX(25%);
+  -ms-transform: translateX(25%);
+  -o-transform: translateX(25%);
+}
+
+/* line 145, ../scss/main.scss */
+.gallery {
+  position: absolute;
+  top: 15%;
+  left: 0;
+  width: 100%;
+  height: 75%;
+  display: inline-block;
+  /*display: none;*/
+}
+
+/* line 154, ../scss/main.scss */
+.gallery > div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+/* line 161, ../scss/main.scss */
+.nav2 {
+  /* BIO */
+  transform-origin: 100% 100%;
+  width: 50% !important;
+  text-align: center;
+}
+
+/* line 168, ../scss/main.scss */
+.nav3 {
+  /* CONTACT */
+  transform-origin: 100% 100%;
+  width: 50% !important;
+  text-align: center;
+}
+
+/* Monitor Styles */
+/* line 177, ../scss/main.scss */
+.monitor {
+  display: none;
+  background-color: black;
+  color: green;
+  width: 250px;
+  height: auto;
+  padding: 5px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  cursor: default;
+}
+
+/* Logo Styles */
+/* line 192, ../scss/main.scss */
+.logo {
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 250px;
+  height: 250px;
+  position: fixed;
+  z-index: 1000;
+  cursor: default;
+  border-radius: 70px;
+  opacity: 1;
+  -webkit-transform: rotateZ(-45deg);
+  -moz-transform: rotateZ(-45deg);
+  -ms-transform: rotateZ(-45deg);
+  -o-transform: rotateZ(-45deg);
+  transform: rotateZ(-45deg);
+  -webkit-transition: transform 500ms ease-in-out;
+  -moz-transition: transform 500ms ease-in-out;
+  -o-transition: transform 500ms ease-in-out;
+  -ms-transition: transform 500ms ease-in-out;
+  transition: transform 500ms ease-in-out;
+  box-shadow: 0 0 30px #000;
+  top: 50%;
+  left: 50%;
+  margin-top: -125px;
+  margin-left: -125px;
+  cursor: pointer;
+}
+
+/* line 218, ../scss/main.scss */
+.logo:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: url(../images/doveblack.png) center center no-repeat;
+  background-size: 90%;
+  -webkit-transform: rotateY(180deg) translate(5%, 0) rotateZ(-45deg);
+  -moz-transform: rotateY(180deg) translate(5%, 0) rotateZ(-45deg);
+  -ms-transform: rotateY(180deg) translate(5%, 0) rotateZ(-45deg);
+  -o-transform: rotateY(180deg) translate(5%, 0) rotateZ(-45deg);
+  transform: rotateY(180deg) translate(5%, 0) rotateZ(-45deg);
+  opacity: 0.7;
+  -webkit-transition: opacity 500ms ease-in;
+  -moz-transition: opacity 500ms ease-in;
+  -o-transition: opacity 500ms ease-in;
+  -ms-transition: opacity 500ms ease-in;
+  transition: opacity 500ms ease-in;
+}
+
+/* line 238, ../scss/main.scss */
+.logo:hover:before {
+  opacity: 1;
+}

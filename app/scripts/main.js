@@ -1,87 +1,72 @@
 //console.log('\'Allo \'Allo!');
 //change url hash on page change
 
+//TODO
+//improve slideshow startup stability and performance
+//CSS: logo out of top of screen on height ~= 640
+
 var currentPage = 'home', lastPage = '';
 $(document).ready(function() {
+	var page = new Page();
+	//var slideshow = new SlideShow();
+	//slideshow.load();
+
 	onload=onresize=function(){	
-		$('.nav div').css('height', Math.ceil($(window).height()/2)+'px');
+		$('.nav .navHover').css('height', Math.ceil($(window).height()/2)+'px');
+		switch (currentPage){
+			case 'gallery': 
+				$('.nav1').height($(window).height()/2);
+				break;
+			case 'bio': 
+				$('.nav2').height($(window).height()/2);
+				break;
+			case 'contact': 
+				$('.nav3').height($(window).height()/2);
+				break;
+			default:
+				break;
+		}
 		//$('.bgImg').height($(window).height());
-		resizeBG();
+		//resizeBG();
 	};
+
 //Clicks
-	$(document).on('click', '.nav1', function(){
-		gotoGallery();
+	$(document).on('click', '.nav1', function(event){
+		var target = $(event.target);
+		//console.log('nav1 clicked element: '+target);
+		if (target.attr('class') === 'nav1 navHover' || event.target.nodeName === 'H1'){
+			page.gotoGallery();
+		}
+		
 	});
-	$(document).on('click', '.nav2', function(){
-		gotoBio();
+	$(document).on('click', '.nav2', function(event){
+		var target = $(event.target);
+		if (target.attr('class') === 'nav2 navHover' || event.target.nodeName === 'H1'){
+			page.gotoBio();
+		}
 	});
-	$(document).on('click', '.nav3', function(){
-		gotoContact();
+	$(document).on('click', '.nav3', function(event){
+		var target = $(event.target);
+		if (target.attr('class') === 'nav3 navHover' || event.target.nodeName === 'H1'){
+			page.gotoContact();
+		}
 	});
 	$(document).on('click', '.logo', function(){
-		gotoHome();
+		page.gotoHome();
 	});
 //------
-	drawTiles('bg', $('.bgImg'));
-	$('.tile').on('contextmenu', 'canvas', function(){ return false; });
+	var img = new Image();
+	img.src = '../images/cover.jpg';
+	img.onload = function( ) {
+    	$('.bgImg').css('opacity','1');
+    	$('.nav').css('opacity', '1');
+	};
+	//drawTiles('bg', $('.bgImg'));
+	//$('.tile').on('contextmenu', 'canvas', function(){ return false; });
 });
-function gotoHome(){ 
-	lastPage = currentPage;
-	switch (lastPage) {
-		case 'gallery':
-			$('.nav1').css('opacity', '');
-			$('.galNav').css('opacity', '0');
-			$('.nav1 h1').css('display', '');
-			$('.logo').css('transform', 'translateY(0%) rotateZ(-45deg)  scale(1)');
-			setTimeout(function(){$('.nav1 h1').css({'transform': '', 'opacity': 1});},10);
-			$('.nav1').css('transform', 'scale(1)').addClass('navHover');
-			$('.nav3').css('transform', 'rotateZ(0deg)');
-			$('.nav2').css('transform', 'rotateZ(0deg)');
-			break;
-		case 'bio':
-		
-			break;
-		case 'contact':
-		
-			break;
-		default:
-			break;
-	}
-	currentPage = 'home';
-}
-function gotoGallery(){
-	lastPage = currentPage;
-	$('.nav2').css('transform', 'rotateZ(90deg)');
-	$('.nav3').css('transform', 'rotateZ(-90deg)');
-	$('.nav1').css('transform', 'scale(1,2)').removeClass('navHover');
-	$('.nav1 h1').css({'transform': 'translateY(50%)', 'opacity': 0});
-	$('.logo').css('transform', 'translateY(-150%) rotateZ(-45deg) scale(0.5)');
-	currentPage = 'gallery';
-	setTimeout(function(){
-		$('.nav1 h1').css('display', 'none');
-		$('.galNav').animate({opacity: '1'}, 500);
-		$('.nav1').css('opacity', '0.75');
-	}, 500);
-}
-function gotoBio(){
-	lastPage = currentPage;
-	
-	currentPage = 'bio';
-}
-function gotoContact(){
-	/*lastPage = currentPage;
-	$('.nav3').css("transform", "rotateZ(0deg) scale(2,2) translateY(-50%)").removeClass('navHover');
-	$('.nav1').css("transform", "scale(1) rotateX(180deg)");
-	$('.nav2').css("transform", "rotateZ(0deg) rotateY(180deg)");
-	$('.nav3 h1').css({"transform": "translateY(50%)", "opacity": 0});
-	$('.logo').css("transform", "translateY(-150%) rotateZ(-45deg) scale(0.5)");
-	currentPage = "contact";
-	setTimeout(function(){
-		$('.nav3 h1').css("display", "none");
-	}, 500);*/
-}
 
 function drawTiles(img, cont){
+	'use strict';
 	var msg = '';
 	var postData = 'img='+img;
 	$.post('http://joshjamesphotos.com/splitImage.php', postData, function(d){
@@ -94,7 +79,7 @@ function drawTiles(img, cont){
    		var imgs = msg.split('|MTJG|');
     	var i, a, load;
     	i = a = load = 0;
-		$('.tile').each(function(){
+		cont.children('.tile').each(function(){
 			$(this).attr({width: w+'px', height: h+'px'});
     		if (i % 5 === 0 && i !== 0){
        	 		a -= 20;
@@ -120,9 +105,12 @@ function drawTiles(img, cont){
 }
 
 function resizeBG(){
+	'use strict';
 	console.log('Resizing BG');
 	//var winWidth = $(window).width();
 	var winHeight = $(window).height();
 	var bg = $('.bgImg');
 	bg.width(winHeight*1.79);
 }
+
+//Maybe just use img tags instead

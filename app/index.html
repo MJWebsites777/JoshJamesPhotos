@@ -22,15 +22,22 @@
 
 
     <div class="background">
-      <div class="bgImg">
-          <canvas class="tile"></canvas><canvas class="tile"></canvas><canvas class="tile"></canvas><canvas class="tile"></canvas><canvas class="tile"></canvas><canvas class="tile"></canvas><canvas class="tile"></canvas><canvas class="tile"></canvas><canvas class="tile"></canvas><canvas class="tile"></canvas><canvas class="tile"></canvas><canvas class="tile"></canvas><canvas class="tile"></canvas><canvas class="tile"></canvas><canvas class="tile"></canvas><canvas class="tile"></canvas><canvas class="tile"></canvas><canvas class="tile"></canvas><canvas class="tile"></canvas><canvas class="tile"></canvas><canvas class="tile"></canvas><canvas class="tile"></canvas><canvas class="tile"></canvas><canvas class="tile"></canvas><canvas class="tile"></canvas>
-          <div class="bgOverlay"></div>
-        </div>
+      <div class="bgImg"></div>
     </div>
     <div class="nav">
       <div class="nav1 navHover"><h1>GALLERY</h1>
-          <span class="galNav top"><h2>WEDDINGS</h2><h2>ARCHITECTURE</h2></span>
-          <span class="galNav btm"><h2>LANDSCAPES</h2><h2>PORTRAITS</h2><h2>COMMERCIAL</h2></span>
+          <span class="galNav"><h2>ARCHITECTURE</h2><h2>COMMERCIAL</h2><h2>LANDSCAPES</h2><h2>PORTRAITS</h2><h2>WEDDINGS</h2></span>
+          <div class="gallery">
+            <div class="architecture"></div>
+            <div class="commercial"></div>
+            <div class="landscapes"></div>
+            <div class="portraits"></div>
+            <div class="weddings"></div>
+            <div class="slideshow"></div>
+            <div class="overlay"><div class="controls">
+              <div class="lastSlide"></div><div class="playback"><p>click to view image</p></div><div class="nextSlide"></div>
+            </div></div>
+          </div>
         </div><div class="nav2 navHover"><h1>BIO</h1>
         
         </div><div class="nav3 navHover"><h1>CONTACT</h1>
@@ -58,6 +65,8 @@
     </script>
 
         <!-- build:js({app,.tmp}) scripts/main.js -->
+        <script src="scripts/slideshow.js"></script>
+        <script src="scripts/changePage.js"></script>
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
 </body>
