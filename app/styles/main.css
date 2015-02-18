@@ -57,7 +57,7 @@ body {
 /* line 49, ../scss/base/_base.scss */
 .nav {
   width: 100%;
-  /* background-color: rgba(0,0,0,0.5); */
+  background-color: rgba(0, 0, 0, 0.5);
   position: absolute;
   opacity: 0;
   -webkit-transition: opacity 500ms ease-in;
@@ -81,8 +81,7 @@ body {
   display: inline-block;
   padding: 0;
   margin: 0px;
-  background-color: black;
-  opacity: 0.5;
+  opacity: 0.75;
   -webkit-transition: transform 500ms ease-in, background-color 500ms ease-in, opacity 500ms ease-in;
   -moz-transition: transform 500ms ease-in, background-color 500ms ease-in, opacity 500ms ease-in;
   -ms-transition: transform 500ms ease-in, background-color 500ms ease-in, opacity 500ms ease-in;
@@ -96,15 +95,14 @@ body {
   font-size: 50pt;
   position: relative;
   text-shadow: 0 0 0px #fff;
-  -webkit-transition: text-shadow 300ms ease-in, transform 500ms ease-in, opacity 500ms ease-in;
-  -moz-transition: text-shadow 300ms ease-in, transform 500ms ease-in, opacity 500ms ease-in;
-  -ms-transition: text-shadow 300ms ease-in, transform 500ms ease-in, opacity 500ms ease-in;
-  -o-transition: text-shadow 300ms ease-in, transform 500ms ease-in, opacity 500ms ease-in;
-  transition: text-shadow 300ms ease-in, transform 500ms ease-in, opacity 500ms ease-in;
+  -webkit-transition: text-shadow 300ms ease-in, transform 500ms ease, opacity 500ms ease-in;
+  -moz-transition: text-shadow 300ms ease-in, transform 500ms ease, opacity 500ms ease-in;
+  -ms-transition: text-shadow 300ms ease-in, transform 500ms ease, opacity 500ms ease-in;
+  -o-transition: text-shadow 300ms ease-in, transform 500ms ease, opacity 500ms ease-in;
+  transition: text-shadow 300ms ease-in, transform 500ms ease, opacity 500ms ease-in;
 }
 /* line 75, ../scss/base/_base.scss */
 .nav .navHover:hover {
-  opacity: 0.75;
   cursor: pointer;
 }
 /* line 81, ../scss/base/_base.scss */
@@ -345,7 +343,7 @@ body {
 /* line 265, ../scss/base/_base.scss */
 .nav .nav1.navHover:hover h1 {
   transform: translateY(50%);
-  text-shadow: 0 0 10px #fff;
+  text-shadow: 0 0 7px #fff;
 }
 /* line 270, ../scss/base/_base.scss */
 .nav .nav2 {
@@ -361,7 +359,7 @@ body {
 /* line 280, ../scss/base/_base.scss */
 .nav .nav2.navHover:hover h1 {
   transform: translateY(-50%);
-  text-shadow: 0 0 10px #fff;
+  text-shadow: 0 0 7px #fff;
 }
 
 /* Monitor Styles */
@@ -419,6 +417,7 @@ body {
   cursor: default;
   border-radius: 50px;
   border: 3px solid #fff;
+  box-shadow: 0 0 10px #000;
   opacity: 1;
   -webkit-transform: rotateZ(-45deg);
   -moz-transform: rotateZ(-45deg);
@@ -437,13 +436,13 @@ body {
   cursor: pointer;
 }
 
-/* line 353, ../scss/base/_base.scss */
+/* line 354, ../scss/base/_base.scss */
 .logo:hover {
   opacity: 1 !important;
   background-color: rgba(255, 255, 255, 0.25);
 }
 
-/* line 357, ../scss/base/_base.scss */
+/* line 358, ../scss/base/_base.scss */
 .logo:before {
   content: "";
   position: absolute;
@@ -465,7 +464,38 @@ body {
   transition: opacity 500ms ease-in;
 }
 
-/* line 369, ../scss/base/_base.scss */
+/* line 370, ../scss/base/_base.scss */
 .logo:hover:before {
   opacity: 1;
+}
+
+/* Diamonds Styles */
+/* line 375, ../scss/base/_base.scss */
+.diamonds {
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  margin-top: -80px;
+  z-index: 1;
+}
+/* line 383, ../scss/base/_base.scss */
+.diamonds .diamond {
+  width: 150px;
+  height: 150px;
+  display: inline-block;
+  border: 3px solid #fff;
+  transform: rotate(45deg);
+  box-shadow: 0 0 10px #000;
+  -webkit-transition: opacity 500ms ease-in;
+  -moz-transition: opacity 500ms ease-in;
+  -ms-transition: opacity 500ms ease-in;
+  -o-transition: opacity 500ms ease-in;
+  transition: opacity 500ms ease-in;
+}
+@media screen and (max-width: 1700px) {
+  /* line 392, ../scss/base/_base.scss */
+  .diamonds .diamond:nth-of-type(1), .diamonds .diamond:nth-of-type(6) {
+    display: none;
+  }
 }

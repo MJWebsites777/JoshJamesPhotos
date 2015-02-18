@@ -48,7 +48,7 @@ body {
 /* Navigation Styles */
 .nav {
 	width: 100%;
-	/* background-color: rgba(0,0,0,0.5); */
+	background-color: rgba(0,0,0,0.5);
 	position: absolute;
 	opacity: 0;
   @include transition(opacity 500ms ease-in);
@@ -60,8 +60,8 @@ body {
   	padding: 0;
   	margin: 0px;
   	//background-color: rgba(0,0,0,0.5);
-  	background-color: rgba(0,0,0,1);
-  	opacity: 0.5;
+  	//background-color: rgba(0,0,0,1);
+  	opacity: 0.75;
   	@include transition(transform 500ms ease-in, background-color 500ms ease-in, opacity 500ms ease-in);
 	}
 	> div h1 {
@@ -70,10 +70,10 @@ body {
     font-size: 50pt;
     position: relative;
     text-shadow: 0 0 0px #fff;
-    @include transition(text-shadow 300ms ease-in, transform 500ms ease-in, opacity 500ms ease-in);
+    @include transition(text-shadow 300ms ease-in, transform 500ms ease, opacity 500ms ease-in);
   }
   .navHover:hover {
-  	opacity: 0.75;
+  	//opacity: 0.75;
   	//background-color: rgba(0,0,0,0.75);
   	cursor: pointer;
   }
@@ -264,7 +264,7 @@ body {
   }
   .nav1.navHover:hover h1 {
     transform: translateY(50%);
-    text-shadow: 0 0 10px #fff;
+    text-shadow: 0 0 7px #fff;
   }
             
   .nav2 { //Bio
@@ -279,7 +279,7 @@ body {
   }
   .nav2.navHover:hover h1 {
     transform: translateY(-50%);
-    text-shadow: 0 0 10px #fff;
+    text-shadow: 0 0 7px #fff;
   }
 
   /*.nav3 { //Contact
@@ -340,6 +340,7 @@ body {
   	cursor: default;
   	border-radius: 50px;
     border: 3px solid #fff;
+    box-shadow: 0 0 10px #000;
   	opacity: 1;
   	@include transform(rotateZ(-45deg));
   	@include transition(transform 500ms ease-in-out, opacity 500ms ease-in, background-color 500ms ease-in);
@@ -368,4 +369,31 @@ body {
 }
 .logo:hover:before {
     opacity: 1;
+}
+
+/* Diamonds Styles */
+.diamonds {
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    margin-top: -80px;
+    z-index: 1;
+
+  .diamond {
+      width: 150px;
+      height: 150px;
+      display: inline-block;
+      border: 3px solid #fff;
+      transform: rotate(45deg);
+      box-shadow: 0 0 10px #000;
+      @include transition(opacity 500ms ease-in);
+  }
+  .diamond:nth-of-type(1), .diamond:nth-of-type(6){
+    @media screen and (max-width: 1700px){
+      display: none;
+    }
+  }
+
+
 }
