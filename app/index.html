@@ -28,29 +28,66 @@
       <div class="nav1 navHover"><h1>GALLERY</h1>
           <span class="galNav"><h2>ARCHITECTURE</h2><h2>COMMERCIAL</h2><h2>LANDSCAPES</h2><h2>PORTRAITS</h2><h2>WEDDINGS</h2></span>
           <div class="gallery">
-            <div class="architecture"></div>
-            <div class="commercial"></div>
-            <div class="landscapes"></div>
-            <div class="portraits"></div>
-            <div class="weddings"></div>
-            <div class="slideshow"></div>
-            <div class="overlay"><div class="controls">
-              <div class="lastSlide"></div><div class="playback"><p>click to view image</p></div><div class="nextSlide"></div>
-            </div></div>
+            <div class="architecture">
+              <div class="container">
+                <div class="thumbScroller">
+                  <div class="columns"></div>
+                </div><div class="preview"></div>
+                <div class="edge"><div class="edgefade"></div></div>
+              </div>  
+            </div>
+            <div class="commercial">
+              <div class="container">
+                <div class="thumbScroller">
+                  <div class="columns"></div>
+                </div><div class="preview"></div>
+                <div class="edge"><div class="edgefade"></div></div>
+              </div> 
+            </div>
+            <div class="landscapes">
+              <div class="container">
+                <div class="thumbScroller">
+                  <div class="columns"></div>
+                </div><div class="preview"></div>
+                <div class="edge"><div class="edgefade"></div></div>
+              </div> 
+            </div>
+            <div class="portraits">
+              <div class="container">
+                <div class="thumbScroller">
+                  <div class="columns"></div>
+                </div><div class="preview"></div>
+                <div class="edge"><div class="edgefade"></div></div>
+              </div> 
+            </div>
+            <div class="weddings">
+              <div class="container">
+                <div class="thumbScroller">
+                  <div class="columns"></div>
+                </div><div class="preview"></div>
+                <div class="edge"><div class="edgefade"></div></div>
+              </div> 
+            </div>
+            <div class="slideshow">
+              <div class="overlay"><div class="controls">
+                <div class="lastSlide"></div><div class="playback"><p>loading slideshow...</p></div><div class="nextSlide"></div>
+              </div></div>
+            </div>
           </div>
         </div><div class="nav2 navHover"><h1>BIO</h1>
         
-        </div><div class="nav3 navHover"><h1>CONTACT</h1>
+        </div><!--<div class="nav3 navHover"><h1>CONTACT</h1>-->
         
         </div>
     </div>
     <div class="monitor"><span class="xMove"></span><br /><span class="yMove"></span></div>
+    <div class="imgViewer"><div></div></div>
     <div class="logo"></div>
-
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/nicescroll/jquery.nicescroll.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -66,6 +103,9 @@
 
         <!-- build:js({app,.tmp}) scripts/main.js -->
         <script src="scripts/slideshow.js"></script>
+        <script src="scripts/gallery.js"></script>
+        <script src="scripts/bio.js"></script>
+        <script src="scripts/contact.js"></script>
         <script src="scripts/changePage.js"></script>
         <script src="scripts/main.js"></script>
         <!-- endbuild -->

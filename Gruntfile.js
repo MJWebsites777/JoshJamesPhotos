@@ -321,7 +321,6 @@ module.exports = function (grunt) {
     }
   });
 
-
   grunt.registerTask('serve', 'start the server and preview your app, --allow-remote for remote access', function (target) {
     if (grunt.option('allow-remote')) {
       grunt.config.set('connect.options.hostname', '0.0.0.0');
@@ -336,7 +335,7 @@ module.exports = function (grunt) {
       'concurrent:server',
       'autoprefixer',
       'connect:livereload',
-      'watch'
+      'watch',
     ]);
   });
 

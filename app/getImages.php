@@ -45,11 +45,11 @@
 				$counter++;
 			}
 			break;
-		case "landscape":
+		case "landscapes":
 			$landArray = scandir("images/gallery/landscapes");
 			serveImages($landArray, "landscapes");
 			break;
-		case "portrait":
+		case "portraits":
 			$portArray = scandir("images/gallery/portraits");
 			serveImages($portArray, "portraits");
 			break;
@@ -61,7 +61,7 @@
 			$commArray = scandir("images/gallery/commercial");
 			serveImages($commArray, "commercial");
 			break;
-		case "wedding":
+		case "weddings":
 			$wedArray = scandir("images/gallery/weddings");
 			serveImages($wedArray, "weddings");
 			break;

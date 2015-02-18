@@ -161,7 +161,7 @@ function SlideShow (){
 		$('.playback p').css('opacity', '0.5');
 		loopLoad(true);
 		$('.playback p').css('margin-left', '-'+($('.playback p').innerWidth()/2)+'px');
-		//http://joshjamesphotos.com
+		//http://joshjamesphotos.com/
 		$.post('http://joshjamesphotos.com/getImages.php', 'cmd=slideshow', function(data){
 			//console.log(data);
 			var files = data.split('|');
