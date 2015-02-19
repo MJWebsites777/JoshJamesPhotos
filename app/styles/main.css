@@ -65,6 +65,7 @@ body {
   -ms-transition: opacity 500ms ease-in;
   -o-transition: opacity 500ms ease-in;
   transition: opacity 500ms ease-in;
+  z-index: 1;
   /*.nav3 { //Contact
   	transform-origin: 100% 100%;
   	width: 50% !important;
@@ -74,7 +75,7 @@ body {
   	}
   }*/
 }
-/* line 56, ../scss/base/_base.scss */
+/* line 57, ../scss/base/_base.scss */
 .nav > div {
   width: 100%;
   height: 50%;
@@ -88,7 +89,7 @@ body {
   -o-transition: transform 500ms ease-in, background-color 500ms ease-in, opacity 500ms ease-in;
   transition: transform 500ms ease-in, background-color 500ms ease-in, opacity 500ms ease-in;
 }
-/* line 67, ../scss/base/_base.scss */
+/* line 68, ../scss/base/_base.scss */
 .nav > div h1 {
   color: #fff;
   font-family: Verdana;
@@ -101,16 +102,16 @@ body {
   -o-transition: text-shadow 300ms ease-in, transform 500ms ease, opacity 500ms ease-in;
   transition: text-shadow 300ms ease-in, transform 500ms ease, opacity 500ms ease-in;
 }
-/* line 75, ../scss/base/_base.scss */
+/* line 76, ../scss/base/_base.scss */
 .nav .navHover:hover {
   cursor: pointer;
 }
-/* line 81, ../scss/base/_base.scss */
+/* line 82, ../scss/base/_base.scss */
 .nav .nav1 {
   transform-origin: 0 0;
   text-align: center;
 }
-/* line 85, ../scss/base/_base.scss */
+/* line 86, ../scss/base/_base.scss */
 .nav .nav1 .galNav {
   position: relative;
   display: none;
@@ -129,7 +130,7 @@ body {
   background-color: #000;
   padding: 5px;
 }
-/* line 101, ../scss/base/_base.scss */
+/* line 102, ../scss/base/_base.scss */
 .nav .nav1 .galNav h2 {
   display: inline-block;
   margin: 0px 20px;
@@ -142,11 +143,11 @@ body {
   -o-transition: text-shadow 200ms ease-in, transform 500ms ease-in-out, color 300ms ease-in;
   transition: text-shadow 200ms ease-in, transform 500ms ease-in-out, color 300ms ease-in;
 }
-/* line 110, ../scss/base/_base.scss */
+/* line 111, ../scss/base/_base.scss */
 .nav .nav1 .galNav h2:hover {
   text-shadow: 0 0 5px #fff;
 }
-/* line 115, ../scss/base/_base.scss */
+/* line 116, ../scss/base/_base.scss */
 .nav .nav1 .gallery {
   position: absolute;
   top: -50%;
@@ -160,14 +161,14 @@ body {
   -o-transform: scaleY(0.5);
   transform: scaleY(0.5);
 }
-/* line 125, ../scss/base/_base.scss */
+/* line 126, ../scss/base/_base.scss */
 .nav .nav1 .gallery > div, .nav .nav1 .gallery .image, .nav .nav1 .gallery .overlay, .nav .nav1 .gallery .overlay div {
   position: absolute;
   width: 100%;
   height: 100%;
   opacity: 0;
 }
-/* line 131, ../scss/base/_base.scss */
+/* line 132, ../scss/base/_base.scss */
 .nav .nav1 .gallery > div:not(.slideshow):not(.nicescroll-rails) {
   display: none;
   position: relative;
@@ -178,7 +179,7 @@ body {
   -o-transition: opacity 500ms ease-in;
   transition: opacity 500ms ease-in;
 }
-/* line 137, ../scss/base/_base.scss */
+/* line 138, ../scss/base/_base.scss */
 .nav .nav1 .gallery .slideshow {
   -webkit-transition: opacity 500ms ease-in;
   -moz-transition: opacity 500ms ease-in;
@@ -186,28 +187,28 @@ body {
   -o-transition: opacity 500ms ease-in;
   transition: opacity 500ms ease-in;
 }
-/* line 140, ../scss/base/_base.scss */
+/* line 141, ../scss/base/_base.scss */
 .nav .nav1 .gallery .overlay {
   opacity: 1;
   z-index: 1000;
 }
-/* line 144, ../scss/base/_base.scss */
+/* line 145, ../scss/base/_base.scss */
 .nav .nav1 .gallery .overlay .controls {
   opacity: 1;
   font-family: Verdana;
   font-weight: bold;
   color: #fff;
 }
-/* line 150, ../scss/base/_base.scss */
+/* line 151, ../scss/base/_base.scss */
 .nav .nav1 .gallery .overlay .controls > div {
   position: relative;
   display: inline-block;
 }
-/* line 154, ../scss/base/_base.scss */
+/* line 155, ../scss/base/_base.scss */
 .nav .nav1 .gallery .overlay .controls > div:not(.playback):hover {
   opacity: 1 !important;
 }
-/* line 157, ../scss/base/_base.scss */
+/* line 158, ../scss/base/_base.scss */
 .nav .nav1 .gallery .overlay .controls .lastSlide, .nav .nav1 .gallery .overlay .controls .nextSlide {
   width: 15%;
   background-size: 100%;
@@ -221,13 +222,15 @@ body {
   -o-transition: opacity 500ms ease-in;
   transition: opacity 500ms ease-in;
 }
-/* line 168, ../scss/base/_base.scss */
+/* line 169, ../scss/base/_base.scss */
 .nav .nav1 .gallery .overlay .controls .playback {
   width: 70%;
   opacity: 1;
+  cursor: url(../images/zoom-in.cur), pointer;
 }
-/* line 172, ../scss/base/_base.scss */
+/* line 174, ../scss/base/_base.scss */
 .nav .nav1 .gallery .overlay .controls .playback p {
+  display: none;
   position: absolute;
   left: 50%;
   top: 25%;
@@ -244,13 +247,13 @@ body {
   -o-transition: opacity 500ms ease-in, background-color 500ms ease-in;
   transition: opacity 500ms ease-in, background-color 500ms ease-in;
 }
-/* line 186, ../scss/base/_base.scss */
+/* line 189, ../scss/base/_base.scss */
 .nav .nav1 .gallery .overlay .controls .playback p:hover {
   opacity: 1 !important;
   background-color: rgba(0, 0, 0, 0.25);
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.25);
 }
-/* line 195, ../scss/base/_base.scss */
+/* line 198, ../scss/base/_base.scss */
 .nav .nav1 .image {
   background-size: contain;
   background-repeat: no-repeat;
@@ -261,7 +264,7 @@ body {
   -o-transition: opacity 500ms ease-in;
   transition: opacity 500ms ease-in;
 }
-/* line 201, ../scss/base/_base.scss */
+/* line 204, ../scss/base/_base.scss */
 .nav .nav1 .container {
   width: 93%;
   height: 65%;
@@ -269,7 +272,7 @@ body {
   display: inline-block;
   top: 24%;
 }
-/* line 208, ../scss/base/_base.scss */
+/* line 211, ../scss/base/_base.scss */
 .nav .nav1 .container .thumbScroller {
   width: 45%;
   height: 105%;
@@ -278,7 +281,7 @@ body {
   position: relative;
   top: -5%;
 }
-/* line 216, ../scss/base/_base.scss */
+/* line 219, ../scss/base/_base.scss */
 .nav .nav1 .container .thumbScroller .columns {
   -webkit-column-count: 3;
   -webkit-column-gap: 5px;
@@ -288,7 +291,7 @@ body {
   column-gap: 5px;
   padding-bottom: 50px;
 }
-/* line 220, ../scss/base/_base.scss */
+/* line 223, ../scss/base/_base.scss */
 .nav .nav1 .container .thumbScroller .columns .thumb {
   display: inline-block;
   margin: 3px;
@@ -305,16 +308,16 @@ body {
   -o-transform: translateZ(0);
   transform: translateZ(0);
 }
-/* line 228, ../scss/base/_base.scss */
+/* line 231, ../scss/base/_base.scss */
 .nav .nav1 .container .thumbScroller .columns .thumb .thumbnail {
   width: 100%;
   border: 1px solid #fff;
 }
-/* line 233, ../scss/base/_base.scss */
+/* line 236, ../scss/base/_base.scss */
 .nav .nav1 .container .thumbScroller .columns .thumb:hover {
   opacity: 1 !important;
 }
-/* line 238, ../scss/base/_base.scss */
+/* line 241, ../scss/base/_base.scss */
 .nav .nav1 .container .preview {
   width: 49%;
   height: 95%;
@@ -325,11 +328,11 @@ body {
   float: right;
   cursor: url(../images/zoom-in.cur), pointer;
 }
-/* line 248, ../scss/base/_base.scss */
+/* line 251, ../scss/base/_base.scss */
 .nav .nav1 .container .edge {
   width: 49%;
 }
-/* line 251, ../scss/base/_base.scss */
+/* line 254, ../scss/base/_base.scss */
 .nav .nav1 .container .edge .edgefade {
   width: 80%;
   height: 0px;
@@ -340,30 +343,30 @@ body {
   display: inline-block;
   left: -4%;
 }
-/* line 265, ../scss/base/_base.scss */
+/* line 268, ../scss/base/_base.scss */
 .nav .nav1.navHover:hover h1 {
   transform: translateY(50%);
   text-shadow: 0 0 7px #fff;
 }
-/* line 270, ../scss/base/_base.scss */
+/* line 273, ../scss/base/_base.scss */
 .nav .nav2 {
   transform-origin: 100% 100%;
   width: 100% !important;
   text-align: center;
 }
-/* line 275, ../scss/base/_base.scss */
+/* line 278, ../scss/base/_base.scss */
 .nav .nav2 h1 {
   position: relative;
   top: 60%;
 }
-/* line 280, ../scss/base/_base.scss */
+/* line 283, ../scss/base/_base.scss */
 .nav .nav2.navHover:hover h1 {
   transform: translateY(-50%);
   text-shadow: 0 0 7px #fff;
 }
 
 /* Monitor Styles */
-/* line 296, ../scss/base/_base.scss */
+/* line 299, ../scss/base/_base.scss */
 .monitor {
   display: none;
   background-color: black;
@@ -379,7 +382,7 @@ body {
 }
 
 /* Image Viewer Styles */
-/* line 311, ../scss/base/_base.scss */
+/* line 314, ../scss/base/_base.scss */
 .imgViewer {
   display: none;
   position: fixed;
@@ -396,7 +399,7 @@ body {
   transition: opacity 500ms ease-in;
   text-align: center;
 }
-/* line 323, ../scss/base/_base.scss */
+/* line 326, ../scss/base/_base.scss */
 .imgViewer > div {
   height: 100%;
   width: 100%;
@@ -407,16 +410,15 @@ body {
 }
 
 /* Logo Styles */
-/* line 334, ../scss/base/_base.scss */
+/* line 337, ../scss/base/_base.scss */
 .logo {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.75);
   width: 250px;
   height: 250px;
   position: fixed;
   z-index: 1000;
-  cursor: default;
-  border-radius: 50px;
-  border: 3px solid #fff;
+  border-radius: 25px;
+  border: 5px solid #fff;
   box-shadow: 0 0 10px #000;
   opacity: 1;
   -webkit-transform: rotateZ(-45deg);
@@ -431,18 +433,18 @@ body {
   transition: transform 500ms ease-in-out, opacity 500ms ease-in, background-color 500ms ease-in;
   top: 50%;
   left: 50%;
-  margin-top: -125px;
-  margin-left: -125px;
+  margin-top: -130px;
+  margin-left: -130px;
   cursor: pointer;
 }
 
-/* line 354, ../scss/base/_base.scss */
+/* line 356, ../scss/base/_base.scss */
 .logo:hover {
   opacity: 1 !important;
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: white;
 }
 
-/* line 358, ../scss/base/_base.scss */
+/* line 360, ../scss/base/_base.scss */
 .logo:before {
   content: "";
   position: absolute;
@@ -464,13 +466,13 @@ body {
   transition: opacity 500ms ease-in;
 }
 
-/* line 370, ../scss/base/_base.scss */
+/* line 372, ../scss/base/_base.scss */
 .logo:hover:before {
   opacity: 1;
 }
 
 /* Diamonds Styles */
-/* line 375, ../scss/base/_base.scss */
+/* line 377, ../scss/base/_base.scss */
 .diamonds {
   width: 100%;
   position: absolute;
@@ -479,12 +481,16 @@ body {
   margin-top: -80px;
   z-index: 1;
 }
-/* line 383, ../scss/base/_base.scss */
+/* line 385, ../scss/base/_base.scss */
 .diamonds .diamond {
   width: 150px;
   height: 150px;
   display: inline-block;
   border: 3px solid #fff;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
   transform: rotate(45deg);
   box-shadow: 0 0 10px #000;
   -webkit-transition: opacity 500ms ease-in;
@@ -494,7 +500,7 @@ body {
   transition: opacity 500ms ease-in;
 }
 @media screen and (max-width: 1700px) {
-  /* line 392, ../scss/base/_base.scss */
+  /* line 394, ../scss/base/_base.scss */
   .diamonds .diamond:nth-of-type(1), .diamonds .diamond:nth-of-type(6) {
     display: none;
   }

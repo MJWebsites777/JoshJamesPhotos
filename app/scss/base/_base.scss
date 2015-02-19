@@ -52,6 +52,7 @@ body {
 	position: absolute;
 	opacity: 0;
   @include transition(opacity 500ms ease-in);
+  z-index: 1;
 
   > div { //nav buttons
   	width: 100%;
@@ -168,8 +169,10 @@ body {
           .playback {
             width: 70%;
             opacity: 1;
+            cursor: url(../images/zoom-in.cur), pointer;
 
             p {
+              display: none;
               position: absolute;
               left: 50%;
               //margin-left: -61px;
@@ -332,14 +335,13 @@ body {
 
 /* Logo Styles */
 .logo {
-  	background-color: rgba(255,255,255,0.1);
+  	background-color: rgba(255,255,255,0.75);
   	width: 250px;
   	height: 250px;
   	position: fixed;
   	z-index: 1000;
-  	cursor: default;
-  	border-radius: 50px;
-    border: 3px solid #fff;
+  	border-radius: 25px;
+    border: 5px solid #fff;
     box-shadow: 0 0 10px #000;
   	opacity: 1;
   	@include transform(rotateZ(-45deg));
@@ -347,13 +349,13 @@ body {
   	//box-shadow: 0 0 30px #000;
   	top: 50%;
   	left: 50%;
-  	margin-top: -125px;
-  	margin-left: -125px;
+  	margin-top: -130px;
+  	margin-left: -130px;
   	cursor: pointer;
 }
 .logo:hover {
 	opacity: 1 !important;
-  background-color: rgba(255,255,255,0.25);
+  background-color: rgba(255,255,255,1);
 }
 .logo:before {
     content: "";
@@ -385,7 +387,7 @@ body {
       height: 150px;
       display: inline-block;
       border: 3px solid #fff;
-      transform: rotate(45deg);
+      @include transform(rotate(45deg));
       box-shadow: 0 0 10px #000;
       @include transition(opacity 500ms ease-in);
   }
@@ -394,6 +396,4 @@ body {
       display: none;
     }
   }
-
-
 }
