@@ -9,7 +9,7 @@ var gallery = new Gallery();
 var slideShow = new SlideShow();
 $(window).resize(function(){
 	if (currentPage === 'gallery'){
-		$('.playback p').css('margin-left', '-'+($('.playback p').innerWidth()/2)+'px');
+		//$('.playback p').css('margin-left', '-'+($('.playback p').innerWidth()/2)+'px');
 		$('.logo').css('transform', 'translateY(-'+Math.ceil($(window).height()/2.8)+'px) rotateZ(-45deg) scale(0.5)');
 	}
 });
@@ -78,7 +78,13 @@ $(document).on('click', '.preview', function(){
 });
 $(document).on('click', '.imgViewer', function(){
 	$('.imgViewer').css('opacity', '0');
-	setTimeout(function(){$('.imgViewer').css('display', '');}, 500);
+	setTimeout(function(){
+		$('.imgViewer').css('display', '');
+		if (slideShow.paused == true){
+			slideShow.resume();
+			slideShow.zoomed = false;
+		}
+	}, 500);
 });
 
 function Gallery () {
@@ -99,9 +105,7 @@ function Gallery () {
 					railoffset: {top:0, left:15}
 				});
 			}, 50);
-			//if (parent.previous !== '') {$('.'+parent.previous+' .thumbScroller').niceScroll().remove();}
 		});
-		//$('.'+id).css({'display': 'block', 'opacity': '1'});
 		//http://joshjamesphotos.com/
 		if (!parent.loaded(id)) {
 			$.post('http://joshjamesphotos.com/getImages.php', 'cmd='+id, function(data){
@@ -135,7 +139,6 @@ function Gallery () {
 					$(this).css('opacity', '0.7');
 				};
 				image.src = $(this).children('.thumbnail').attr('src');
-				//$(this).css('opacity', '0.7');
 			});
 		}
 		parent.previous = parent.current;
@@ -147,7 +150,6 @@ function Gallery () {
 	this.unload = function(id, callback){
 		if (id === 'slideshow') {slideShow.pause(true); if (callback) {setTimeout(function(){callback()}, 500);}}
 		else {
-			//$('.'+id).css({'display': 'none', 'opacity': ''}); 
 			$('.'+id).css('opacity', ''); 
 			setTimeout(function(){
 				$('.'+id).css('display', 'none');

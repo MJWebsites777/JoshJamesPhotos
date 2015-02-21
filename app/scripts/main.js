@@ -1,6 +1,7 @@
 //TODO
 //fadein main once nav buttons are rendered correctly
 //change url hash on page change?
+//remove headings from nav and add background images to show user where that nav takes them
 
 var currentPage = 'home', lastPage = '';
 $(document).ready(function() {

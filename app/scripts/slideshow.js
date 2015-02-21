@@ -23,7 +23,6 @@ function Interval(){
 			};
 		}(wait));
 		timeout = setTimeout(loop, wait);
-		//loop(wait);
 	};
 
 	this.clear = function(){
@@ -40,15 +39,15 @@ function SlideShow (){
 	this.paused = false;
 	this.loaded = false;
 	this.hidden = true;
+	this.zoomed = false;
 
 	var parent = this;
 	var showLength;
-	//var slideInterval;
 	var currentSlide = 0, lastSlide = 0;
 
 	setInterval(function(){
 		if (document.hasFocus()) { 
-			if (parent.paused && !parent.hidden) {
+			if (parent.paused && !parent.hidden && !parent.zoomed) {
 				parent.resume();
 			}
 		} 
@@ -62,49 +61,29 @@ function SlideShow (){
 	this.start = function(){
 		if (!parent.loaded) { parent.load(); parent.start(); return; }
 		if (parent.running) {return;}
-		//parent.mouseListen(true);
 		parent.running = true;
 		parent.hidden = false;
 		currentSlide = 0; lastSlide = 0;
-		$('.playback p').css('margin-left', '-'+($('.playback p').innerWidth()/2)+'px');
 
 		$('.logo').css('opacity', '0.1');
 
 		$(document).on('click', '.nextSlide', function(){
 			//console.log('nextslide click');
-			//clearInterval(slideInterval);
 			interval.clear();
-			//parent.nextSlide(function(){slideInterval = setInterval(parent.nextSlide, 5000);});
 			parent.nextSlide(function(){interval.set(parent.nextSlide, 5000);});
-			//parent.nextSlide();
 		});
-		$(document).on('click', '.playback p', function(){
-			if (parent.paused){
-				parent.hidden = true;
-				parent.resume();
-				$('.playback p').html('click to view image');
-				$('.playback p').css('margin-left', '-'+($('.playback p').innerWidth()/2)+'px');
-				$('.logo, .galNav, .nextSlide, .lastSlide').fadeIn(500);
-			} 
-			else {
-				parent.hidden = true;
-				parent.pause();
-				$('.playback p').html('click to exit');
-				$('.playback p').css('margin-left', '-'+($('.playback p').innerWidth()/2)+'px');
-				$('.logo, .galNav, .nextSlide, .lastSlide').fadeOut(500);
-			}
+		$(document).on('click', '.playback', function(){
+			parent.pause();
+			parent.zoomed = true;
+			$('.imgViewer div').css('background-image', $('.image').eq(currentSlide-1).css('background-image'));
+			$('.imgViewer').css('display', 'block');
+			setTimeout(function(){$('.imgViewer').css('opacity', '1');}, 50);
 		});
 		$(document).on('click', '.lastSlide', function(){
 			//console.log('lastslide click');
-			//clearInterval(slideInterval);
 			interval.clear();
-			//parent.lastSlide(function(){slideInterval = setInterval(parent.nextSlide, 5000);});
 			parent.lastSlide(function(){interval.set(parent.nextSlide, 5000);});
 		});
-
-		//slideInterval = setInterval(parent.nextSlide, 5000);
-		//interval.set(parent.nextSlide, 5000);
-		//$('.nextSlide, .lastSlide').css('opacity', '0.5');
 		console.log('SlideShow Started');
 	};
 
@@ -114,7 +93,6 @@ function SlideShow (){
 		$(document).off('click', '.nextSlide');
 		$(document).off('click', '.playback');
 		$(document).off('click', '.lastSlide');
-		//clearInterval(slideInterval);
 		interval.clear();
 		$('.image').eq(lastSlide).css('opacity', '0');
 		$('.logo').css('opacity', '');
@@ -125,7 +103,6 @@ function SlideShow (){
 	this.pause = function(hide){
 		if (parent.paused) {return;}
 		parent.mouseListen(false);
-		//clearInterval(slideInterval);
 		interval.clear();
 		parent.running = false;
 		parent.paused = true;
@@ -134,11 +111,10 @@ function SlideShow (){
 			$('.overlay').css('z-index', '0');
 			$('.image').eq(lastSlide).css('opacity', '0');
 			$('.nextSlide, .lastSlide').css('opacity', '0');
-			/*$('.image').eq(lastSlide).css('opacity', '0');*/
 			parent.hidden = true;
 		}
 		$('.logo').css('opacity', '');
-		//console.log('SlideShow Paused');
+		console.log('SlideShow Paused');
 	};
 
 	this.resume = function(){
@@ -147,7 +123,6 @@ function SlideShow (){
 		$('.logo').css('opacity', '0.1');
 		$('.image').eq(lastSlide).css('opacity', '1');
 		$('.nextSlide, .lastSlide').css('opacity', '0.5');
-		//slideInterval = setInterval(parent.nextSlide, 5000);
 		interval.set(parent.nextSlide, 5000);
 		parent.mouseListen(true);
 		parent.running = true;
@@ -158,9 +133,9 @@ function SlideShow (){
 
 	this.load = function(){
 		$('.logo').css('opacity', '1');
+		$('.playback p').css('display', 'inline-block');
 		$('.playback p').css('opacity', '0.5');
 		loopLoad(true);
-		$('.playback p').css('margin-left', '-'+($('.playback p').innerWidth()/2)+'px');
 		//http://joshjamesphotos.com/
 		$.post('http://joshjamesphotos.com/getImages.php', 'cmd=slideshow', function(data){
 			//console.log(data);
@@ -171,7 +146,6 @@ function SlideShow (){
 			imgCount = 0;
 			for (var i=0; i < files.length; i++) {
 				filename = files[i];
-				//$('.slideshow').append('<div class=\'image\' style=\'background-image: url("'+files[i]+'");\'></div>');
 				$('.slideshow').append('<div class=\'image\' style=\'background-image: url("'+filename+'");\'></div>');
 				count++;
 
@@ -182,7 +156,8 @@ function SlideShow (){
 					    	console.log('All images are rendered.');
 					    	$('.nextSlide, .lastSlide').css('opacity', '0.5');
 							loopLoad(false);
-							$('.playback p').html('click to view image');
+							$('.playback p').css('opacity', '0');
+							setTimeout(function(){$('.playback p').css('display', 'none');}, 500)
 							slideShow.nextSlide();
 							interval.set(slideShow.nextSlide, 5000);
 							slideShow.mouseListen(true);
@@ -214,7 +189,6 @@ function SlideShow (){
 		if (currentSlide !== lastSlide){
 			$('.image').eq(currentSlide-1).css('opacity', '0');
 		}
-		//if (currentSlide === 0 && lastSlide === 0) { currentSlide = showLength; lastSlide = showLength-1;}
 		$('.image').eq(lastSlide-1).css('opacity', '1');
 		lastSlide--;
 		$('.lastSlide').css('background-image', $('.image').eq((lastSlide === 0 && currentSlide === 0) ? showLength : lastSlide-1).css('background-image'));
@@ -234,12 +208,10 @@ function SlideShow (){
         			y = e.clientY;
 					clearTimeout(mouseTimer);
 					$('.logo').css('opacity', '1');
-					$('.playback p').css('opacity', '0.5');
 					//console.log('Mouse Move');
 
 					mouseTimer = setTimeout(function(){
 						$('.logo').css('opacity', '0.1');
-						$('.playback p').css('opacity', '0');
 						//console.log('fadeout');
 					}, 1000);
 				}

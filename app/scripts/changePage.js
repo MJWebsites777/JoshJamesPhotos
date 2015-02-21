@@ -26,6 +26,7 @@ function Page (){
 				//$('.nav2').css('transform', 'rotateZ(0deg)');
 				$('.nav3, .nav2').css('transform', 'scaleY(1)');
 				//$('.nav2').css('transform', 'scaleY(0%)');
+				setTimeout(function(){$('.diamonds').css('z-index', '2');}, 500);
 				break;
 			case 'bio':
 		
@@ -44,6 +45,7 @@ function Page (){
 		lastPage = currentPage;
 		//$('.nav2').css('transform', 'rotateZ(90deg)');
 		//$('.nav3').css('transform', 'rotateZ(-90deg)');
+		$('.diamonds').css('z-index', '0');
 		if (gallery.current === 'slideshow') {$('.slideshow').css('opacity', '1');}
 		$('.nav3, .nav2').css('transform', 'scaleY(0)');
 		$('.nav1').css({'background-color': 'rgba(0,0,0,0.75)', 'transform': 'scale(1,2)'}).removeClass('navHover');
@@ -68,18 +70,5 @@ function Page (){
 		//lastPage = currentPage;
 	
 		//currentPage = 'bio';
-	};
-	this.gotoContact = function(){
-		'use strict';
-		/*lastPage = currentPage;
-		$('.nav3').css("transform", "rotateZ(0deg) scale(2,2) translateY(-50%)").removeClass('navHover');
-		$('.nav1').css("transform", "scale(1) rotateX(180deg)");
-		$('.nav2').css("transform", "rotateZ(0deg) rotateY(180deg)");
-		$('.nav3 h1').css({"transform": "translateY(50%)", "opacity": 0});
-		$('.logo').css("transform", "translateY(-150%) rotateZ(-45deg) scale(0.5)");
-		currentPage = "contact";
-		setTimeout(function(){
-			$('.nav3 h1').css("display", "none");
-		}, 500);*/
 	};
 }
