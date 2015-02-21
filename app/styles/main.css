@@ -230,30 +230,23 @@ body {
 }
 /* line 174, ../scss/base/_base.scss */
 .nav .nav1 .gallery .overlay .controls .playback p {
-  display: none;
-  position: absolute;
-  left: 50%;
-  top: 25%;
+  display: inline-block;
+  position: relative;
+  top: -50%;
   font-size: 17pt;
   text-shadow: 0 0px 5px #000;
-  background-color: rgba(0, 0, 0, 0);
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0);
-  cursor: pointer;
-  padding: 150px;
-  opacity: 0;
-  -webkit-transition: opacity 500ms ease-in, background-color 500ms ease-in;
-  -moz-transition: opacity 500ms ease-in, background-color 500ms ease-in;
-  -ms-transition: opacity 500ms ease-in, background-color 500ms ease-in;
-  -o-transition: opacity 500ms ease-in, background-color 500ms ease-in;
-  transition: opacity 500ms ease-in, background-color 500ms ease-in;
-}
-/* line 189, ../scss/base/_base.scss */
-.nav .nav1 .gallery .overlay .controls .playback p:hover {
-  opacity: 1 !important;
   background-color: rgba(0, 0, 0, 0.25);
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  padding: 10px;
+  opacity: 0;
+  -webkit-transition: opacity 500ms ease-in;
+  -moz-transition: opacity 500ms ease-in;
+  -ms-transition: opacity 500ms ease-in;
+  -o-transition: opacity 500ms ease-in;
+  transition: opacity 500ms ease-in;
 }
-/* line 198, ../scss/base/_base.scss */
+/* line 191, ../scss/base/_base.scss */
 .nav .nav1 .image {
   background-size: contain;
   background-repeat: no-repeat;
@@ -264,7 +257,7 @@ body {
   -o-transition: opacity 500ms ease-in;
   transition: opacity 500ms ease-in;
 }
-/* line 204, ../scss/base/_base.scss */
+/* line 197, ../scss/base/_base.scss */
 .nav .nav1 .container {
   width: 93%;
   height: 65%;
@@ -272,7 +265,7 @@ body {
   display: inline-block;
   top: 24%;
 }
-/* line 211, ../scss/base/_base.scss */
+/* line 204, ../scss/base/_base.scss */
 .nav .nav1 .container .thumbScroller {
   width: 45%;
   height: 105%;
@@ -281,7 +274,7 @@ body {
   position: relative;
   top: -5%;
 }
-/* line 219, ../scss/base/_base.scss */
+/* line 212, ../scss/base/_base.scss */
 .nav .nav1 .container .thumbScroller .columns {
   -webkit-column-count: 3;
   -webkit-column-gap: 5px;
@@ -291,7 +284,7 @@ body {
   column-gap: 5px;
   padding-bottom: 50px;
 }
-/* line 223, ../scss/base/_base.scss */
+/* line 216, ../scss/base/_base.scss */
 .nav .nav1 .container .thumbScroller .columns .thumb {
   display: inline-block;
   margin: 3px;
@@ -308,16 +301,16 @@ body {
   -o-transform: translateZ(0);
   transform: translateZ(0);
 }
-/* line 231, ../scss/base/_base.scss */
+/* line 224, ../scss/base/_base.scss */
 .nav .nav1 .container .thumbScroller .columns .thumb .thumbnail {
   width: 100%;
   border: 1px solid #fff;
 }
-/* line 236, ../scss/base/_base.scss */
+/* line 229, ../scss/base/_base.scss */
 .nav .nav1 .container .thumbScroller .columns .thumb:hover {
   opacity: 1 !important;
 }
-/* line 241, ../scss/base/_base.scss */
+/* line 234, ../scss/base/_base.scss */
 .nav .nav1 .container .preview {
   width: 49%;
   height: 95%;
@@ -328,11 +321,11 @@ body {
   float: right;
   cursor: url(../images/zoom-in.cur), pointer;
 }
-/* line 251, ../scss/base/_base.scss */
+/* line 244, ../scss/base/_base.scss */
 .nav .nav1 .container .edge {
   width: 49%;
 }
-/* line 254, ../scss/base/_base.scss */
+/* line 247, ../scss/base/_base.scss */
 .nav .nav1 .container .edge .edgefade {
   width: 80%;
   height: 0px;
@@ -343,30 +336,30 @@ body {
   display: inline-block;
   left: -4%;
 }
-/* line 268, ../scss/base/_base.scss */
+/* line 261, ../scss/base/_base.scss */
 .nav .nav1.navHover:hover h1 {
   transform: translateY(50%);
   text-shadow: 0 0 7px #fff;
 }
-/* line 273, ../scss/base/_base.scss */
+/* line 266, ../scss/base/_base.scss */
 .nav .nav2 {
   transform-origin: 100% 100%;
   width: 100% !important;
   text-align: center;
 }
-/* line 278, ../scss/base/_base.scss */
+/* line 271, ../scss/base/_base.scss */
 .nav .nav2 h1 {
   position: relative;
   top: 60%;
 }
-/* line 283, ../scss/base/_base.scss */
+/* line 276, ../scss/base/_base.scss */
 .nav .nav2.navHover:hover h1 {
   transform: translateY(-50%);
   text-shadow: 0 0 7px #fff;
 }
 
 /* Monitor Styles */
-/* line 299, ../scss/base/_base.scss */
+/* line 292, ../scss/base/_base.scss */
 .monitor {
   display: none;
   background-color: black;
@@ -382,7 +375,7 @@ body {
 }
 
 /* Image Viewer Styles */
-/* line 314, ../scss/base/_base.scss */
+/* line 307, ../scss/base/_base.scss */
 .imgViewer {
   display: none;
   position: fixed;
@@ -399,7 +392,7 @@ body {
   transition: opacity 500ms ease-in;
   text-align: center;
 }
-/* line 326, ../scss/base/_base.scss */
+/* line 319, ../scss/base/_base.scss */
 .imgViewer > div {
   height: 100%;
   width: 100%;
@@ -410,7 +403,7 @@ body {
 }
 
 /* Logo Styles */
-/* line 337, ../scss/base/_base.scss */
+/* line 330, ../scss/base/_base.scss */
 .logo {
   background-color: rgba(255, 255, 255, 0.75);
   width: 250px;
@@ -438,13 +431,13 @@ body {
   cursor: pointer;
 }
 
-/* line 356, ../scss/base/_base.scss */
+/* line 349, ../scss/base/_base.scss */
 .logo:hover {
   opacity: 1 !important;
   background-color: white;
 }
 
-/* line 360, ../scss/base/_base.scss */
+/* line 353, ../scss/base/_base.scss */
 .logo:before {
   content: "";
   position: absolute;
@@ -466,13 +459,13 @@ body {
   transition: opacity 500ms ease-in;
 }
 
-/* line 372, ../scss/base/_base.scss */
+/* line 365, ../scss/base/_base.scss */
 .logo:hover:before {
   opacity: 1;
 }
 
 /* Diamonds Styles */
-/* line 377, ../scss/base/_base.scss */
+/* line 370, ../scss/base/_base.scss */
 .diamonds {
   width: 100%;
   position: absolute;
@@ -481,7 +474,7 @@ body {
   margin-top: -80px;
   z-index: 1;
 }
-/* line 385, ../scss/base/_base.scss */
+/* line 378, ../scss/base/_base.scss */
 .diamonds .diamond {
   width: 150px;
   height: 150px;
@@ -500,7 +493,7 @@ body {
   transition: opacity 500ms ease-in;
 }
 @media screen and (max-width: 1700px) {
-  /* line 394, ../scss/base/_base.scss */
+  /* line 387, ../scss/base/_base.scss */
   .diamonds .diamond:nth-of-type(1), .diamonds .diamond:nth-of-type(6) {
     display: none;
   }

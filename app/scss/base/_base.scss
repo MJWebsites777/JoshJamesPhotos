@@ -172,24 +172,17 @@ body {
             cursor: url(../images/zoom-in.cur), pointer;
 
             p {
-              display: none;
-              position: absolute;
-              left: 50%;
-              //margin-left: -61px;
-              top: 25%;
+              display: inline-block;
+              position: relative;
+              top: -50%;
               font-size: 17pt;
               text-shadow: 0 0px 5px #000;
-              background-color: rgba(0,0,0,0);
-              box-shadow: 0 0 30px rgba(0,0,0,0);
-              cursor: pointer;
-              padding: 150px;
-              opacity: 0;
-              @include transition(opacity 500ms ease-in, background-color 500ms ease-in);
-            }
-            p:hover {
-              opacity: 1 !important;
               background-color: rgba(0,0,0,0.25);
               box-shadow: 0 0 30px rgba(0,0,0,0.25);
+              cursor: pointer;
+              padding: 10px;
+              opacity: 0;
+              @include transition(opacity 500ms ease-in);
             }
           }
         }
