@@ -1,15 +1,11 @@
 //TODO ---------------------------
 //gallery thumbnail right-click prevention?
-//gallery thumbs don't fade in
-//fade in each thumbnail on load NOT WORKING
-//add div on preview to view larger image
 //--------------------------------
 
 var gallery = new Gallery();
 var slideShow = new SlideShow();
 $(window).resize(function(){
 	if (currentPage === 'gallery'){
-		//$('.playback p').css('margin-left', '-'+($('.playback p').innerWidth()/2)+'px');
 		$('.logo').css('transform', 'translateY(-'+Math.ceil($(window).height()/2.8)+'px) rotateZ(-45deg) scale(0.5)');
 	}
 });
