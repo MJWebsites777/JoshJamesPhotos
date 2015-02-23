@@ -385,9 +385,4 @@ body {
       box-shadow: 0 0 10px #000, inset 0 0 5px #000;
       @include transition(opacity 500ms ease-in);
   }
-  //.diamond:nth-of-type(1), .diamond:nth-of-type(6){
-    //@media screen and (max-width: 1700px){
-      //display: none;
-    //}
-  //}
 }
