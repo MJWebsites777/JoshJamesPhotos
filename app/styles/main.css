@@ -14,7 +14,6 @@ body {
   overflow: hidden;
 }
 
-/* Background Styles */
 /* line 17, ../scss/base/_base.scss */
 .background {
   width: 100%;
@@ -53,7 +52,6 @@ body {
   width: 20%;
 }
 
-/* Navigation Styles */
 /* line 49, ../scss/base/_base.scss */
 .nav {
   width: 100%;
@@ -66,14 +64,6 @@ body {
   -o-transition: opacity 500ms ease-in;
   transition: opacity 500ms ease-in;
   z-index: 1;
-  /*.nav3 { //Contact
-  	transform-origin: 100% 100%;
-  	width: 50% !important;
-  	text-align: center;
-
-  	h1 {
-  	}
-  }*/
 }
 /* line 57, ../scss/base/_base.scss */
 .nav > div {
@@ -125,12 +115,11 @@ body {
   color: #fff;
   font-family: Verdana;
   text-align: center;
-  /*transform: scale(1,0.5);*/
   opacity: 0;
   background-color: #000;
   padding: 5px;
 }
-/* line 102, ../scss/base/_base.scss */
+/* line 100, ../scss/base/_base.scss */
 .nav .nav1 .galNav h2 {
   display: inline-block;
   margin: 0px 20px;
@@ -143,11 +132,11 @@ body {
   -o-transition: text-shadow 200ms ease-in, transform 500ms ease-in-out, color 300ms ease-in;
   transition: text-shadow 200ms ease-in, transform 500ms ease-in-out, color 300ms ease-in;
 }
-/* line 111, ../scss/base/_base.scss */
+/* line 109, ../scss/base/_base.scss */
 .nav .nav1 .galNav h2:hover {
   text-shadow: 0 0 5px #fff;
 }
-/* line 116, ../scss/base/_base.scss */
+/* line 113, ../scss/base/_base.scss */
 .nav .nav1 .gallery {
   position: absolute;
   top: -50%;
@@ -161,14 +150,14 @@ body {
   -o-transform: scaleY(0.5);
   transform: scaleY(0.5);
 }
-/* line 126, ../scss/base/_base.scss */
+/* line 122, ../scss/base/_base.scss */
 .nav .nav1 .gallery > div, .nav .nav1 .gallery .image, .nav .nav1 .gallery .overlay, .nav .nav1 .gallery .overlay div {
   position: absolute;
   width: 100%;
   height: 100%;
   opacity: 0;
 }
-/* line 132, ../scss/base/_base.scss */
+/* line 128, ../scss/base/_base.scss */
 .nav .nav1 .gallery > div:not(.slideshow):not(.nicescroll-rails) {
   display: none;
   position: relative;
@@ -179,7 +168,7 @@ body {
   -o-transition: opacity 500ms ease-in;
   transition: opacity 500ms ease-in;
 }
-/* line 138, ../scss/base/_base.scss */
+/* line 134, ../scss/base/_base.scss */
 .nav .nav1 .gallery .slideshow {
   -webkit-transition: opacity 500ms ease-in;
   -moz-transition: opacity 500ms ease-in;
@@ -187,28 +176,28 @@ body {
   -o-transition: opacity 500ms ease-in;
   transition: opacity 500ms ease-in;
 }
-/* line 141, ../scss/base/_base.scss */
+/* line 137, ../scss/base/_base.scss */
 .nav .nav1 .gallery .overlay {
   opacity: 1;
   z-index: 1000;
 }
-/* line 145, ../scss/base/_base.scss */
+/* line 141, ../scss/base/_base.scss */
 .nav .nav1 .gallery .overlay .controls {
   opacity: 1;
   font-family: Verdana;
   font-weight: bold;
   color: #fff;
 }
-/* line 151, ../scss/base/_base.scss */
+/* line 147, ../scss/base/_base.scss */
 .nav .nav1 .gallery .overlay .controls > div {
   position: relative;
   display: inline-block;
 }
-/* line 155, ../scss/base/_base.scss */
+/* line 151, ../scss/base/_base.scss */
 .nav .nav1 .gallery .overlay .controls > div:not(.playback):hover {
   opacity: 1 !important;
 }
-/* line 158, ../scss/base/_base.scss */
+/* line 154, ../scss/base/_base.scss */
 .nav .nav1 .gallery .overlay .controls .lastSlide, .nav .nav1 .gallery .overlay .controls .nextSlide {
   width: 15%;
   background-size: 100%;
@@ -222,13 +211,13 @@ body {
   -o-transition: opacity 500ms ease-in;
   transition: opacity 500ms ease-in;
 }
-/* line 169, ../scss/base/_base.scss */
+/* line 163, ../scss/base/_base.scss */
 .nav .nav1 .gallery .overlay .controls .playback {
   width: 70%;
   opacity: 1;
   cursor: url(../images/zoom-in.cur), pointer;
 }
-/* line 174, ../scss/base/_base.scss */
+/* line 168, ../scss/base/_base.scss */
 .nav .nav1 .gallery .overlay .controls .playback p {
   display: inline-block;
   position: relative;
@@ -246,7 +235,7 @@ body {
   -o-transition: opacity 500ms ease-in;
   transition: opacity 500ms ease-in;
 }
-/* line 191, ../scss/base/_base.scss */
+/* line 185, ../scss/base/_base.scss */
 .nav .nav1 .image {
   background-size: contain;
   background-repeat: no-repeat;
@@ -257,7 +246,7 @@ body {
   -o-transition: opacity 500ms ease-in;
   transition: opacity 500ms ease-in;
 }
-/* line 197, ../scss/base/_base.scss */
+/* line 191, ../scss/base/_base.scss */
 .nav .nav1 .container {
   width: 93%;
   height: 65%;
@@ -265,7 +254,7 @@ body {
   display: inline-block;
   top: 24%;
 }
-/* line 204, ../scss/base/_base.scss */
+/* line 198, ../scss/base/_base.scss */
 .nav .nav1 .container .thumbScroller {
   width: 45%;
   height: 105%;
@@ -274,7 +263,7 @@ body {
   position: relative;
   top: -5%;
 }
-/* line 212, ../scss/base/_base.scss */
+/* line 206, ../scss/base/_base.scss */
 .nav .nav1 .container .thumbScroller .columns {
   -webkit-column-count: 3;
   -webkit-column-gap: 5px;
@@ -284,7 +273,7 @@ body {
   column-gap: 5px;
   padding-bottom: 50px;
 }
-/* line 216, ../scss/base/_base.scss */
+/* line 210, ../scss/base/_base.scss */
 .nav .nav1 .container .thumbScroller .columns .thumb {
   display: inline-block;
   margin: 3px;
@@ -301,16 +290,16 @@ body {
   -o-transform: translateZ(0);
   transform: translateZ(0);
 }
-/* line 224, ../scss/base/_base.scss */
+/* line 218, ../scss/base/_base.scss */
 .nav .nav1 .container .thumbScroller .columns .thumb .thumbnail {
   width: 100%;
   border: 1px solid #fff;
 }
-/* line 229, ../scss/base/_base.scss */
+/* line 223, ../scss/base/_base.scss */
 .nav .nav1 .container .thumbScroller .columns .thumb:hover {
   opacity: 1 !important;
 }
-/* line 234, ../scss/base/_base.scss */
+/* line 228, ../scss/base/_base.scss */
 .nav .nav1 .container .preview {
   width: 49%;
   height: 95%;
@@ -321,11 +310,11 @@ body {
   float: right;
   cursor: url(../images/zoom-in.cur), pointer;
 }
-/* line 244, ../scss/base/_base.scss */
+/* line 238, ../scss/base/_base.scss */
 .nav .nav1 .container .edge {
   width: 49%;
 }
-/* line 247, ../scss/base/_base.scss */
+/* line 241, ../scss/base/_base.scss */
 .nav .nav1 .container .edge .edgefade {
   width: 80%;
   height: 0px;
@@ -336,30 +325,29 @@ body {
   display: inline-block;
   left: -4%;
 }
-/* line 261, ../scss/base/_base.scss */
+/* line 254, ../scss/base/_base.scss */
 .nav .nav1.navHover:hover h1 {
   transform: translateY(50%);
   text-shadow: 0 0 7px #fff;
 }
-/* line 266, ../scss/base/_base.scss */
+/* line 259, ../scss/base/_base.scss */
 .nav .nav2 {
   transform-origin: 100% 100%;
   width: 100% !important;
   text-align: center;
 }
-/* line 271, ../scss/base/_base.scss */
+/* line 264, ../scss/base/_base.scss */
 .nav .nav2 h1 {
   position: relative;
   top: 60%;
 }
-/* line 276, ../scss/base/_base.scss */
+/* line 269, ../scss/base/_base.scss */
 .nav .nav2.navHover:hover h1 {
   transform: translateY(-50%);
   text-shadow: 0 0 7px #fff;
 }
 
-/* Monitor Styles */
-/* line 292, ../scss/base/_base.scss */
+/* line 276, ../scss/base/_base.scss */
 .monitor {
   display: none;
   background-color: black;
@@ -374,8 +362,7 @@ body {
   cursor: default;
 }
 
-/* Image Viewer Styles */
-/* line 307, ../scss/base/_base.scss */
+/* line 291, ../scss/base/_base.scss */
 .imgViewer {
   display: none;
   position: fixed;
@@ -392,7 +379,7 @@ body {
   transition: opacity 500ms ease-in;
   text-align: center;
 }
-/* line 319, ../scss/base/_base.scss */
+/* line 303, ../scss/base/_base.scss */
 .imgViewer > div {
   height: 100%;
   width: 100%;
@@ -402,8 +389,7 @@ body {
   cursor: url(../images/zoom-out.cur), pointer;
 }
 
-/* Logo Styles */
-/* line 330, ../scss/base/_base.scss */
+/* line 314, ../scss/base/_base.scss */
 .logo {
   background-color: rgba(255, 255, 255, 0.75);
   width: 13.5vw;
@@ -431,13 +417,13 @@ body {
   cursor: pointer;
 }
 
-/* line 349, ../scss/base/_base.scss */
+/* line 333, ../scss/base/_base.scss */
 .logo:hover {
   opacity: 1 !important;
   background-color: white;
 }
 
-/* line 353, ../scss/base/_base.scss */
+/* line 337, ../scss/base/_base.scss */
 .logo:before {
   content: "";
   position: absolute;
@@ -459,13 +445,12 @@ body {
   transition: opacity 500ms ease-in;
 }
 
-/* line 365, ../scss/base/_base.scss */
+/* line 349, ../scss/base/_base.scss */
 .logo:hover:before {
   opacity: 1;
 }
 
-/* Diamonds Styles */
-/* line 370, ../scss/base/_base.scss */
+/* line 354, ../scss/base/_base.scss */
 .diamonds {
   width: 100%;
   height: 9vw;
@@ -475,7 +460,7 @@ body {
   margin-top: calc(-4.5vw - 3px);
   z-index: 1;
 }
-/* line 379, ../scss/base/_base.scss */
+/* line 363, ../scss/base/_base.scss */
 .diamonds .diamond {
   width: 9vw;
   height: 9vw;
