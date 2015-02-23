@@ -329,8 +329,8 @@ body {
 /* Logo Styles */
 .logo {
   	background-color: rgba(255,255,255,0.75);
-  	width: 250px;
-  	height: 250px;
+  	width: 13.5vw;
+    height: 13.5vw;
   	position: fixed;
   	z-index: 1000;
   	border-radius: 25px;
@@ -342,8 +342,8 @@ body {
   	//box-shadow: 0 0 30px #000;
   	top: 50%;
   	left: 50%;
-  	margin-top: -130px;
-  	margin-left: -130px;
+  	margin-top: calc(-6.75vw - 5px);
+    margin-left: calc(-6.75vw - 5px);
   	cursor: pointer;
 }
 .logo:hover {
@@ -369,24 +369,25 @@ body {
 /* Diamonds Styles */
 .diamonds {
     width: 100%;
+    height: 9vw;
     position: absolute;
     text-align: center;
     top: 50%;
-    margin-top: -80px;
+    margin-top: calc(-4.5vw - 3px);
     z-index: 1;
 
   .diamond {
-      width: 150px;
-      height: 150px;
+      width: 9vw;
+      height: 9vw;
       display: inline-block;
       border: 3px solid #fff;
       @include transform(rotate(45deg));
       box-shadow: 0 0 10px #000, inset 0 0 5px #000;
       @include transition(opacity 500ms ease-in);
   }
-  .diamond:nth-of-type(1), .diamond:nth-of-type(6){
-    @media screen and (max-width: 1700px){
-      display: none;
-    }
-  }
+  //.diamond:nth-of-type(1), .diamond:nth-of-type(6){
+    //@media screen and (max-width: 1700px){
+      //display: none;
+    //}
+  //}
 }
