@@ -1,16 +1,12 @@
 //TODO
-//fadein main once nav buttons are rendered correctly
 //change url hash on page change?
 //remove headings from nav and add background images to show user where that nav takes them
 
 var currentPage = 'home', lastPage = '';
 $(document).ready(function() {
 	var page = new Page();
-	//var slideshow = new SlideShow();
-	//slideshow.load();
 
 	onload=onresize=function(){	
-		$('.nav .navHover').css('height', Math.ceil($(window).height()/2)+'px');
 		switch (currentPage){
 			case 'gallery': 
 				$('.nav1').height($(window).height()/2);
@@ -31,7 +27,6 @@ $(document).ready(function() {
 //Clicks
 	$(document).on('click', '.nav1', function(event){
 		var target = $(event.target);
-		//console.log('nav1 clicked element: '+target);
 		if (target.attr('class') === 'nav1 navHover' || event.target.nodeName === 'H1'){
 			page.gotoGallery();
 		}
@@ -56,8 +51,8 @@ $(document).ready(function() {
 	var img = new Image();
 	img.src = '../images/cover.jpg';
 	img.onload = function() {
-    	$('.bgImg').css('opacity','1');
-    	$('.nav').css('opacity', '1');
+		$('.bgImg').css('opacity','1');
+		$('.nav').css('opacity', '1');
 	};
 	//drawTiles('bg', $('.bgImg'));
 	//$('.tile').on('contextmenu', 'canvas', function(){ return false; });
