@@ -156,8 +156,8 @@ function SlideShow (){
 
 				var image = new Image();
 				image.onload = function(){
-					imgLoaded(this.src, function(){
-						if (imgCount === showLength){
+					renderLoaded(this.src, function(){
+						if (renderCount === showLength){
 					    	console.log('All images are rendered.');
 					    	$('.nextSlide, .lastSlide').css('opacity', '0.5');
 							loopLoad(false);
@@ -232,14 +232,14 @@ function SlideShow (){
 		}
 	};
 }
-var imgCount = 0;
-function imgLoaded(name, callback)  {
+var renderCount = 0;
+function renderLoaded(name, callback)  {
 	'use strict';
     requestAnimationFrame(function(){
     	requestAnimationFrame(function(){
     		console.log(name+' rendered.');
     		callback();
-			imgCount++;
+			renderCount++;
     	});
 	});
 }
