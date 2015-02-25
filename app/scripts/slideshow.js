@@ -38,6 +38,7 @@ function SlideShow (){
 	this.running = false;
 	this.paused = false;
 	this.loaded = false;
+	this.waiting = false;
 	this.hidden = true;
 	this.zoomed = false;
 	this.animating = false;
@@ -60,7 +61,14 @@ function SlideShow (){
 	}, 50);
 
 	this.start = function(){
-		if (!parent.loaded) { parent.load(); parent.start(); return; }
+		//if (!parent.loaded) { parent.load(); parent.start(); return; }
+		if (!parent.loaded) { parent.waiting = true; return;}
+		else {
+			$('.nextSlide, .lastSlide').css('opacity', '0.5');
+    		slideShow.nextSlide();
+			interval.set(slideShow.nextSlide, 5000);
+			slideShow.mouseListen(true);
+		}
 		if (parent.running) {return;}
 		parent.running = true;
 		parent.hidden = false;
@@ -148,7 +156,7 @@ function SlideShow (){
 			var count = 0;
 			showLength = files.length - 1;
 			var filename = '';
-			imgCount = 0;
+			renderCount = 0;
 			for (var i=0; i < files.length; i++) {
 				filename = files[i];
 				$('.slideshow').append('<div class=\'image\' style=\'background-image: url("'+filename+'");\'></div>');
@@ -159,20 +167,20 @@ function SlideShow (){
 					renderLoaded(this.src, function(){
 						if (renderCount === showLength){
 					    	console.log('All images are rendered.');
-					    	$('.nextSlide, .lastSlide').css('opacity', '0.5');
-							loopLoad(false);
+					    	loopLoad(false);
+					    	parent.loaded = true;
+					    	if (parent.waiting){	
+					    		parent.start();
+					    	}	    	
 							$('.playback p').css('opacity', '0');
 							setTimeout(function(){$('.playback p').css('display', 'none');}, 500)
-							slideShow.nextSlide();
-							interval.set(slideShow.nextSlide, 5000);
-							slideShow.mouseListen(true);
+							parent.waiting = false;
 						}
 					});
 				};
 				image.src = files[i];
 			}
 		});
-		parent.loaded = true;
 		console.log('SlideShow Loaded');
 	};
 

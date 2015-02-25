@@ -53,6 +53,7 @@ $(document).ready(function() {
 	img.onload = function() {
 		$('.bgImg').css('opacity','1');
 		$('.nav').css('opacity', '1');
+		slideShow.load();
 	};
 	//drawTiles('bg', $('.bgImg'));
 	//$('.tile').on('contextmenu', 'canvas', function(){ return false; });
