@@ -410,8 +410,8 @@ body {
 /* line 323, ../scss-mobile/base/_base.scss */
 .logo {
   background-color: rgba(255, 255, 255, 0.75);
-  width: 13.5vw;
-  height: 13.5vw;
+  width: 30vw;
+  height: 30vw;
   position: fixed;
   z-index: 1000;
   border-radius: 25px;
@@ -430,8 +430,8 @@ body {
   transition: transform 500ms ease-in-out, opacity 500ms ease-in, background-color 500ms ease-in;
   top: 50%;
   left: 50%;
-  margin-top: calc(-6.75vw - 5px);
-  margin-left: calc(-6.75vw - 5px);
+  margin-top: calc(-15vw - 5px);
+  margin-left: calc(-15vw - 5px);
   cursor: pointer;
 }
 
@@ -470,6 +470,7 @@ body {
 
 /* line 363, ../scss-mobile/base/_base.scss */
 .diamonds {
+  display: none;
   width: 100%;
   height: 9vw;
   position: absolute;
@@ -478,7 +479,7 @@ body {
   margin-top: calc(-4.5vw - 3px);
   z-index: 1;
 }
-/* line 372, ../scss-mobile/base/_base.scss */
+/* line 373, ../scss-mobile/base/_base.scss */
 .diamonds .diamond {
   width: 9vw;
   height: 9vw;

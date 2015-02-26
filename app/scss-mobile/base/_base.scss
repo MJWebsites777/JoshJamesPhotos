@@ -322,8 +322,8 @@ body {
 // Logo Styles
 .logo {
   	background-color: rgba(255,255,255,0.75);
-  	width: 13.5vw;
-    height: 13.5vw;
+  	width: 30vw;
+    height: 30vw;
   	position: fixed;
   	z-index: 1000;
   	border-radius: 25px;
@@ -335,8 +335,8 @@ body {
   	//box-shadow: 0 0 30px #000;
   	top: 50%;
   	left: 50%;
-  	margin-top: calc(-6.75vw - 5px);
-    margin-left: calc(-6.75vw - 5px);
+  	margin-top: calc(-15vw - 5px);
+    margin-left: calc(-15vw - 5px);
   	cursor: pointer;
 }
 .logo:hover {
@@ -361,6 +361,7 @@ body {
 
 // Diamonds Styles
 .diamonds {
+    display: none;
     width: 100%;
     height: 9vw;
     position: absolute;
