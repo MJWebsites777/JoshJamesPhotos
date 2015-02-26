@@ -24,12 +24,20 @@ function Page (){
 				$('.nav1').css('transform', 'scale(1)').addClass('navHover');
 				//$('.nav3').css('transform', 'rotateZ(0deg)');
 				//$('.nav2').css('transform', 'rotateZ(0deg)');
-				$('.nav3, .nav2').css('transform', 'scaleY(1)');
+				$('.nav2').css('transform', 'scaleY(1)');
 				//$('.nav2').css('transform', 'scaleY(0%)');
 				setTimeout(function(){$('.diamonds').css('z-index', '2');}, 500);
 				break;
 			case 'bio':
-		
+				$('.bio').css('opacity', '');
+				setTimeout(function(){$('.bio').css('display', '');}, 500);
+				$('.nav2').css({'background-color': '', 'opacity': ''});
+				$('.nav2 h1').css('display', '');
+				$('.logo').css({'transform': 'translateY(0%) rotateZ(-45deg)  scale(1)', 'opacity': '1'});
+				setTimeout(function(){$('.nav2 h1').css({'transform': '', 'opacity': 1});},10);
+				$('.nav2').css('transform', 'scale(1)').addClass('navHover');
+				$('.nav1').css('transform', 'scaleY(1)');
+				setTimeout(function(){$('.diamonds').css('z-index', '2');}, 500);
 				break;
 			case 'contact':
 		
@@ -47,7 +55,7 @@ function Page (){
 		//$('.nav3').css('transform', 'rotateZ(-90deg)');
 		$('.diamonds').css('z-index', '0');
 		if (gallery.current === 'slideshow') {$('.slideshow').css('opacity', '1');}
-		$('.nav3, .nav2').css('transform', 'scaleY(0)');
+		$('.nav2').css('transform', 'scaleY(0)');
 		$('.nav1').css({'background-color': 'rgba(0,0,0,0.75)', 'transform': 'scale(1,2)'}).removeClass('navHover');
 		$('.nav1 h1').css({'transform': 'translateY(50%)', 'opacity': 0});
 		$('.logo').css('transform', 'translateY(-'+Math.ceil($(window).height()/2.8)+'px) rotateZ(-45deg) scale(0.5)');
@@ -67,8 +75,16 @@ function Page (){
 	};
 	this.gotoBio = function(){
 		'use strict';
-		//lastPage = currentPage;
-	
-		//currentPage = 'bio';
+		lastPage = currentPage;
+		$('.diamonds').css('z-index', '0');
+		$('.nav1').css('transform', 'scaleY(0)');
+		$('.nav2').css({'background-color': 'rgba(0,0,0,0.75)', 'transform': 'scale(1,2)'}).removeClass('navHover');
+		$('.nav2 h1').css({'transform': 'translateY(50%)', 'opacity': 0});
+		$('.logo').css('transform', 'translateY(-'+Math.ceil($(window).height()/2.8)+'px) rotateZ(-45deg) scale(0.5)');
+		currentPage = 'bio';
+		setTimeout(function(){
+			$('.bio').css('display', 'block');
+			setTimeout(function(){$('.bio').css('opacity', '1');}, 50);
+		}, 500);
 	};
 }
