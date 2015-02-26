@@ -1,0 +1,498 @@
+/* line 2, ../scss-mobile/base/_base.scss */
+html {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+}
+
+/* line 8, ../scss-mobile/base/_base.scss */
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* line 17, ../scss-mobile/base/_base.scss */
+.background {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+/* line 22, ../scss-mobile/base/_base.scss */
+.background .bgImg {
+  min-width: 100%;
+  min-height: 100%;
+  background-image: url(../images/cover.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  opacity: 0;
+  -webkit-transition: opacity 500ms ease-in;
+  -moz-transition: opacity 500ms ease-in;
+  -ms-transition: opacity 500ms ease-in;
+  -o-transition: opacity 500ms ease-in;
+  transition: opacity 500ms ease-in;
+}
+/* line 33, ../scss-mobile/base/_base.scss */
+.background .bgOverlay {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 0 500px 200px #000;
+}
+/* line 40, ../scss-mobile/base/_base.scss */
+.background .tile {
+  display: inline-block;
+  margin: 0;
+  margin-top: -4.5px;
+  width: 20%;
+}
+
+/* line 49, ../scss-mobile/base/_base.scss */
+.nav {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  opacity: 0;
+  -webkit-transition: opacity 500ms ease-in;
+  -moz-transition: opacity 500ms ease-in;
+  -ms-transition: opacity 500ms ease-in;
+  -o-transition: opacity 500ms ease-in;
+  transition: opacity 500ms ease-in;
+  z-index: 1;
+}
+/* line 58, ../scss-mobile/base/_base.scss */
+.nav > div {
+  width: 100%;
+  height: 50%;
+  display: inline-block;
+  padding: 0;
+  margin: 0px;
+  opacity: 0.75;
+  -webkit-transition: transform 500ms ease-in, background-color 500ms ease-in, opacity 500ms ease-in;
+  -moz-transition: transform 500ms ease-in, background-color 500ms ease-in, opacity 500ms ease-in;
+  -ms-transition: transform 500ms ease-in, background-color 500ms ease-in, opacity 500ms ease-in;
+  -o-transition: transform 500ms ease-in, background-color 500ms ease-in, opacity 500ms ease-in;
+  transition: transform 500ms ease-in, background-color 500ms ease-in, opacity 500ms ease-in;
+}
+/* line 69, ../scss-mobile/base/_base.scss */
+.nav > div h1 {
+  color: #fff;
+  font-family: Verdana;
+  font-size: 50pt;
+  position: relative;
+  text-shadow: 0 0 0px #fff;
+  -webkit-transition: text-shadow 300ms ease-in, transform 500ms ease, opacity 500ms ease-in;
+  -moz-transition: text-shadow 300ms ease-in, transform 500ms ease, opacity 500ms ease-in;
+  -ms-transition: text-shadow 300ms ease-in, transform 500ms ease, opacity 500ms ease-in;
+  -o-transition: text-shadow 300ms ease-in, transform 500ms ease, opacity 500ms ease-in;
+  transition: text-shadow 300ms ease-in, transform 500ms ease, opacity 500ms ease-in;
+}
+/* line 77, ../scss-mobile/base/_base.scss */
+.nav .navHover:hover {
+  cursor: pointer;
+}
+/* line 83, ../scss-mobile/base/_base.scss */
+.nav .nav1 {
+  transform-origin: 0 0;
+  text-align: center;
+}
+/* line 87, ../scss-mobile/base/_base.scss */
+.nav .nav1 .galNav {
+  position: relative;
+  display: none;
+  top: 85%;
+  -webkit-transform: translateY(50%);
+  -moz-transform: translateY(50%);
+  -ms-transform: translateY(50%);
+  -o-transform: translateY(50%);
+  transform: translateY(50%);
+  z-index: 1000;
+  color: #fff;
+  font-family: Verdana;
+  text-align: center;
+  opacity: 0;
+  background-color: #000;
+  padding: 5px;
+}
+/* line 101, ../scss-mobile/base/_base.scss */
+.nav .nav1 .galNav h2 {
+  display: inline-block;
+  margin: 0px 20px;
+  font-size: 15pt;
+  cursor: pointer;
+  text-shadow: 0 0 10px #000;
+  -webkit-transition: text-shadow 200ms ease-in, transform 500ms ease-in-out, color 300ms ease-in;
+  -moz-transition: text-shadow 200ms ease-in, transform 500ms ease-in-out, color 300ms ease-in;
+  -ms-transition: text-shadow 200ms ease-in, transform 500ms ease-in-out, color 300ms ease-in;
+  -o-transition: text-shadow 200ms ease-in, transform 500ms ease-in-out, color 300ms ease-in;
+  transition: text-shadow 200ms ease-in, transform 500ms ease-in-out, color 300ms ease-in;
+}
+/* line 110, ../scss-mobile/base/_base.scss */
+.nav .nav1 .galNav h2:hover {
+  text-shadow: 0 0 5px #fff;
+}
+/* line 114, ../scss-mobile/base/_base.scss */
+.nav .nav1 .gallery {
+  position: absolute;
+  top: -50%;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  display: none;
+  -webkit-transform: scaleY(0.5);
+  -moz-transform: scaleY(0.5);
+  -ms-transform: scaleY(0.5);
+  -o-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+/* line 123, ../scss-mobile/base/_base.scss */
+.nav .nav1 .gallery > div, .nav .nav1 .gallery .image, .nav .nav1 .gallery .overlay, .nav .nav1 .gallery .overlay div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+/* line 129, ../scss-mobile/base/_base.scss */
+.nav .nav1 .gallery > div:not(.slideshow):not(.nicescroll-rails) {
+  display: none;
+  position: relative;
+  text-align: center;
+  -webkit-transition: opacity 500ms ease-in;
+  -moz-transition: opacity 500ms ease-in;
+  -ms-transition: opacity 500ms ease-in;
+  -o-transition: opacity 500ms ease-in;
+  transition: opacity 500ms ease-in;
+}
+/* line 135, ../scss-mobile/base/_base.scss */
+.nav .nav1 .gallery .slideshow {
+  -webkit-transition: opacity 500ms ease-in;
+  -moz-transition: opacity 500ms ease-in;
+  -ms-transition: opacity 500ms ease-in;
+  -o-transition: opacity 500ms ease-in;
+  transition: opacity 500ms ease-in;
+}
+/* line 138, ../scss-mobile/base/_base.scss */
+.nav .nav1 .gallery .overlay {
+  opacity: 1;
+  z-index: 1000;
+}
+/* line 142, ../scss-mobile/base/_base.scss */
+.nav .nav1 .gallery .overlay .controls {
+  opacity: 1;
+  font-family: Verdana;
+  font-weight: bold;
+  color: #fff;
+}
+/* line 148, ../scss-mobile/base/_base.scss */
+.nav .nav1 .gallery .overlay .controls > div {
+  position: relative;
+  display: inline-block;
+}
+/* line 152, ../scss-mobile/base/_base.scss */
+.nav .nav1 .gallery .overlay .controls > div:not(.playback):hover {
+  opacity: 1 !important;
+}
+/* line 155, ../scss-mobile/base/_base.scss */
+.nav .nav1 .gallery .overlay .controls .lastSlide, .nav .nav1 .gallery .overlay .controls .nextSlide {
+  width: 15%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  cursor: pointer;
+  opacity: 0.5;
+  -webkit-transition: opacity 500ms ease-in;
+  -moz-transition: opacity 500ms ease-in;
+  -ms-transition: opacity 500ms ease-in;
+  -o-transition: opacity 500ms ease-in;
+  transition: opacity 500ms ease-in;
+}
+/* line 164, ../scss-mobile/base/_base.scss */
+.nav .nav1 .gallery .overlay .controls .playback {
+  width: 70%;
+  opacity: 1;
+  cursor: url(../images/zoom-in.cur), pointer;
+}
+/* line 169, ../scss-mobile/base/_base.scss */
+.nav .nav1 .gallery .overlay .controls .playback p {
+  display: inline-block;
+  position: relative;
+  top: -50%;
+  font-size: 17pt;
+  text-shadow: 0 0px 5px #000;
+  background-color: rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.25);
+  padding: 10px;
+  opacity: 0;
+  -webkit-transition: opacity 500ms ease-in;
+  -moz-transition: opacity 500ms ease-in;
+  -ms-transition: opacity 500ms ease-in;
+  -o-transition: opacity 500ms ease-in;
+  transition: opacity 500ms ease-in;
+}
+/* line 185, ../scss-mobile/base/_base.scss */
+.nav .nav1 .image {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-transition: opacity 500ms ease-in;
+  -moz-transition: opacity 500ms ease-in;
+  -ms-transition: opacity 500ms ease-in;
+  -o-transition: opacity 500ms ease-in;
+  transition: opacity 500ms ease-in;
+}
+/* line 191, ../scss-mobile/base/_base.scss */
+.nav .nav1 .container {
+  width: 93%;
+  height: 65%;
+  position: relative;
+  display: inline-block;
+  top: 24%;
+}
+/* line 198, ../scss-mobile/base/_base.scss */
+.nav .nav1 .container .thumbScroller {
+  width: 45%;
+  height: 105%;
+  display: inline-block;
+  float: left;
+  position: relative;
+  top: -5%;
+}
+/* line 206, ../scss-mobile/base/_base.scss */
+.nav .nav1 .container .thumbScroller .columns {
+  -webkit-column-count: 3;
+  -webkit-column-gap: 5px;
+  -moz-column-count: 3;
+  -moz-column-gap: 5px;
+  column-count: 3;
+  column-gap: 5px;
+  padding-bottom: 50px;
+}
+/* line 210, ../scss-mobile/base/_base.scss */
+.nav .nav1 .container .thumbScroller .columns .thumb {
+  display: inline-block;
+  margin: 3px;
+  opacity: 0;
+  -webkit-transition: opacity 500ms ease-in;
+  -moz-transition: opacity 500ms ease-in;
+  -ms-transition: opacity 500ms ease-in;
+  -o-transition: opacity 500ms ease-in;
+  transition: opacity 500ms ease-in;
+  cursor: pointer;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+}
+/* line 218, ../scss-mobile/base/_base.scss */
+.nav .nav1 .container .thumbScroller .columns .thumb .thumbnail {
+  width: 100%;
+  border: 1px solid #fff;
+}
+/* line 223, ../scss-mobile/base/_base.scss */
+.nav .nav1 .container .thumbScroller .columns .thumb:hover {
+  opacity: 1 !important;
+}
+/* line 228, ../scss-mobile/base/_base.scss */
+.nav .nav1 .container .preview {
+  width: 49%;
+  height: 95%;
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  float: right;
+  cursor: url(../images/zoom-in.cur), pointer;
+}
+/* line 238, ../scss-mobile/base/_base.scss */
+.nav .nav1 .container .edge {
+  width: 49%;
+}
+/* line 241, ../scss-mobile/base/_base.scss */
+.nav .nav1 .container .edge .edgefade {
+  width: 80%;
+  height: 0px;
+  position: relative;
+  box-shadow: 0px -25px 90px 130px black;
+  -webkit-box-shadow: 0 -25px 110px 100px black;
+  z-index: 1000;
+  display: inline-block;
+  left: -4%;
+}
+/* line 254, ../scss-mobile/base/_base.scss */
+.nav .nav1.navHover:hover h1 {
+  transform: translateY(50%);
+  text-shadow: 0 0 7px #fff;
+}
+/* line 259, ../scss-mobile/base/_base.scss */
+.nav .nav2 {
+  transform-origin: 100% 100%;
+  width: 100% !important;
+  text-align: center;
+}
+/* line 264, ../scss-mobile/base/_base.scss */
+.nav .nav2 h1 {
+  position: relative;
+  top: 60%;
+}
+/* line 268, ../scss-mobile/base/_base.scss */
+.nav .nav2 .bio {
+  display: none;
+  opacity: 0;
+  color: #fff;
+  font-family: verdana;
+  font-size: 50pt;
+  -webkit-transform: scaleY(0.5);
+  -moz-transform: scaleY(0.5);
+  -ms-transform: scaleY(0.5);
+  -o-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+  -webkit-transition: opacity 500ms ease-in;
+  -moz-transition: opacity 500ms ease-in;
+  -ms-transition: opacity 500ms ease-in;
+  -o-transition: opacity 500ms ease-in;
+  transition: opacity 500ms ease-in;
+}
+/* line 278, ../scss-mobile/base/_base.scss */
+.nav .nav2.navHover:hover h1 {
+  transform: translateY(-50%);
+  text-shadow: 0 0 7px #fff;
+}
+
+/* line 285, ../scss-mobile/base/_base.scss */
+.monitor {
+  display: none;
+  background-color: black;
+  color: green;
+  width: 250px;
+  height: auto;
+  padding: 5px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  cursor: default;
+}
+
+/* line 300, ../scss-mobile/base/_base.scss */
+.imgViewer {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  -webkit-transition: opacity 500ms ease-in;
+  -moz-transition: opacity 500ms ease-in;
+  -ms-transition: opacity 500ms ease-in;
+  -o-transition: opacity 500ms ease-in;
+  transition: opacity 500ms ease-in;
+  text-align: center;
+}
+/* line 312, ../scss-mobile/base/_base.scss */
+.imgViewer > div {
+  height: 100%;
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: url(../images/zoom-out.cur), pointer;
+}
+
+/* line 323, ../scss-mobile/base/_base.scss */
+.logo {
+  background-color: rgba(255, 255, 255, 0.75);
+  width: 13.5vw;
+  height: 13.5vw;
+  position: fixed;
+  z-index: 1000;
+  border-radius: 25px;
+  border: 5px solid #fff;
+  box-shadow: 0 0 10px #000, inset 0 0 5px #000;
+  opacity: 1;
+  -webkit-transform: rotateZ(-45deg);
+  -moz-transform: rotateZ(-45deg);
+  -ms-transform: rotateZ(-45deg);
+  -o-transform: rotateZ(-45deg);
+  transform: rotateZ(-45deg);
+  -webkit-transition: transform 500ms ease-in-out, opacity 500ms ease-in, background-color 500ms ease-in;
+  -moz-transition: transform 500ms ease-in-out, opacity 500ms ease-in, background-color 500ms ease-in;
+  -ms-transition: transform 500ms ease-in-out, opacity 500ms ease-in, background-color 500ms ease-in;
+  -o-transition: transform 500ms ease-in-out, opacity 500ms ease-in, background-color 500ms ease-in;
+  transition: transform 500ms ease-in-out, opacity 500ms ease-in, background-color 500ms ease-in;
+  top: 50%;
+  left: 50%;
+  margin-top: calc(-6.75vw - 5px);
+  margin-left: calc(-6.75vw - 5px);
+  cursor: pointer;
+}
+
+/* line 342, ../scss-mobile/base/_base.scss */
+.logo:hover {
+  opacity: 1 !important;
+  background-color: white;
+}
+
+/* line 346, ../scss-mobile/base/_base.scss */
+.logo:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: url(../images/doveblack.png) center center no-repeat;
+  background-size: 90%;
+  -webkit-transform: rotateY(180deg) translate(5%, 0) rotateZ(-45deg);
+  -moz-transform: rotateY(180deg) translate(5%, 0) rotateZ(-45deg);
+  -ms-transform: rotateY(180deg) translate(5%, 0) rotateZ(-45deg);
+  -o-transform: rotateY(180deg) translate(5%, 0) rotateZ(-45deg);
+  transform: rotateY(180deg) translate(5%, 0) rotateZ(-45deg);
+  opacity: 0.7;
+  -webkit-transition: opacity 500ms ease-in;
+  -moz-transition: opacity 500ms ease-in;
+  -ms-transition: opacity 500ms ease-in;
+  -o-transition: opacity 500ms ease-in;
+  transition: opacity 500ms ease-in;
+}
+
+/* line 358, ../scss-mobile/base/_base.scss */
+.logo:hover:before {
+  opacity: 1;
+}
+
+/* line 363, ../scss-mobile/base/_base.scss */
+.diamonds {
+  width: 100%;
+  height: 9vw;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  margin-top: calc(-4.5vw - 3px);
+  z-index: 1;
+}
+/* line 372, ../scss-mobile/base/_base.scss */
+.diamonds .diamond {
+  width: 9vw;
+  height: 9vw;
+  display: inline-block;
+  border: 3px solid #fff;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  box-shadow: 0 0 10px #000, inset 0 0 5px #000;
+  -webkit-transition: opacity 500ms ease-in;
+  -moz-transition: opacity 500ms ease-in;
+  -ms-transition: opacity 500ms ease-in;
+  -o-transition: opacity 500ms ease-in;
+  transition: opacity 500ms ease-in;
+}
