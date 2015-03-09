@@ -195,9 +195,12 @@ body {
 /* line 154, ../scss/base/_base.scss */
 .nav .nav1 .gallery .overlay .controls .lastSlide, .nav .nav1 .gallery .overlay .controls .nextSlide {
   width: 15%;
+  height: 95%;
+  vertical-align: top;
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: 50% 50%;
+  background-color: rgba(255, 255, 255, 0.15);
   cursor: pointer;
   opacity: 0.5;
   -webkit-transition: opacity 500ms ease-in;
@@ -206,13 +209,21 @@ body {
   -o-transition: opacity 500ms ease-in;
   transition: opacity 500ms ease-in;
 }
-/* line 163, ../scss/base/_base.scss */
+/* line 166, ../scss/base/_base.scss */
+.nav .nav1 .gallery .overlay .controls .lastSlide {
+  box-shadow: -20px -20px 75px 70px rgba(255, 255, 255, 0.15);
+}
+/* line 169, ../scss/base/_base.scss */
+.nav .nav1 .gallery .overlay .controls .nextSlide {
+  box-shadow: 20px -20px 75px 70px rgba(255, 255, 255, 0.15);
+}
+/* line 172, ../scss/base/_base.scss */
 .nav .nav1 .gallery .overlay .controls .playback {
-  width: 70%;
+  width: calc(70vw - 60px);
   opacity: 1;
   cursor: url(../images/zoom-in.cur), pointer;
 }
-/* line 168, ../scss/base/_base.scss */
+/* line 177, ../scss/base/_base.scss */
 .nav .nav1 .gallery .overlay .controls .playback p {
   display: inline-block;
   position: relative;
@@ -229,7 +240,7 @@ body {
   -o-transition: opacity 500ms ease-in;
   transition: opacity 500ms ease-in;
 }
-/* line 184, ../scss/base/_base.scss */
+/* line 193, ../scss/base/_base.scss */
 .nav .nav1 .image {
   background-size: contain;
   background-repeat: no-repeat;
@@ -240,7 +251,7 @@ body {
   -o-transition: opacity 500ms ease-in;
   transition: opacity 500ms ease-in;
 }
-/* line 190, ../scss/base/_base.scss */
+/* line 199, ../scss/base/_base.scss */
 .nav .nav1 .container {
   width: 93%;
   height: 65%;
@@ -248,7 +259,7 @@ body {
   display: inline-block;
   top: 24%;
 }
-/* line 197, ../scss/base/_base.scss */
+/* line 206, ../scss/base/_base.scss */
 .nav .nav1 .container .thumbScroller {
   width: 45%;
   height: 105%;
@@ -257,7 +268,7 @@ body {
   position: relative;
   top: -5%;
 }
-/* line 205, ../scss/base/_base.scss */
+/* line 214, ../scss/base/_base.scss */
 .nav .nav1 .container .thumbScroller .columns {
   -webkit-column-count: 3;
   -webkit-column-gap: 5px;
@@ -267,7 +278,7 @@ body {
   column-gap: 5px;
   padding-bottom: 50px;
 }
-/* line 209, ../scss/base/_base.scss */
+/* line 218, ../scss/base/_base.scss */
 .nav .nav1 .container .thumbScroller .columns .thumb {
   display: inline-block;
   margin: 3px;
@@ -284,16 +295,16 @@ body {
   -o-transform: translateZ(0);
   transform: translateZ(0);
 }
-/* line 217, ../scss/base/_base.scss */
+/* line 226, ../scss/base/_base.scss */
 .nav .nav1 .container .thumbScroller .columns .thumb .thumbnail {
   width: 100%;
   border: 1px solid #fff;
 }
-/* line 222, ../scss/base/_base.scss */
+/* line 231, ../scss/base/_base.scss */
 .nav .nav1 .container .thumbScroller .columns .thumb:hover {
   opacity: 1 !important;
 }
-/* line 227, ../scss/base/_base.scss */
+/* line 236, ../scss/base/_base.scss */
 .nav .nav1 .container .preview {
   width: 49%;
   height: 95%;
@@ -304,11 +315,11 @@ body {
   float: right;
   cursor: url(../images/zoom-in.cur), pointer;
 }
-/* line 237, ../scss/base/_base.scss */
+/* line 246, ../scss/base/_base.scss */
 .nav .nav1 .container .edge {
   width: 49%;
 }
-/* line 240, ../scss/base/_base.scss */
+/* line 249, ../scss/base/_base.scss */
 .nav .nav1 .container .edge .edgefade {
   width: 80%;
   height: 0px;
@@ -319,24 +330,24 @@ body {
   display: inline-block;
   left: -4%;
 }
-/* line 253, ../scss/base/_base.scss */
+/* line 262, ../scss/base/_base.scss */
 .nav .nav1.navHover:hover h1 {
   transform: translateY(50%);
   text-shadow: 0 0 7px #fff;
 }
-/* line 258, ../scss/base/_base.scss */
+/* line 267, ../scss/base/_base.scss */
 .nav .nav2 {
   display: none;
   transform-origin: 100% 100%;
   width: 100% !important;
   text-align: center;
 }
-/* line 264, ../scss/base/_base.scss */
+/* line 273, ../scss/base/_base.scss */
 .nav .nav2 h1 {
   position: relative;
   top: 60%;
 }
-/* line 268, ../scss/base/_base.scss */
+/* line 277, ../scss/base/_base.scss */
 .nav .nav2 .bio {
   display: none;
   opacity: 0;
@@ -354,13 +365,13 @@ body {
   -o-transition: opacity 500ms ease-in;
   transition: opacity 500ms ease-in;
 }
-/* line 278, ../scss/base/_base.scss */
+/* line 287, ../scss/base/_base.scss */
 .nav .nav2.navHover:hover h1 {
   transform: translateY(-50%);
   text-shadow: 0 0 7px #fff;
 }
 
-/* line 285, ../scss/base/_base.scss */
+/* line 294, ../scss/base/_base.scss */
 .monitor {
   display: none;
   background-color: black;
@@ -375,7 +386,7 @@ body {
   cursor: default;
 }
 
-/* line 300, ../scss/base/_base.scss */
+/* line 309, ../scss/base/_base.scss */
 .imgViewer {
   display: none;
   position: fixed;
@@ -392,7 +403,7 @@ body {
   transition: opacity 500ms ease-in;
   text-align: center;
 }
-/* line 312, ../scss/base/_base.scss */
+/* line 321, ../scss/base/_base.scss */
 .imgViewer > div {
   height: 100%;
   width: 100%;
@@ -402,7 +413,7 @@ body {
   cursor: url(../images/zoom-out.cur), pointer;
 }
 
-/* line 323, ../scss/base/_base.scss */
+/* line 332, ../scss/base/_base.scss */
 .logo {
   background-color: rgba(255, 255, 255, 0.75);
   width: 13.5vw;
@@ -430,13 +441,13 @@ body {
   cursor: pointer;
 }
 
-/* line 342, ../scss/base/_base.scss */
+/* line 351, ../scss/base/_base.scss */
 .logo:hover {
   opacity: 1 !important;
   background-color: white;
 }
 
-/* line 346, ../scss/base/_base.scss */
+/* line 355, ../scss/base/_base.scss */
 .logo:before {
   content: "";
   position: absolute;
@@ -458,12 +469,12 @@ body {
   transition: opacity 500ms ease-in;
 }
 
-/* line 358, ../scss/base/_base.scss */
+/* line 367, ../scss/base/_base.scss */
 .logo:hover:before {
   opacity: 1;
 }
 
-/* line 363, ../scss/base/_base.scss */
+/* line 372, ../scss/base/_base.scss */
 .diamonds {
   width: 100%;
   height: 9vw;
@@ -473,7 +484,7 @@ body {
   margin-top: calc(-4.5vw - 3px);
   z-index: 1;
 }
-/* line 372, ../scss/base/_base.scss */
+/* line 381, ../scss/base/_base.scss */
 .diamonds .diamond {
   width: 9vw;
   height: 9vw;
