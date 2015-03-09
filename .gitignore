@@ -6,6 +6,7 @@ dist
 
 bower_components
 app old design
+app/scripts/changePage.js
 app/images/ignore
 app/images/galleryOLD
 .sass-cache
