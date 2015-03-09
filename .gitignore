@@ -5,7 +5,7 @@ dist
 .tmp
 
 bower_components
-
+app old design
 app/images/ignore
 app/images/galleryOLD
 .sass-cache
