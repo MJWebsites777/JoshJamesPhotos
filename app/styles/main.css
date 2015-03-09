@@ -73,7 +73,7 @@ body {
   display: inline-block;
   padding: 0;
   margin: 0px;
-  opacity: 0.75;
+  opacity: 1;
   -webkit-transition: transform 500ms ease-in, background-color 500ms ease-in, opacity 500ms ease-in;
   -moz-transition: transform 500ms ease-in, background-color 500ms ease-in, opacity 500ms ease-in;
   -ms-transition: transform 500ms ease-in, background-color 500ms ease-in, opacity 500ms ease-in;
@@ -92,17 +92,14 @@ body {
   -ms-transition: text-shadow 300ms ease-in, transform 500ms ease, opacity 500ms ease-in;
   -o-transition: text-shadow 300ms ease-in, transform 500ms ease, opacity 500ms ease-in;
   transition: text-shadow 300ms ease-in, transform 500ms ease, opacity 500ms ease-in;
+  display: none;
 }
-/* line 77, ../scss/base/_base.scss */
-.nav .navHover:hover {
-  cursor: pointer;
-}
-/* line 83, ../scss/base/_base.scss */
+/* line 79, ../scss/base/_base.scss */
 .nav .nav1 {
   transform-origin: 0 0;
   text-align: center;
 }
-/* line 87, ../scss/base/_base.scss */
+/* line 83, ../scss/base/_base.scss */
 .nav .nav1 .galNav {
   position: relative;
   display: none;
@@ -120,7 +117,7 @@ body {
   background-color: #000;
   padding: 5px;
 }
-/* line 101, ../scss/base/_base.scss */
+/* line 97, ../scss/base/_base.scss */
 .nav .nav1 .galNav h2 {
   display: inline-block;
   margin: 0px 20px;
@@ -133,32 +130,28 @@ body {
   -o-transition: text-shadow 200ms ease-in, transform 500ms ease-in-out, color 300ms ease-in;
   transition: text-shadow 200ms ease-in, transform 500ms ease-in-out, color 300ms ease-in;
 }
-/* line 110, ../scss/base/_base.scss */
+/* line 106, ../scss/base/_base.scss */
 .nav .nav1 .galNav h2:hover {
   text-shadow: 0 0 5px #fff;
 }
-/* line 114, ../scss/base/_base.scss */
+/* line 110, ../scss/base/_base.scss */
 .nav .nav1 .gallery {
-  position: absolute;
-  top: -50%;
+  position: relative;
+  top: 5%;
   left: 0;
   width: 100%;
-  height: 200%;
-  display: none;
-  -webkit-transform: scaleY(0.5);
-  -moz-transform: scaleY(0.5);
-  -ms-transform: scaleY(0.5);
-  -o-transform: scaleY(0.5);
-  transform: scaleY(0.5);
+  height: 60vh;
+  background-color: rgba(0, 0, 0, 0.75);
+  box-shadow: 0 0 100px 100px rgba(0, 0, 0, 0.75);
 }
-/* line 123, ../scss/base/_base.scss */
+/* line 121, ../scss/base/_base.scss */
 .nav .nav1 .gallery > div, .nav .nav1 .gallery .image, .nav .nav1 .gallery .overlay, .nav .nav1 .gallery .overlay div {
   position: absolute;
   width: 100%;
   height: 100%;
   opacity: 0;
 }
-/* line 129, ../scss/base/_base.scss */
+/* line 127, ../scss/base/_base.scss */
 .nav .nav1 .gallery > div:not(.slideshow):not(.nicescroll-rails) {
   display: none;
   position: relative;
@@ -169,36 +162,37 @@ body {
   -o-transition: opacity 500ms ease-in;
   transition: opacity 500ms ease-in;
 }
-/* line 135, ../scss/base/_base.scss */
+/* line 133, ../scss/base/_base.scss */
 .nav .nav1 .gallery .slideshow {
+  opacity: 1;
   -webkit-transition: opacity 500ms ease-in;
   -moz-transition: opacity 500ms ease-in;
   -ms-transition: opacity 500ms ease-in;
   -o-transition: opacity 500ms ease-in;
   transition: opacity 500ms ease-in;
 }
-/* line 138, ../scss/base/_base.scss */
+/* line 137, ../scss/base/_base.scss */
 .nav .nav1 .gallery .overlay {
   opacity: 1;
   z-index: 1000;
 }
-/* line 142, ../scss/base/_base.scss */
+/* line 141, ../scss/base/_base.scss */
 .nav .nav1 .gallery .overlay .controls {
   opacity: 1;
   font-family: Verdana;
   font-weight: bold;
   color: #fff;
 }
-/* line 148, ../scss/base/_base.scss */
+/* line 147, ../scss/base/_base.scss */
 .nav .nav1 .gallery .overlay .controls > div {
   position: relative;
   display: inline-block;
 }
-/* line 152, ../scss/base/_base.scss */
+/* line 151, ../scss/base/_base.scss */
 .nav .nav1 .gallery .overlay .controls > div:not(.playback):hover {
   opacity: 1 !important;
 }
-/* line 155, ../scss/base/_base.scss */
+/* line 154, ../scss/base/_base.scss */
 .nav .nav1 .gallery .overlay .controls .lastSlide, .nav .nav1 .gallery .overlay .controls .nextSlide {
   width: 15%;
   background-size: 100%;
@@ -212,13 +206,13 @@ body {
   -o-transition: opacity 500ms ease-in;
   transition: opacity 500ms ease-in;
 }
-/* line 164, ../scss/base/_base.scss */
+/* line 163, ../scss/base/_base.scss */
 .nav .nav1 .gallery .overlay .controls .playback {
   width: 70%;
   opacity: 1;
   cursor: url(../images/zoom-in.cur), pointer;
 }
-/* line 169, ../scss/base/_base.scss */
+/* line 168, ../scss/base/_base.scss */
 .nav .nav1 .gallery .overlay .controls .playback p {
   display: inline-block;
   position: relative;
@@ -235,7 +229,7 @@ body {
   -o-transition: opacity 500ms ease-in;
   transition: opacity 500ms ease-in;
 }
-/* line 185, ../scss/base/_base.scss */
+/* line 184, ../scss/base/_base.scss */
 .nav .nav1 .image {
   background-size: contain;
   background-repeat: no-repeat;
@@ -246,7 +240,7 @@ body {
   -o-transition: opacity 500ms ease-in;
   transition: opacity 500ms ease-in;
 }
-/* line 191, ../scss/base/_base.scss */
+/* line 190, ../scss/base/_base.scss */
 .nav .nav1 .container {
   width: 93%;
   height: 65%;
@@ -254,7 +248,7 @@ body {
   display: inline-block;
   top: 24%;
 }
-/* line 198, ../scss/base/_base.scss */
+/* line 197, ../scss/base/_base.scss */
 .nav .nav1 .container .thumbScroller {
   width: 45%;
   height: 105%;
@@ -263,7 +257,7 @@ body {
   position: relative;
   top: -5%;
 }
-/* line 206, ../scss/base/_base.scss */
+/* line 205, ../scss/base/_base.scss */
 .nav .nav1 .container .thumbScroller .columns {
   -webkit-column-count: 3;
   -webkit-column-gap: 5px;
@@ -273,7 +267,7 @@ body {
   column-gap: 5px;
   padding-bottom: 50px;
 }
-/* line 210, ../scss/base/_base.scss */
+/* line 209, ../scss/base/_base.scss */
 .nav .nav1 .container .thumbScroller .columns .thumb {
   display: inline-block;
   margin: 3px;
@@ -290,16 +284,16 @@ body {
   -o-transform: translateZ(0);
   transform: translateZ(0);
 }
-/* line 218, ../scss/base/_base.scss */
+/* line 217, ../scss/base/_base.scss */
 .nav .nav1 .container .thumbScroller .columns .thumb .thumbnail {
   width: 100%;
   border: 1px solid #fff;
 }
-/* line 223, ../scss/base/_base.scss */
+/* line 222, ../scss/base/_base.scss */
 .nav .nav1 .container .thumbScroller .columns .thumb:hover {
   opacity: 1 !important;
 }
-/* line 228, ../scss/base/_base.scss */
+/* line 227, ../scss/base/_base.scss */
 .nav .nav1 .container .preview {
   width: 49%;
   height: 95%;
@@ -310,11 +304,11 @@ body {
   float: right;
   cursor: url(../images/zoom-in.cur), pointer;
 }
-/* line 238, ../scss/base/_base.scss */
+/* line 237, ../scss/base/_base.scss */
 .nav .nav1 .container .edge {
   width: 49%;
 }
-/* line 241, ../scss/base/_base.scss */
+/* line 240, ../scss/base/_base.scss */
 .nav .nav1 .container .edge .edgefade {
   width: 80%;
   height: 0px;
@@ -325,13 +319,14 @@ body {
   display: inline-block;
   left: -4%;
 }
-/* line 254, ../scss/base/_base.scss */
+/* line 253, ../scss/base/_base.scss */
 .nav .nav1.navHover:hover h1 {
   transform: translateY(50%);
   text-shadow: 0 0 7px #fff;
 }
-/* line 259, ../scss/base/_base.scss */
+/* line 258, ../scss/base/_base.scss */
 .nav .nav2 {
+  display: none;
   transform-origin: 100% 100%;
   width: 100% !important;
   text-align: center;
@@ -428,7 +423,7 @@ body {
   -ms-transition: transform 500ms ease-in-out, opacity 500ms ease-in, background-color 500ms ease-in;
   -o-transition: transform 500ms ease-in-out, opacity 500ms ease-in, background-color 500ms ease-in;
   transition: transform 500ms ease-in-out, opacity 500ms ease-in, background-color 500ms ease-in;
-  top: 50%;
+  top: 85%;
   left: 50%;
   margin-top: calc(-6.75vw - 5px);
   margin-left: calc(-6.75vw - 5px);
@@ -474,7 +469,7 @@ body {
   height: 9vw;
   position: absolute;
   text-align: center;
-  top: 50%;
+  top: 85%;
   margin-top: calc(-4.5vw - 3px);
   z-index: 1;
 }
@@ -482,6 +477,7 @@ body {
 .diamonds .diamond {
   width: 9vw;
   height: 9vw;
+  position: relative;
   display: inline-block;
   border: 3px solid #fff;
   -webkit-transform: rotate(45deg);

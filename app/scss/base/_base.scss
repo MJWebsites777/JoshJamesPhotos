@@ -63,7 +63,7 @@ body {
   	margin: 0px;
   	//background-color: rgba(0,0,0,0.5);
   	//background-color: rgba(0,0,0,1);
-  	opacity: 0.75;
+  	opacity: 1;
   	@include transition(transform 500ms ease-in, background-color 500ms ease-in, opacity 500ms ease-in);
 	}
 	> div h1 {
@@ -73,11 +73,7 @@ body {
     position: relative;
     text-shadow: 0 0 0px #fff;
     @include transition(text-shadow 300ms ease-in, transform 500ms ease, opacity 500ms ease-in);
-  }
-  .navHover:hover {
-  	//opacity: 0.75;
-  	//background-color: rgba(0,0,0,0.75);
-  	cursor: pointer;
+    display: none;
   }
 
   .nav1 { //Gallery
@@ -112,13 +108,15 @@ body {
     	}
     }
     .gallery {
-    	position: absolute;
-    	top: -50%;
+    	position: relative;
+    	top: 5%;
     	left: 0;
     	width: 100%;
-    	height: 200%;
-    	display: none;
-    	@include transform(scaleY(0.5));
+    	height: 60vh;
+      background-color: rgba(0,0,0,0.75);
+      box-shadow: 0 0 100px 100px rgba(0,0,0,0.75);
+    	//display: none;
+    	//@include transform(scaleY(0.5));
 
     	> div, .image, .overlay, .overlay div {
       	position: absolute;
@@ -133,6 +131,7 @@ body {
         @include transition(opacity 500ms ease-in);
       }
       .slideshow {
+        opacity: 1;
         @include transition(opacity 500ms ease-in);
       }
       .overlay {
@@ -257,6 +256,7 @@ body {
   }
             
   .nav2 { //Bio
+    display: none;
   	transform-origin: 100% 100%;
   	width: 100% !important;
   	text-align: center;
@@ -333,7 +333,7 @@ body {
   	@include transform(rotateZ(-45deg));
   	@include transition(transform 500ms ease-in-out, opacity 500ms ease-in, background-color 500ms ease-in);
   	//box-shadow: 0 0 30px #000;
-  	top: 50%;
+  	top: 85%;
   	left: 50%;
   	margin-top: calc(-6.75vw - 5px);
     margin-left: calc(-6.75vw - 5px);
@@ -365,13 +365,14 @@ body {
     height: 9vw;
     position: absolute;
     text-align: center;
-    top: 50%;
+    top: 85%;
     margin-top: calc(-4.5vw - 3px);
     z-index: 1;
 
   .diamond {
       width: 9vw;
       height: 9vw;
+      position: relative;
       display: inline-block;
       border: 3px solid #fff;
       @include transform(rotate(45deg));
