@@ -1,6 +1,6 @@
 //TODO------------------
 //add arrow key control
-//slideshow load timeout?
+//display images as they load?
 //----------------------
 
 function Interval(){
@@ -45,7 +45,7 @@ function SlideShow (){
 
 	var parent = this;
 	var showLength;
-	var currentSlide = 0, lastSlide = 0;
+	var currentSlide = 0, lastSlide = 0, nextSlide = 0;
 
 	setInterval(function(){
 		if (document.hasFocus()) { 
@@ -61,20 +61,20 @@ function SlideShow (){
 	}, 50);
 
 	this.start = function(){
-		//if (!parent.loaded) { parent.load(); parent.start(); return; }
 		if (!parent.loaded) { parent.waiting = true; return;}
 		else {
+			//$('.slideshow').css('opacity', '1');
 			$('.nextSlide, .lastSlide').css('opacity', '0.5');
-    		slideShow.nextSlide();
-			interval.set(slideShow.nextSlide, 5000);
-			slideShow.mouseListen(true);
+    		parent.nextSlide();
+			interval.set(parent.nextSlide, 5000);
+			//slideShow.mouseListen(true);
 		}
 		if (parent.running) {return;}
 		parent.running = true;
 		parent.hidden = false;
-		currentSlide = 0; lastSlide = 0;
+		//currentSlide = 0; lastSlide = 0;
 
-		$('.logo').css('opacity', '0.1');
+		//$('.logo').css('opacity', '0.1');
 
 		$(document).on('click', '.nextSlide', function(){
 			if (!parent.animating){
@@ -86,7 +86,7 @@ function SlideShow (){
 		$(document).on('click', '.playback', function(){
 			parent.pause();
 			parent.zoomed = true;
-			$('.imgViewer div').css('background-image', $('.image').eq(currentSlide-1).css('background-image'));
+			$('.imgViewer div').css('background-image', $('.image').eq(currentSlide).css('background-image'));
 			$('.imgViewer').css('display', 'block');
 			setTimeout(function(){$('.imgViewer').css('opacity', '1');}, 50);
 		});
@@ -102,7 +102,7 @@ function SlideShow (){
 
 	this.stop = function(){
 		if (!parent.running) {return;}
-		parent.mouseListen(false);
+		//parent.mouseListen(false);
 		$(document).off('click', '.nextSlide');
 		$(document).off('click', '.playback');
 		$(document).off('click', '.lastSlide');
@@ -115,14 +115,14 @@ function SlideShow (){
 
 	this.pause = function(hide){
 		if (parent.paused) {return;}
-		parent.mouseListen(false);
+		//parent.mouseListen(false);
 		interval.clear();
 		parent.running = false;
 		parent.paused = true;
 		if (hide) {
 			$('.slideshow').css('opacity', '0');
 			$('.overlay').css('z-index', '0');
-			$('.image').eq(lastSlide).css('opacity', '0');
+			$('.image').eq(currentSlide).css('opacity', '0');
 			$('.nextSlide, .lastSlide').css('opacity', '0');
 			parent.hidden = true;
 		}
@@ -133,11 +133,11 @@ function SlideShow (){
 	this.resume = function(){
 		$('.overlay').css('z-index', '');
 		$('.slideshow').css('opacity', '1');
-		$('.logo').css('opacity', '0.1');
-		$('.image').eq(lastSlide).css('opacity', '1');
+		//$('.logo').css('opacity', '0.1');
+		$('.image').eq(currentSlide).css('opacity', '1');
 		$('.nextSlide, .lastSlide').css('opacity', '0.5');
 		interval.set(parent.nextSlide, 5000);
-		parent.mouseListen(true);
+		//parent.mouseListen(true);
 		parent.running = true;
 		parent.paused = false;
 		parent.hidden = false;
@@ -145,11 +145,16 @@ function SlideShow (){
 	};
 
 	this.load = function(){
+		//$('.gallery').css('opacity', '1');
+		setTimeout(function(){
+			$('.galNav').css('opacity', '1');
+		}, 300);
 		$('.logo').css('opacity', '1');
 		$('.playback p').css('display', 'inline-block');
 		$('.playback p').css('opacity', '0.5');
 		loopLoad(true);
 		//http://joshjamesphotos.com/
+		//this should read '/getImages.php' instead of 'http://joshjamesphotos.com/getImages.php'
 		$.post('http://joshjamesphotos.com/getImages.php', 'cmd=slideshow', function(data){
 			//console.log(data);
 			var files = data.split('|');
@@ -173,7 +178,7 @@ function SlideShow (){
 					    		parent.start();
 					    	}	    	
 							$('.playback p').css('opacity', '0');
-							setTimeout(function(){$('.playback p').css('display', 'none');}, 500)
+							setTimeout(function(){$('.playback p').css('display', 'none');}, 500);
 							parent.waiting = false;
 						}
 					});
@@ -181,38 +186,49 @@ function SlideShow (){
 				image.src = files[i];
 			}
 		});
-		console.log('SlideShow Loaded');
+		//console.log('SlideShow Loaded');
 	};
 
 	this.nextSlide = function(callback){
+		//console.log('Before Next\nLast: '+lastSlide+'\nCurrent: '+currentSlide);
 		parent.animating = true;
 		setTimeout(function(){parent.animating = false;}, 500);
-		if (currentSlide !== lastSlide){
-			$('.image').eq(lastSlide).css('opacity', '0');
+		if ((currentSlide+lastSlide+nextSlide) === 0){
+			lastSlide = showLength;
+			nextSlide = 1;
+		} 
+		else {
+			$('.image').eq(currentSlide).css('opacity', '0');
+			lastSlide = currentSlide;
+			currentSlide = nextSlide;
+			((nextSlide+1) > showLength) ? nextSlide = 0 : nextSlide++;
 		}
-		if (currentSlide > showLength) { currentSlide = 0; lastSlide = 0;}
+		$('.lastSlide').css('background-image', $('.image').eq(lastSlide).css('background-image'));
+		$('.nextSlide').css('background-image', $('.image').eq(nextSlide).css('background-image'));
 		$('.image').eq(currentSlide).css('opacity', '1');
-		$('.lastSlide').css('background-image', $('.image').eq((lastSlide === 0 && currentSlide === 0) ? showLength : lastSlide).css('background-image'));
-		lastSlide = currentSlide;
-		$('.nextSlide').css('background-image', $('.image').eq((currentSlide === showLength)? 0 : currentSlide+1).css('background-image'));
-		currentSlide++;
 		if (callback) {callback();}
-		//console.log('Next Slide');
+		//console.log('Next Slide\nLast: '+lastSlide+'\nCurrent: '+currentSlide);
 	};
 
 	this.lastSlide = function(callback){
+		//console.log('Before Last\nLast: '+lastSlide+'\nCurrent: '+currentSlide);
 		parent.animating = true;
 		setTimeout(function(){parent.animating = false;}, 500);
-		if (currentSlide !== lastSlide){
-			$('.image').eq(currentSlide-1).css('opacity', '0');
+		if ((currentSlide+lastSlide+nextSlide) === 0){
+			lastSlide = showLength;
+			nextSlide = 1;
+		} 
+		else {
+			$('.image').eq(currentSlide).css('opacity', '0');
+			nextSlide = currentSlide;
+			currentSlide = lastSlide;
+			((lastSlide-1) < 0) ? lastSlide = showLength : lastSlide--;
 		}
-		$('.image').eq(lastSlide-1).css('opacity', '1');
-		lastSlide--;
-		$('.lastSlide').css('background-image', $('.image').eq((lastSlide === 0 && currentSlide === 0) ? showLength : lastSlide-1).css('background-image'));
-		currentSlide--;
-		$('.nextSlide').css('background-image', $('.image').eq((currentSlide === showLength)? 0 : currentSlide).css('background-image'));
+		$('.lastSlide').css('background-image', $('.image').eq(lastSlide).css('background-image'));
+		$('.nextSlide').css('background-image', $('.image').eq(nextSlide).css('background-image'));
+		$('.image').eq(currentSlide).css('opacity', '1');
 		if (callback) {callback();}
-		//console.log('Previous Slide');
+		//console.log('Last Slide\nLast: '+lastSlide+'\nCurrent: '+currentSlide);
 	};
 
 	var mouseTimer;
