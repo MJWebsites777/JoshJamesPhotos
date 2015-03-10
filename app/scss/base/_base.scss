@@ -80,33 +80,6 @@ body {
   	transform-origin: 0 0;
   	text-align: center;
 
-  	.galNav {
-    	position: relative;
-      display: none;
-      top: 85%;
-    	@include transform(translateY(50%));
-    	z-index: 1000;
-    	color: #fff;
-    	font-family: Verdana;
-    	text-align: center;
-    	opacity: 0;
-      background-color: #000;
-      padding: 5px;
-    	//@include transition(opacity 500ms ease-in);
-
-    	h2 {
-    		display: inline-block;
-    		margin: 0px 20px;
-    		font-size: 15pt;
-    		cursor: pointer;
-    		text-shadow: 0 0 10px #000;
-    		@include transition(text-shadow 200ms ease-in, transform 500ms ease-in-out, color 300ms ease-in);
-        //color: #92B5FF;  color when selected
-    	}
-    	h2:hover {
-      	text-shadow: 0 0 5px #fff;
-    	}
-    }
     .gallery {
     	position: relative;
     	top: 5%;
@@ -115,6 +88,8 @@ body {
     	height: 60vh;
       background-color: rgba(0,0,0,0.75);
       box-shadow: 0 0 100px 100px rgba(0,0,0,0.75);
+      //opacity: 0;
+      @include transition(opacity 500ms ease-in);
     	//display: none;
     	//@include transform(scaleY(0.5));
 
@@ -164,10 +139,10 @@ body {
             @include transition(opacity 500ms ease-in);
           }
           .lastSlide {
-              box-shadow: -20px -20px 75px 70px rgba(255, 255, 255, 0.15);
+              box-shadow: -15px -15px 50px 85px rgba(255, 255, 255, 0.15);
           }
           .nextSlide {
-              box-shadow: 20px -20px 75px 70px rgba(255, 255, 255, 0.15);
+              box-shadow: 15px -15px 50px 85px rgba(255, 255, 255, 0.15);
           }
           .playback {
             width: calc(70vw - 60px);
@@ -177,7 +152,7 @@ body {
             p {
               display: inline-block;
               position: relative;
-              top: -50%;
+              top: 50%;
               font-size: 17pt;
               text-shadow: 0 0px 5px #000;
               background-color: rgba(0,0,0,0.25);
@@ -198,10 +173,10 @@ body {
   	}
     .container {
       width: 93%;
-      height: 65%;
+      height: 100%;
       position: relative;
       display: inline-block;
-      top: 24%;
+      top: 15%;
 
       .thumbScroller {
         width: 45%;
@@ -366,6 +341,34 @@ body {
 }
 .logo:hover:before {
     opacity: 1;
+}
+
+// Gallery Navigation Styles
+.galNav {
+  position: absolute;
+  top: 0;
+  z-index: 5000;
+  width: 100%;
+  height: 5vh;
+  color: #fff;
+  font-family: Verdana;
+  text-align: center;
+  opacity: 0;
+  padding: 5px;
+  @include transition(opacity 500ms ease-in);
+
+  h2 {
+    display: inline-block;
+    margin: 0px 20px;
+    font-size: 2vw;
+    cursor: pointer;
+    text-shadow: 0 0 50px #000;
+    @include transition(text-shadow 200ms ease-in, transform 500ms ease-in-out, color 300ms ease-in);
+    //color: #92B5FF;  color when selected
+  }
+  h2:hover {
+    text-shadow: 0 0 5px #fff;
+  }
 }
 
 // Diamonds Styles
