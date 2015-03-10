@@ -1,382 +1,385 @@
-html
-{
-	width: 100%;
-	height: 100%;
-	background-color: #000;
-}
-
-body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
-// Background Styles
-.background {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-
-  .bgImg {
-    min-width: 100%;
-    min-height: 100%;
-    background-image: url(../images/cover.jpg);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    background-attachment: fixed;
-    opacity: 0;
-    @include transition(opacity 500ms ease-in);
+@media handheld {
+  html
+  {
+  	width: 100%;
+  	height: 100%;
+  	background-color: #000;
   }
-  .bgOverlay {
-    display: none;
+
+  body {
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.5);
-    box-shadow: inset 0 0 500px 200px #000;
-  }
-  .tile {
-    display: inline-block;
     margin: 0;
-    margin-top: -4.5px;
-    width: 20%;
-  }
-}
-
-// Navigation Styles
-.nav {
-	width: 100%;
-  height: 100%;
-	background-color: rgba(0,0,0,0.5);
-	position: absolute;
-	opacity: 0;
-  @include transition(opacity 500ms ease-in);
-  z-index: 1;
-
-  > div { //nav buttons
-  	width: 100%;
-  	height: 50%;
-  	display: inline-block;
-  	padding: 0;
-  	margin: 0px;
-  	//background-color: rgba(0,0,0,0.5);
-  	//background-color: rgba(0,0,0,1);
-  	opacity: 0.75;
-  	@include transition(transform 500ms ease-in, background-color 500ms ease-in, opacity 500ms ease-in);
-	}
-	> div h1 {
-    color: #fff;
-    font-family: Verdana;
-    font-size: 50pt;
-    position: relative;
-    text-shadow: 0 0 0px #fff;
-    @include transition(text-shadow 300ms ease-in, transform 500ms ease, opacity 500ms ease-in);
-  }
-  .navHover:hover {
-  	//opacity: 0.75;
-  	//background-color: rgba(0,0,0,0.75);
-  	cursor: pointer;
+    padding: 0;
+    overflow: hidden;
   }
 
-  .nav1 { //Gallery
-  	transform-origin: 0 0;
-  	text-align: center;
+  // Background Styles
+  .background {
+    width: 100%;
+    height: 100%;
+    position: fixed;
 
-  	.galNav {
-    	position: relative;
-      display: none;
-      top: 85%;
-    	@include transform(translateY(50%));
-    	z-index: 1000;
-    	color: #fff;
-    	font-family: Verdana;
-    	text-align: center;
-    	opacity: 0;
-      background-color: #000;
-      padding: 5px;
-    	//@include transition(opacity 500ms ease-in);
-
-    	h2 {
-    		display: inline-block;
-    		margin: 0px 20px;
-    		font-size: 15pt;
-    		cursor: pointer;
-    		text-shadow: 0 0 10px #000;
-    		@include transition(text-shadow 200ms ease-in, transform 500ms ease-in-out, color 300ms ease-in);
-        //color: #92B5FF;  color when selected
-    	}
-    	h2:hover {
-      	text-shadow: 0 0 5px #fff;
-    	}
+    .bgImg {
+      min-width: 100%;
+      min-height: 100%;
+      background-image: url(../images/cover.jpg);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      background-attachment: fixed;
+      opacity: 0;
+      @include transition(opacity 500ms ease-in);
     }
-    .gallery {
-    	position: absolute;
-    	top: -50%;
-    	left: 0;
+    .bgOverlay {
+      display: none;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      box-shadow: inset 0 0 500px 200px #000;
+    }
+    .tile {
+      display: inline-block;
+      margin: 0;
+      margin-top: -4.5px;
+      width: 20%;
+    }
+  }
+
+  // Navigation Styles
+  .nav {
+  	width: 100%;
+    height: 100%;
+  	background-color: rgba(0,0,0,0.5);
+  	position: absolute;
+  	opacity: 0;
+    @include transition(opacity 500ms ease-in);
+    z-index: 1;
+
+    > div { //nav buttons
     	width: 100%;
-    	height: 200%;
-    	display: none;
-    	@include transform(scaleY(0.5));
+    	height: 50%;
+    	display: inline-block;
+    	padding: 0;
+    	margin: 0px;
+    	//background-color: rgba(0,0,0,0.5);
+    	//background-color: rgba(0,0,0,1);
+    	opacity: 0.75;
+    	@include transition(transform 500ms ease-in, background-color 500ms ease-in, opacity 500ms ease-in);
+  	}
+  	> div h1 {
+      color: #fff;
+      font-family: Verdana;
+      font-size: 50pt;
+      position: relative;
+      text-shadow: 0 0 0px #fff;
+      @include transition(text-shadow 300ms ease-in, transform 500ms ease, opacity 500ms ease-in);
+    }
+    .navHover:hover {
+    	//opacity: 0.75;
+    	//background-color: rgba(0,0,0,0.75);
+    	cursor: pointer;
+    }
 
-    	> div, .image, .overlay, .overlay div {
-      	position: absolute;
-      	width: 100%;
-      	height: 100%;
-      	opacity: 0;
-    	}
-      > div:not(.slideshow):not(.nicescroll-rails) {
+    .nav1 { //Gallery
+    	transform-origin: 0 0;
+    	text-align: center;
+
+    	.galNav {
+      	position: relative;
         display: none;
-        position: relative;
-        text-align: center;
-        @include transition(opacity 500ms ease-in);
-      }
-      .slideshow {
-        @include transition(opacity 500ms ease-in);
-      }
-      .overlay {
-        opacity: 1;
-        z-index: 1000;
+        top: 85%;
+      	@include transform(translateY(50%));
+      	z-index: 1000;
+      	color: #fff;
+      	font-family: Verdana;
+      	text-align: center;
+      	opacity: 0;
+        background-color: #000;
+        padding: 5px;
+      	//@include transition(opacity 500ms ease-in);
 
-        .controls{
+      	h2 {
+      		display: inline-block;
+      		margin: 0px 20px;
+      		font-size: 15pt;
+      		cursor: pointer;
+      		text-shadow: 0 0 10px #000;
+      		@include transition(text-shadow 200ms ease-in, transform 500ms ease-in-out, color 300ms ease-in);
+          //color: #92B5FF;  color when selected
+      	}
+      	h2:hover {
+        	text-shadow: 0 0 5px #fff;
+      	}
+      }
+      .gallery {
+      	position: absolute;
+      	top: -50%;
+      	left: 0;
+      	width: 100%;
+      	height: 200%;
+      	display: none;
+      	@include transform(scaleY(0.5));
+
+      	> div, .image, .overlay, .overlay div {
+        	position: absolute;
+        	width: 100%;
+        	height: 100%;
+        	opacity: 0;
+      	}
+        > div:not(.slideshow):not(.nicescroll-rails) {
+          display: none;
+          position: relative;
+          text-align: center;
+          @include transition(opacity 500ms ease-in);
+        }
+        .slideshow {
+          @include transition(opacity 500ms ease-in);
+        }
+        .overlay {
           opacity: 1;
-          font-family: Verdana;
-          font-weight: bold;
-          color: #fff;
-        
-          > div {
-            position: relative;
-            display: inline-block;
-          }
-          > div:not(.playback):hover{
-            opacity: 1 !important;
-          }
-          .lastSlide, .nextSlide {
-            width: 15%;
-            background-size: 100%;
-            background-repeat: no-repeat;
-            background-position: 50% 50%;
-            cursor: pointer;
-            opacity: 0.5;
-            @include transition(opacity 500ms ease-in);
-          }
-          .playback {
-            width: 70%;
-            opacity: 1;
-            cursor: url(../images/zoom-in.cur), pointer;
+          z-index: 1000;
 
-            p {
-              display: inline-block;
+          .controls{
+            opacity: 1;
+            font-family: Verdana;
+            font-weight: bold;
+            color: #fff;
+          
+            > div {
               position: relative;
-              top: -50%;
-              font-size: 17pt;
-              text-shadow: 0 0px 5px #000;
-              background-color: rgba(0,0,0,0.25);
-              box-shadow: 0 0 30px rgba(0,0,0,0.25);
-              padding: 10px;
-              opacity: 0;
+              display: inline-block;
+            }
+            > div:not(.playback):hover{
+              opacity: 1 !important;
+            }
+            .lastSlide, .nextSlide {
+              width: 15%;
+              background-size: 100%;
+              background-repeat: no-repeat;
+              background-position: 50% 50%;
+              cursor: pointer;
+              opacity: 0.5;
               @include transition(opacity 500ms ease-in);
             }
-          }
-        }
-      }
-  	}
-  	.image {
-  		background-size: contain;
-  		background-repeat: no-repeat;
-  		background-position: center;
-  		@include transition(opacity 500ms ease-in);
-  	}
-    .container {
-      width: 93%;
-      height: 65%;
-      position: relative;
-      display: inline-block;
-      top: 24%;
+            .playback {
+              width: 70%;
+              opacity: 1;
+              cursor: url(../images/zoom-in.cur), pointer;
 
-      .thumbScroller {
-        width: 45%;
-        height: 105%;
-        display: inline-block;
-        float: left;
-        position: relative;
-        top: -5%;
-
-        .columns {
-          @include column(3, 5px);
-          padding-bottom: 50px;
-
-          .thumb {
-            display: inline-block;
-            margin: 3px;
-            opacity: 0;
-            @include transition(opacity 500ms ease-in);
-            cursor: pointer;
-            @include transform(translateZ(0));
-
-            .thumbnail {
-              width: 100%;
-              border: 1px solid #fff;
+              p {
+                display: inline-block;
+                position: relative;
+                top: -50%;
+                font-size: 17pt;
+                text-shadow: 0 0px 5px #000;
+                background-color: rgba(0,0,0,0.25);
+                box-shadow: 0 0 30px rgba(0,0,0,0.25);
+                padding: 10px;
+                opacity: 0;
+                @include transition(opacity 500ms ease-in);
+              }
             }
           }
-          .thumb:hover {
-            opacity: 1 !important;
+        }
+    	}
+    	.image {
+    		background-size: contain;
+    		background-repeat: no-repeat;
+    		background-position: center;
+    		@include transition(opacity 500ms ease-in);
+    	}
+      .container {
+        width: 93%;
+        height: 65%;
+        position: relative;
+        display: inline-block;
+        top: 24%;
+
+        .thumbScroller {
+          width: 45%;
+          height: 105%;
+          display: inline-block;
+          float: left;
+          position: relative;
+          top: -5%;
+
+          .columns {
+            @include column(3, 5px);
+            padding-bottom: 50px;
+
+            .thumb {
+              display: inline-block;
+              margin: 3px;
+              opacity: 0;
+              @include transition(opacity 500ms ease-in);
+              cursor: pointer;
+              @include transform(translateZ(0));
+
+              .thumbnail {
+                width: 100%;
+                border: 1px solid #fff;
+              }
+            }
+            .thumb:hover {
+              opacity: 1 !important;
+            }
+          }
+        }
+        .preview {
+          width: 49%;
+          height: 95%;
+          display: inline-block;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          float: right;
+          cursor: url(../images/zoom-in.cur), pointer;
+        }
+        .edge {
+          width: 49%;
+
+          .edgefade {
+            width: 80%;
+            height: 0px;
+            position: relative;
+            box-shadow: 0px -25px 90px 130px #000;
+              -webkit-box-shadow: 0 -25px 110px 100px #000;
+            z-index: 1000;
+            display: inline-block;
+            left: -4%;
           }
         }
       }
-      .preview {
-        width: 49%;
-        height: 95%;
-        display: inline-block;
+    }
+    .nav1.navHover:hover h1 {
+      transform: translateY(50%);
+      text-shadow: 0 0 7px #fff;
+    }
+              
+    .nav2 { //Bio
+    	transform-origin: 100% 100%;
+    	width: 100% !important;
+    	text-align: center;
+   
+    	h1 {
+        position: relative;
+        top: 60%;
+    	}
+      .bio {
+        display: none;
+        opacity: 0;
+        color: #fff;
+        font-family: verdana;
+        font-size: 50pt;
+        @include transform(scaleY(0.5));
+        @include transition(opacity 500ms ease-in);
+      }
+    }
+    .nav2.navHover:hover h1 {
+      transform: translateY(-50%);
+      text-shadow: 0 0 7px #fff;
+    }
+  }
+
+  // Monitor Styles
+  .monitor {
+    	display: none;
+    	background-color: black;
+    	color: green;
+    	width: 250px;
+    	height: auto;
+    	padding: 5px;
+    	position: fixed;
+    	top: 0;
+    	left: 0;
+    	z-index: 1000;
+    	cursor: default;
+  }
+
+  // Image Viewer Styles
+  .imgViewer {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    opacity: 0;
+    @include transition(opacity 500ms ease-in);
+    text-align: center;
+
+    > div {
+        height: 100%;
+        width: 100%;
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
-        float: right;
-        cursor: url(../images/zoom-in.cur), pointer;
-      }
-      .edge {
-        width: 49%;
-
-        .edgefade {
-          width: 80%;
-          height: 0px;
-          position: relative;
-          box-shadow: 0px -25px 90px 130px #000;
-            -webkit-box-shadow: 0 -25px 110px 100px #000;
-          z-index: 1000;
-          display: inline-block;
-          left: -4%;
-        }
-      }
+        cursor: url(../images/zoom-out.cur), pointer;
     }
   }
-  .nav1.navHover:hover h1 {
-    transform: translateY(50%);
-    text-shadow: 0 0 7px #fff;
-  }
-            
-  .nav2 { //Bio
-  	transform-origin: 100% 100%;
-  	width: 100% !important;
-  	text-align: center;
- 
-  	h1 {
-      position: relative;
-      top: 60%;
-  	}
-    .bio {
-      display: none;
-      opacity: 0;
-      color: #fff;
-      font-family: verdana;
-      font-size: 50pt;
-      @include transform(scaleY(0.5));
-      @include transition(opacity 500ms ease-in);
-    }
-  }
-  .nav2.navHover:hover h1 {
-    transform: translateY(-50%);
-    text-shadow: 0 0 7px #fff;
-  }
-}
 
-// Monitor Styles
-.monitor {
-  	display: none;
-  	background-color: black;
-  	color: green;
-  	width: 250px;
-  	height: auto;
-  	padding: 5px;
-  	position: fixed;
-  	top: 0;
-  	left: 0;
-  	z-index: 1000;
-  	cursor: default;
-}
-
-// Image Viewer Styles
-.imgViewer {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.8);
-  opacity: 0;
-  @include transition(opacity 500ms ease-in);
-  text-align: center;
-
-  > div {
-      height: 100%;
-      width: 100%;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      cursor: url(../images/zoom-out.cur), pointer;
-  }
-}
-
-// Logo Styles
-.logo {
-  	background-color: rgba(255,255,255,0.75);
-  	width: 30vw;
-    height: 30vw;
-  	position: fixed;
-  	z-index: 1000;
-  	border-radius: 25px;
-    border: 5px solid #fff;
-    box-shadow: 0 0 10px #000, inset 0 0 5px #000;
-  	opacity: 1;
-  	@include transform(rotateZ(-45deg));
-  	@include transition(transform 500ms ease-in-out, opacity 500ms ease-in, background-color 500ms ease-in);
-  	//box-shadow: 0 0 30px #000;
-  	top: 50%;
-  	left: 50%;
-  	margin-top: calc(-15vw - 5px);
-    margin-left: calc(-15vw - 5px);
-  	cursor: pointer;
-}
-.logo:hover {
-	opacity: 1 !important;
-  background-color: rgba(255,255,255,1);
-}
-.logo:before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background: url(../images/doveblack.png) center center no-repeat;
-    background-size: 90%;
-    @include transform(rotateY(180deg) translate(5%,0) rotateZ(-45deg));
-    opacity: 0.7;
-    @include transition(opacity 500ms ease-in);
-}
-.logo:hover:before {
-    opacity: 1;
-}
-
-// Diamonds Styles
-.diamonds {
-    display: none;
-    width: 100%;
-    height: 9vw;
-    position: absolute;
-    text-align: center;
-    top: 50%;
-    margin-top: calc(-4.5vw - 3px);
-    z-index: 1;
-
-  .diamond {
-      width: 9vw;
-      height: 9vw;
-      display: inline-block;
-      border: 3px solid #fff;
-      @include transform(rotate(45deg));
+  // Logo Styles
+  .logo {
+    	background-color: rgba(255,255,255,0.75);
+    	width: 30vw;
+      height: 30vw;
+    	position: fixed;
+    	z-index: 1000;
+    	border-radius: 25px;
+      border: 5px solid #fff;
       box-shadow: 0 0 10px #000, inset 0 0 5px #000;
+    	opacity: 1;
+    	@include transform(rotateZ(-45deg));
+    	@include transition(transform 500ms ease-in-out, opacity 500ms ease-in, background-color 500ms ease-in);
+    	//box-shadow: 0 0 30px #000;
+    	top: 50%;
+    	left: 50%;
+    	margin-top: calc(-15vw - 5px);
+      margin-left: calc(-15vw - 5px);
+    	cursor: pointer;
+  }
+  .logo:hover {
+  	opacity: 1 !important;
+    background-color: rgba(255,255,255,1);
+  }
+  .logo:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: url(../images/doveblack.png) center center no-repeat;
+      background-size: 90%;
+      @include transform(rotateY(180deg) translate(5%,0) rotateZ(-45deg));
+      opacity: 0.7;
       @include transition(opacity 500ms ease-in);
+  }
+  .logo:hover:before {
+      opacity: 1;
+  }
+
+  // Diamonds Styles
+  .diamonds {
+      display: none;
+      width: 100%;
+      height: 9vw;
+      position: absolute;
+      text-align: center;
+      top: 50%;
+      margin-top: calc(-4.5vw - 3px);
+      z-index: 1;
+
+    .diamond {
+        width: 9vw;
+        height: 9vw;
+        position: relative;
+        display: inline-block;
+        border: 3px solid #fff;
+        @include transform(rotate(45deg));
+        box-shadow: 0 0 10px #000, inset 0 0 5px #000;
+        @include transition(opacity 500ms ease-in);
+    }
   }
 }
