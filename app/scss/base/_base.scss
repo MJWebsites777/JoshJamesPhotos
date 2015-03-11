@@ -351,7 +351,6 @@
     z-index: 5000;
     width: 100%;
     height: 5vh;
-    color: #fff;
     font-family: Verdana;
     text-align: center;
     opacity: 0;
@@ -362,13 +361,14 @@
       display: inline-block;
       margin: 0px 20px;
       font-size: 2vw;
+      color: rgba(255,255,255,0.75);
       cursor: pointer;
       text-shadow: 0 0 50px #000;
-      @include transition(text-shadow 200ms ease-in, transform 500ms ease-in-out, color 300ms ease-in);
+      @include transition(transform 500ms ease-in-out, color 300ms ease-in);
       //color: #92B5FF;  color when selected
     }
     h2:hover {
-      text-shadow: 0 0 5px #fff;
+      color: rgba(255,255,255,1);
     }
   }
 

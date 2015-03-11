@@ -452,7 +452,6 @@
     z-index: 5000;
     width: 100%;
     height: 5vh;
-    color: #fff;
     font-family: Verdana;
     text-align: center;
     opacity: 0;
@@ -463,22 +462,23 @@
     -o-transition: opacity 500ms ease-in;
     transition: opacity 500ms ease-in;
   }
-  /* line 361, ../scss/base/_base.scss */
+  /* line 360, ../scss/base/_base.scss */
   .galNav h2 {
     display: inline-block;
     margin: 0px 20px;
     font-size: 2vw;
+    color: rgba(255, 255, 255, 0.75);
     cursor: pointer;
     text-shadow: 0 0 50px #000;
-    -webkit-transition: text-shadow 200ms ease-in, transform 500ms ease-in-out, color 300ms ease-in;
-    -moz-transition: text-shadow 200ms ease-in, transform 500ms ease-in-out, color 300ms ease-in;
-    -ms-transition: text-shadow 200ms ease-in, transform 500ms ease-in-out, color 300ms ease-in;
-    -o-transition: text-shadow 200ms ease-in, transform 500ms ease-in-out, color 300ms ease-in;
-    transition: text-shadow 200ms ease-in, transform 500ms ease-in-out, color 300ms ease-in;
+    -webkit-transition: transform 500ms ease-in-out, color 300ms ease-in;
+    -moz-transition: transform 500ms ease-in-out, color 300ms ease-in;
+    -ms-transition: transform 500ms ease-in-out, color 300ms ease-in;
+    -o-transition: transform 500ms ease-in-out, color 300ms ease-in;
+    transition: transform 500ms ease-in-out, color 300ms ease-in;
   }
   /* line 370, ../scss/base/_base.scss */
   .galNav h2:hover {
-    text-shadow: 0 0 5px #fff;
+    color: white;
   }
 
   /* line 376, ../scss/base/_base.scss */
