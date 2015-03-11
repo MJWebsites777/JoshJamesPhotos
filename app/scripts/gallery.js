@@ -10,51 +10,15 @@ $(window).resize(function(){
 	}
 });
 $(document).on('click', '.galNav h2', function() {
+	if ($('.edge').css('opacity')==="0") {
+		$('.edge').css('opacity', '1');
+	}
 	var t = $(this);
 	var id = t.html().toLowerCase();
-	switch(id){
-		case 'architecture':
-			//console.log('architecture');
-			if (gallery.current !== id) {
-				$('.galNav h2').css('color', '#FFF'); 
-				t.css('color', '#FBFF6D'); 
-				gallery.load(id); 
-			}
-			break;
-		case 'commercial':
-			//console.log('commercial');
-			if (gallery.current !== id) {
-				$('.galNav h2').css('color', '#FFF'); 
-				t.css('color', '#FBFF6D'); 
-				gallery.load(id); 
-			}
-			break;
-		case 'landscapes':
-			//console.log('landscapes');
-			if (gallery.current !== id) {
-				$('.galNav h2').css('color', '#FFF'); 
-				t.css('color', '#FBFF6D'); 
-				gallery.load(id); 
-			}
-			break;
-		case 'portraits':
-			//console.log('portraits');
-			if (gallery.current !== id) {
-				$('.galNav h2').css('color', '#FFF'); 
-				t.css('color', '#FBFF6D'); 
-				gallery.load(id); 
-			}
-			break;
-		case 'weddings':
-			//console.log('weddings');
-			if (gallery.current !== id) {
-				$('.galNav h2').css('color', '#FFF'); 
-				t.css('color', '#FBFF6D'); 
-				gallery.load(id); 
-			}
-			break;
-		default:
-			break;
+	if (gallery.current !== id) {
+		$('.galNav h2').css('color', ''); 
+		t.css('color', 'rgba(251, 255, 109, 0.75)'); 
+		gallery.load(id); 
 	}
 });
 $(document).on('click', '.thumb', function(){
@@ -104,7 +68,7 @@ function Gallery () {
 		});
 		//http://joshjamesphotos.com/
 		if (!parent.loaded(id)) {
-			//this should read '/getImages.php' instead of 'http://joshjamesphotos.com/getImages.php'
+			//this should read 'getImages.php' instead of 'http://joshjamesphotos.com/getImages.php'
 			$.post('http://joshjamesphotos.com/getImages.php', 'cmd='+id, function(data){
 				var files = data.split('|');
 				var count = 0;
