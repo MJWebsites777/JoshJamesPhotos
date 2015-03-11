@@ -123,7 +123,7 @@
     opacity: 0;
   }
   /* line 103, ../scss/base/_base.scss */
-  .nav .nav1 .gallery > div:not(.slideshow):not(.nicescroll-rails) {
+  .nav .nav1 .gallery > div:not(.slideshow):not(.nicescroll-rails):not(.edge) {
     display: none;
     position: relative;
     text-align: center;
@@ -143,27 +143,52 @@
     transition: opacity 500ms ease-in;
   }
   /* line 113, ../scss/base/_base.scss */
+  .nav .nav1 .gallery .edge {
+    position: absolute;
+    width: 100vw;
+    left: 0;
+    top: 110%;
+    opacity: 0;
+    -webkit-transition: opacity 500ms ease-in;
+    -moz-transition: opacity 500ms ease-in;
+    -ms-transition: opacity 500ms ease-in;
+    -o-transition: opacity 500ms ease-in;
+    transition: opacity 500ms ease-in;
+    z-index: 2;
+  }
+  /* line 122, ../scss/base/_base.scss */
+  .nav .nav1 .gallery .edge .edgefade {
+    width: 100%;
+    height: 0px;
+    position: relative;
+    box-shadow: 0px -25px 90px 130px black;
+    -webkit-box-shadow: 0 -25px 110px 100px black;
+    z-index: 1000;
+    display: inline-block;
+    left: -4%;
+  }
+  /* line 133, ../scss/base/_base.scss */
   .nav .nav1 .gallery .overlay {
     opacity: 1;
     z-index: 1000;
   }
-  /* line 117, ../scss/base/_base.scss */
+  /* line 137, ../scss/base/_base.scss */
   .nav .nav1 .gallery .overlay .controls {
     opacity: 1;
     font-family: Verdana;
     font-weight: bold;
     color: #fff;
   }
-  /* line 123, ../scss/base/_base.scss */
+  /* line 143, ../scss/base/_base.scss */
   .nav .nav1 .gallery .overlay .controls > div {
     position: relative;
     display: inline-block;
   }
-  /* line 127, ../scss/base/_base.scss */
+  /* line 147, ../scss/base/_base.scss */
   .nav .nav1 .gallery .overlay .controls > div:not(.playback):hover {
     opacity: 1 !important;
   }
-  /* line 130, ../scss/base/_base.scss */
+  /* line 150, ../scss/base/_base.scss */
   .nav .nav1 .gallery .overlay .controls .lastSlide, .nav .nav1 .gallery .overlay .controls .nextSlide {
     width: 15%;
     height: 95%;
@@ -180,21 +205,21 @@
     -o-transition: opacity 500ms ease-in;
     transition: opacity 500ms ease-in;
   }
-  /* line 142, ../scss/base/_base.scss */
+  /* line 162, ../scss/base/_base.scss */
   .nav .nav1 .gallery .overlay .controls .lastSlide {
     box-shadow: -15px -15px 50px 85px rgba(255, 255, 255, 0.15);
   }
-  /* line 145, ../scss/base/_base.scss */
+  /* line 165, ../scss/base/_base.scss */
   .nav .nav1 .gallery .overlay .controls .nextSlide {
     box-shadow: 15px -15px 50px 85px rgba(255, 255, 255, 0.15);
   }
-  /* line 148, ../scss/base/_base.scss */
+  /* line 168, ../scss/base/_base.scss */
   .nav .nav1 .gallery .overlay .controls .playback {
     width: calc(70vw - 60px);
     opacity: 1;
     cursor: url(../images/zoom-in.cur), pointer;
   }
-  /* line 153, ../scss/base/_base.scss */
+  /* line 173, ../scss/base/_base.scss */
   .nav .nav1 .gallery .overlay .controls .playback p {
     display: inline-block;
     position: relative;
@@ -211,7 +236,7 @@
     -o-transition: opacity 500ms ease-in;
     transition: opacity 500ms ease-in;
   }
-  /* line 169, ../scss/base/_base.scss */
+  /* line 189, ../scss/base/_base.scss */
   .nav .nav1 .image {
     background-size: contain;
     background-repeat: no-repeat;
@@ -222,7 +247,7 @@
     -o-transition: opacity 500ms ease-in;
     transition: opacity 500ms ease-in;
   }
-  /* line 175, ../scss/base/_base.scss */
+  /* line 195, ../scss/base/_base.scss */
   .nav .nav1 .container {
     width: 93%;
     height: 100%;
@@ -230,7 +255,7 @@
     display: inline-block;
     top: 15%;
   }
-  /* line 182, ../scss/base/_base.scss */
+  /* line 202, ../scss/base/_base.scss */
   .nav .nav1 .container .thumbScroller {
     width: 45%;
     height: 105%;
@@ -239,7 +264,7 @@
     position: relative;
     top: -5%;
   }
-  /* line 190, ../scss/base/_base.scss */
+  /* line 210, ../scss/base/_base.scss */
   .nav .nav1 .container .thumbScroller .columns {
     -webkit-column-count: 3;
     -webkit-column-gap: 5px;
@@ -249,7 +274,7 @@
     column-gap: 5px;
     padding-bottom: 50px;
   }
-  /* line 194, ../scss/base/_base.scss */
+  /* line 214, ../scss/base/_base.scss */
   .nav .nav1 .container .thumbScroller .columns .thumb {
     display: inline-block;
     margin: 3px;
@@ -266,16 +291,16 @@
     -o-transform: translateZ(0);
     transform: translateZ(0);
   }
-  /* line 202, ../scss/base/_base.scss */
+  /* line 222, ../scss/base/_base.scss */
   .nav .nav1 .container .thumbScroller .columns .thumb .thumbnail {
     width: 100%;
     border: 1px solid #fff;
   }
-  /* line 207, ../scss/base/_base.scss */
+  /* line 227, ../scss/base/_base.scss */
   .nav .nav1 .container .thumbScroller .columns .thumb:hover {
     opacity: 1 !important;
   }
-  /* line 212, ../scss/base/_base.scss */
+  /* line 232, ../scss/base/_base.scss */
   .nav .nav1 .container .preview {
     width: 49%;
     height: 95%;
@@ -286,39 +311,24 @@
     float: right;
     cursor: url(../images/zoom-in.cur), pointer;
   }
-  /* line 222, ../scss/base/_base.scss */
-  .nav .nav1 .container .edge {
-    width: 49%;
-  }
-  /* line 225, ../scss/base/_base.scss */
-  .nav .nav1 .container .edge .edgefade {
-    width: 80%;
-    height: 0px;
-    position: relative;
-    box-shadow: 0px -25px 90px 130px black;
-    -webkit-box-shadow: 0 -25px 110px 100px black;
-    z-index: 1000;
-    display: inline-block;
-    left: -4%;
-  }
-  /* line 238, ../scss/base/_base.scss */
+  /* line 244, ../scss/base/_base.scss */
   .nav .nav1.navHover:hover h1 {
     transform: translateY(50%);
     text-shadow: 0 0 7px #fff;
   }
-  /* line 243, ../scss/base/_base.scss */
+  /* line 249, ../scss/base/_base.scss */
   .nav .nav2 {
     display: none;
     transform-origin: 100% 100%;
     width: 100% !important;
     text-align: center;
   }
-  /* line 249, ../scss/base/_base.scss */
+  /* line 255, ../scss/base/_base.scss */
   .nav .nav2 h1 {
     position: relative;
     top: 60%;
   }
-  /* line 253, ../scss/base/_base.scss */
+  /* line 259, ../scss/base/_base.scss */
   .nav .nav2 .bio {
     display: none;
     opacity: 0;
@@ -336,13 +346,13 @@
     -o-transition: opacity 500ms ease-in;
     transition: opacity 500ms ease-in;
   }
-  /* line 263, ../scss/base/_base.scss */
+  /* line 269, ../scss/base/_base.scss */
   .nav .nav2.navHover:hover h1 {
     transform: translateY(-50%);
     text-shadow: 0 0 7px #fff;
   }
 
-  /* line 270, ../scss/base/_base.scss */
+  /* line 276, ../scss/base/_base.scss */
   .monitor {
     display: none;
     background-color: black;
@@ -357,7 +367,7 @@
     cursor: default;
   }
 
-  /* line 285, ../scss/base/_base.scss */
+  /* line 291, ../scss/base/_base.scss */
   .imgViewer {
     display: none;
     position: fixed;
@@ -374,7 +384,7 @@
     transition: opacity 500ms ease-in;
     text-align: center;
   }
-  /* line 297, ../scss/base/_base.scss */
+  /* line 303, ../scss/base/_base.scss */
   .imgViewer > div {
     height: 100%;
     width: 100%;
@@ -384,7 +394,7 @@
     cursor: url(../images/zoom-out.cur), pointer;
   }
 
-  /* line 308, ../scss/base/_base.scss */
+  /* line 314, ../scss/base/_base.scss */
   .logo {
     background-color: rgba(255, 255, 255, 0.75);
     width: 13.5vw;
@@ -412,13 +422,13 @@
     cursor: pointer;
   }
 
-  /* line 327, ../scss/base/_base.scss */
+  /* line 333, ../scss/base/_base.scss */
   .logo:hover {
     opacity: 1 !important;
     background-color: white;
   }
 
-  /* line 331, ../scss/base/_base.scss */
+  /* line 337, ../scss/base/_base.scss */
   .logo:before {
     content: "";
     position: absolute;
@@ -440,12 +450,12 @@
     transition: opacity 500ms ease-in;
   }
 
-  /* line 343, ../scss/base/_base.scss */
+  /* line 349, ../scss/base/_base.scss */
   .logo:hover:before {
     opacity: 1;
   }
 
-  /* line 348, ../scss/base/_base.scss */
+  /* line 354, ../scss/base/_base.scss */
   .galNav {
     position: absolute;
     top: 0;
@@ -462,7 +472,7 @@
     -o-transition: opacity 500ms ease-in;
     transition: opacity 500ms ease-in;
   }
-  /* line 360, ../scss/base/_base.scss */
+  /* line 366, ../scss/base/_base.scss */
   .galNav h2 {
     display: inline-block;
     margin: 0px 20px;
@@ -476,12 +486,12 @@
     -o-transition: transform 500ms ease-in-out, color 300ms ease-in;
     transition: transform 500ms ease-in-out, color 300ms ease-in;
   }
-  /* line 370, ../scss/base/_base.scss */
+  /* line 376, ../scss/base/_base.scss */
   .galNav h2:hover {
     color: white;
   }
 
-  /* line 376, ../scss/base/_base.scss */
+  /* line 382, ../scss/base/_base.scss */
   .diamonds {
     width: 100%;
     height: 9vw;
@@ -491,7 +501,7 @@
     margin-top: calc(-4.5vw - 3px);
     z-index: 1;
   }
-  /* line 385, ../scss/base/_base.scss */
+  /* line 391, ../scss/base/_base.scss */
   .diamonds .diamond {
     width: 9vw;
     height: 9vw;
