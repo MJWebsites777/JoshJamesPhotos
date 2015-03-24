@@ -330,10 +330,10 @@
       margin-left: calc(-6.75vw - 5px);
     	cursor: pointer;
   }
-  .logo:hover {
+  /*.logo:hover {
   	opacity: 1 !important;
     background-color: rgba(255,255,255,1);
-  }
+  }*/
   .logo:before {
       content: "";
       position: absolute;
@@ -346,9 +346,9 @@
       opacity: 0.7;
       @include transition(opacity 500ms ease-in);
   }
-  .logo:hover:before {
+  /*.logo:hover:before {
       opacity: 1;
-  }
+  }*/
 
   // Gallery Navigation Styles
   .galNav {
@@ -398,5 +398,38 @@
         box-shadow: 0 0 10px #000, inset 0 0 5px #000;
         @include transition(opacity 500ms ease-in);
     }
+  }
+
+  // Bio Styles
+  .bioHover {
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    bottom: 0;
+    z-index: 1001;
+
+    .bio {
+      position: absolute;
+      width: 35vw;
+      height: 50vh;
+      top: 105%;
+      left: 50%;
+      margin-left: -17.5vw;
+      @include transition(transform 300ms ease-in);
+      background-color: rgba(0,0,0,0.85);
+      box-shadow: 0 0 20px #000;
+      color: #fff;
+      text-align: center;
+      font-family: Verdana;
+      z-index: 1002;
+      cursor: pointer;
+
+      h1 {
+        text-shadow: 0 0 10px #000;
+      }
+    }
+  }
+  .bioHover:hover > .bio {
+    @include transform(translateY(-20%));
   }
 }

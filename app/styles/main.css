@@ -422,12 +422,10 @@
     cursor: pointer;
   }
 
-  /* line 333, ../scss/base/_base.scss */
-  .logo:hover {
-    opacity: 1 !important;
-    background-color: white;
-  }
-
+  /*.logo:hover {
+  	opacity: 1 !important;
+    background-color: rgba(255,255,255,1);
+  }*/
   /* line 337, ../scss/base/_base.scss */
   .logo:before {
     content: "";
@@ -450,11 +448,9 @@
     transition: opacity 500ms ease-in;
   }
 
-  /* line 349, ../scss/base/_base.scss */
-  .logo:hover:before {
-    opacity: 1;
-  }
-
+  /*.logo:hover:before {
+      opacity: 1;
+  }*/
   /* line 354, ../scss/base/_base.scss */
   .galNav {
     position: absolute;
@@ -519,5 +515,48 @@
     -ms-transition: opacity 500ms ease-in;
     -o-transition: opacity 500ms ease-in;
     transition: opacity 500ms ease-in;
+  }
+
+  /* line 404, ../scss/base/_base.scss */
+  .bioHover {
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    bottom: 0;
+    z-index: 1001;
+  }
+  /* line 411, ../scss/base/_base.scss */
+  .bioHover .bio {
+    position: absolute;
+    width: 35vw;
+    height: 50vh;
+    top: 105%;
+    left: 50%;
+    margin-left: -17.5vw;
+    -webkit-transition: transform 300ms ease-in;
+    -moz-transition: transform 300ms ease-in;
+    -ms-transition: transform 300ms ease-in;
+    -o-transition: transform 300ms ease-in;
+    transition: transform 300ms ease-in;
+    background-color: rgba(0, 0, 0, 0.85);
+    box-shadow: 0 0 20px #000;
+    color: #fff;
+    text-align: center;
+    font-family: Verdana;
+    z-index: 1002;
+    cursor: pointer;
+  }
+  /* line 427, ../scss/base/_base.scss */
+  .bioHover .bio h1 {
+    text-shadow: 0 0 10px #000;
+  }
+
+  /* line 432, ../scss/base/_base.scss */
+  .bioHover:hover > .bio {
+    -webkit-transform: translateY(-20%);
+    -moz-transform: translateY(-20%);
+    -ms-transform: translateY(-20%);
+    -o-transform: translateY(-20%);
+    transform: translateY(-20%);
   }
 }
