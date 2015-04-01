@@ -40,7 +40,7 @@ function SlideShow (){
 	this.loaded = false;
 	this.waiting = false;
 	this.hidden = true;
-	this.zoomed = false;
+	this.focused = true;
 	this.animating = false;
 
 	var parent = this;
@@ -49,7 +49,7 @@ function SlideShow (){
 
 	setInterval(function(){
 		if (document.hasFocus()) { 
-			if (parent.paused && !parent.hidden && !parent.zoomed) {
+			if (parent.paused && !parent.hidden && parent.focused) {
 				parent.resume();
 			}
 		} 
@@ -85,7 +85,7 @@ function SlideShow (){
 		});
 		$(document).on('click', '.playback', function(){
 			parent.pause();
-			parent.zoomed = true;
+			parent.focused = false;
 			$('.imgViewer div').css('background-image', $('.image').eq(currentSlide).css('background-image'));
 			$('.imgViewer').css('display', 'block');
 			setTimeout(function(){$('.imgViewer').css('opacity', '1');}, 50);
@@ -154,7 +154,7 @@ function SlideShow (){
 		$('.playback p').css('opacity', '0.5');
 		loopLoad(true);
 		//http://joshjamesphotos.com/
-		//this should read '/getImages.php' instead of 'http://joshjamesphotos.com/getImages.php'
+		//this should read 'getImages.php' instead of 'http://joshjamesphotos.com/getImages.php'
 		$.post('http://joshjamesphotos.com/getImages.php', 'cmd=slideshow', function(data){
 			//console.log(data);
 			var files = data.split('|');
