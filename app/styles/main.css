@@ -455,7 +455,7 @@
   .galNav {
     position: absolute;
     top: 0;
-    z-index: 5000;
+    z-index: 1000;
     width: 100%;
     height: 5vh;
     font-family: Verdana;
@@ -526,37 +526,73 @@
     z-index: 1001;
   }
   /* line 411, ../scss/base/_base.scss */
+  .bioHover .bioOverlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: none;
+    opacity: 0;
+    -webkit-transition: opacity 300ms ease-in;
+    -moz-transition: opacity 300ms ease-in;
+    -ms-transition: opacity 300ms ease-in;
+    -o-transition: opacity 300ms ease-in;
+    transition: opacity 300ms ease-in;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  /* line 421, ../scss/base/_base.scss */
   .bioHover .bio {
     position: absolute;
-    width: 35vw;
-    height: 50vh;
+    width: 55vw;
+    height: 75vh;
     top: 105%;
     left: 50%;
-    margin-left: -17.5vw;
+    margin-left: -27.5vw;
     -webkit-transition: transform 300ms ease-in;
     -moz-transition: transform 300ms ease-in;
     -ms-transition: transform 300ms ease-in;
     -o-transition: transform 300ms ease-in;
     transition: transform 300ms ease-in;
     background-color: rgba(0, 0, 0, 0.85);
-    box-shadow: 0 0 20px #000;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
     color: #fff;
     text-align: center;
     font-family: Verdana;
+    font-size: 1.5vh;
     z-index: 1002;
-    cursor: pointer;
   }
-  /* line 427, ../scss/base/_base.scss */
+  /* line 438, ../scss/base/_base.scss */
   .bioHover .bio h1 {
     text-shadow: 0 0 10px #000;
   }
+  /* line 441, ../scss/base/_base.scss */
+  .bioHover .bio .hideBio {
+    position: absolute;
+    display: block;
+    bottom: 0;
+    padding: 20px 0;
+    background-color: rgba(255, 0, 0, 0.25);
+    -webkit-transition: background-color 300ms ease-in;
+    -moz-transition: background-color 300ms ease-in;
+    -ms-transition: background-color 300ms ease-in;
+    -o-transition: background-color 300ms ease-in;
+    transition: background-color 300ms ease-in;
+    width: 100%;
+    font-size: 2vh;
+    cursor: pointer;
+    text-shadow: 0 0 3px #000;
+  }
+  /* line 453, ../scss/base/_base.scss */
+  .bioHover .bio .hideBio:hover {
+    background-color: rgba(255, 0, 0, 0.5);
+  }
 
-  /* line 432, ../scss/base/_base.scss */
+  /* line 458, ../scss/base/_base.scss */
   .bioHover:hover > .bio {
-    -webkit-transform: translateY(-20%);
-    -moz-transform: translateY(-20%);
-    -ms-transform: translateY(-20%);
-    -o-transform: translateY(-20%);
-    transform: translateY(-20%);
+    -webkit-transform: translateY(-15%);
+    -moz-transform: translateY(-15%);
+    -ms-transform: translateY(-15%);
+    -o-transform: translateY(-15%);
+    transform: translateY(-15%);
   }
 }
