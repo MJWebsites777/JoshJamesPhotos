@@ -33,7 +33,7 @@ $(document).ready(function() {
 			$('.bioOverlay').css('display', ''); 
 			isAnimating = false;
 			bioOpen = false;
-		}, 350);
+		}, 550);
 		slideShow.resume();
 		slideShow.focused = true;
 	});
