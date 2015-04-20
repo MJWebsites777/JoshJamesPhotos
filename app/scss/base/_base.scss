@@ -425,7 +425,7 @@
       top: 105%;
       left: 50%;
       margin-left: -27.5vw;
-      @include transition(transform 300ms ease-in);
+      @include transition(transform 500ms ease-in-out);
       background-color: rgba(0,0,0,0.85);
       box-shadow: 0 0 5px rgba(255,255,255,0.5);;
       color: #fff;
