@@ -5,7 +5,7 @@ dist
 .tmp
 
 bower_components
-app old design
+app v2
 app/scripts/changePage.js
 app/images/ignore
 app/images/galleryOLD
