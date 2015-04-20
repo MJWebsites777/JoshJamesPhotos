@@ -16,8 +16,10 @@ $(document).ready(function() {
 			});
 			$('.bioOverlay').css('display', 'block');
 			setTimeout(function(){$('.bioOverlay').css('opacity', '1');}, 50);
-			slideShow.pause();
-			slideShow.focused = false;
+			if (slideShow.running){
+				slideShow.pause();
+				slideShow.focused = false;
+			}
 			bioOpen = true;
 		}
 	});
@@ -34,8 +36,10 @@ $(document).ready(function() {
 			isAnimating = false;
 			bioOpen = false;
 		}, 550);
-		slideShow.resume();
-		slideShow.focused = true;
+		if (slideShow.paused){
+			slideShow.resume();
+			slideShow.focused = true;
+		}
 	});
 //------
 	var img = new Image();
