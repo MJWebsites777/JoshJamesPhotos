@@ -36,7 +36,7 @@ $(document).ready(function() {
 			isAnimating = false;
 			bioOpen = false;
 		}, 550);
-		if (slideShow.paused){
+		if (slideShow.paused && !slideShow.hidden){
 			slideShow.resume();
 			slideShow.focused = true;
 		}
