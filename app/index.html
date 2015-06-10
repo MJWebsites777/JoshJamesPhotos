@@ -24,55 +24,16 @@
 
     <div class="background">
       <div class="bgImg"></div>
-    </div>
-    <div class="nav">
-      <div class="nav1 navHover">
-          <div class="gallery">
-            <div class="architecture">
-              <div class="container">
-                <div class="thumbScroller">
-                  <div class="columns"></div>
-                </div><div class="preview"></div>
-              </div>  
-            </div>
-            <div class="commercial">
-              <div class="container">
-                <div class="thumbScroller">
-                  <div class="columns"></div>
-                </div><div class="preview"></div>
-              </div> 
-            </div>
-            <div class="landscapes">
-              <div class="container">
-                <div class="thumbScroller">
-                  <div class="columns"></div>
-                </div><div class="preview"></div>
-              </div> 
-            </div>
-            <div class="portraits">
-              <div class="container">
-                <div class="thumbScroller">
-                  <div class="columns"></div>
-                </div><div class="preview"></div>
-              </div> 
-            </div>
-            <div class="weddings">
-              <div class="container">
-                <div class="thumbScroller">
-                  <div class="columns"></div>
-                </div><div class="preview"></div>
-              </div> 
-            </div>
-            <div class="slideshow">
-              <div class="overlay"><div class="controls">
-                <div class="lastSlide"></div><div class="playback"><p>loading slideshow...</p></div><div class="nextSlide"></div>
-              </div></div>
-            </div>
-            <div class="edge"><div class="edgefade"></div></div>
-          </div>
-        </div>
+      <div class="bgOverlay"></div>
     </div>
     <span class="galNav"><h2>ARCHITECTURE</h2><h2>COMMERCIAL</h2><h2>LANDSCAPES</h2><h2>PORTRAITS</h2><h2>WEDDINGS</h2></span>
+    <div class="featured">
+      <div class="controls">
+        <div class="lastSlide control" style="margin-right: -4px;"></div>
+        <div class="photos"></div>
+        <div class="nextSlide control" style="margin-left: -4px;"></div>
+      </div>
+    </div>
     <div class="diamonds">
         <div class="diamond" style=""></div>
         <div class="diamond" style="background-color: rgba(255,255,255,0.25);border-radius: 10px;"></div>
@@ -82,16 +43,25 @@
         <div class="diamond" style="z-index: 1;"></div>
     </div>
     <div class="monitor"><span class="xMove"></span><br /><span class="yMove"></span></div>
+    <div class="shadows">
+      <div class="topShadow"></div>
+      <div class="bottomShadow"></div>
+      <div class="leftShadow"></div>
+      <div class="rightShadow"></div>
+    </div>
     <div class="imgViewer"><div></div></div>
     <div class="logo"></div>
-    <div class="bioHover">
+    <div class="bioHover" style="display: none;">
       <div class="bioOverlay"></div>
       <div class="bio">
-        <div class="bioContent">
+        <div class="bioContainer">
           <h1>Get to know Josh</h1>
-          <p>Under Construction</p>
+          <div class="bioContent">
+            <p>I hope you’ve figured it out by now. I’m a photographer. I take photos because it’s my favorite way of releasing the creativity within. Yet, photography is more than just a release to me. It’s a passion of mine, perhaps even a love. I love going on photography adventures, traveling to awesome places to capture the beauty of creation. So if you have any plane tickets to Colorado or Montana lying around, I’m open for donations. Yet, adventure can be found even here in Minnesota. I often go on mini adventures when taking senior portraits, finding the best spots to shoot at. It’s definitely my favorite way of doing portraits as many of my best works have been created that way.</p>
+          </div>
+          <div class="bioPic"></div>
+          <div class="hideBio">Hide</div>
         </div>
-        <div class="hideBio">Hide</div>
       </div>
     </div>
 
@@ -118,6 +88,7 @@
         <script src="scripts/gallery.js"></script>
         <script src="scripts/bio.js"></script>
         <script src="scripts/contact.js"></script>
+        <script src="scripts/events.js"></script>
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
 </body>

@@ -64,7 +64,7 @@ function SlideShow (){
 		if (!parent.loaded) { parent.waiting = true; return;}
 		else {
 			//$('.slideshow').css('opacity', '1');
-			$('.nextSlide, .lastSlide').css('opacity', '0.5');
+			//$('.nextSlide, .lastSlide').css('opacity', '0.5');
     		parent.nextSlide();
 			interval.set(parent.nextSlide, 5000);
 			//slideShow.mouseListen(true);
@@ -83,7 +83,7 @@ function SlideShow (){
 				parent.nextSlide(function(){interval.set(parent.nextSlide, 5000);});
 			}
 		});
-		$(document).on('click', '.playback', function(){
+		$(document).on('click', '.photos', function(){
 			parent.pause();
 			parent.focused = false;
 			$('.imgViewer div').css('background-image', $('.image').eq(currentSlide).css('background-image'));
@@ -104,7 +104,7 @@ function SlideShow (){
 		if (!parent.running) {return;}
 		//parent.mouseListen(false);
 		$(document).off('click', '.nextSlide');
-		$(document).off('click', '.playback');
+		$(document).off('click', '.photos');
 		$(document).off('click', '.lastSlide');
 		interval.clear();
 		$('.image').eq(lastSlide).css('opacity', '0');
@@ -135,7 +135,7 @@ function SlideShow (){
 		$('.slideshow').css('opacity', '1');
 		//$('.logo').css('opacity', '0.1');
 		$('.image').eq(currentSlide).css('opacity', '1');
-		$('.nextSlide, .lastSlide').css('opacity', '0.5');
+		//$('.nextSlide, .lastSlide').css('opacity', '0.5');
 		interval.set(parent.nextSlide, 5000);
 		//parent.mouseListen(true);
 		parent.running = true;
@@ -152,7 +152,7 @@ function SlideShow (){
 		$('.logo').css('opacity', '1');
 		$('.playback p').css('display', 'inline-block');
 		$('.playback p').css('opacity', '0.5');
-		loopLoad(true);
+		//loopLoad(true);
 		//http://joshjamesphotos.com/
 		//this should read 'getImages.php' instead of 'http://joshjamesphotos.com/getImages.php'
 		$.post('http://joshjamesphotos.com/getImages.php', 'cmd=slideshow', function(data){
@@ -164,7 +164,7 @@ function SlideShow (){
 			renderCount = 0;
 			for (var i=0; i < files.length; i++) {
 				filename = files[i];
-				$('.slideshow').append('<div class=\'image\' style=\'background-image: url("'+filename+'");\'></div>');
+				$('.photos').append('<div class=\'image\' style=\'background-image: url("'+filename+'");\'></div>');
 				count++;
 
 				var image = new Image();
