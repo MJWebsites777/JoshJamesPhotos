@@ -39,7 +39,6 @@ function SlideShow (){
 	this.paused = false;
 	this.loaded = false;
 	this.waiting = false;
-	this.hidden = true;
 	this.focused = true;
 	this.animating = false;
 
@@ -49,12 +48,12 @@ function SlideShow (){
 
 	setInterval(function(){
 		if (document.hasFocus()) { 
-			if (parent.paused && !parent.hidden && parent.focused) {
+			if (parent.paused && parent.focused) {
 				parent.resume();
 			}
 		} 
 		else {
-			if (parent.running && !parent.hidden) {
+			if (parent.running) {
 				parent.pause();
 			}
 		}
@@ -71,7 +70,6 @@ function SlideShow (){
 		}
 		if (parent.running) {return;}
 		parent.running = true;
-		parent.hidden = false;
 		//currentSlide = 0; lastSlide = 0;
 
 		//$('.logo').css('opacity', '0.1');
@@ -113,18 +111,14 @@ function SlideShow (){
 		//console.log('SlideShow Stopped');
 	};
 
-	this.pause = function(hide){
+	this.pause = function(defocus){
 		if (parent.paused) {return;}
 		//parent.mouseListen(false);
 		interval.clear();
 		parent.running = false;
 		parent.paused = true;
-		if (hide) {
-			$('.slideshow').css('opacity', '0');
-			$('.overlay').css('z-index', '0');
-			$('.image').eq(currentSlide).css('opacity', '0');
-			$('.nextSlide, .lastSlide').css('opacity', '0');
-			parent.hidden = true;
+		if (defocus) {
+			parent.focused = false;
 		}
 		$('.logo').css('opacity', '');
 		//console.log('SlideShow Paused');
@@ -140,7 +134,7 @@ function SlideShow (){
 		//parent.mouseListen(true);
 		parent.running = true;
 		parent.paused = false;
-		parent.hidden = false;
+		parent.focused = true;
 		//console.log('SlideShow Resumed');
 	};
 
