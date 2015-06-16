@@ -21,6 +21,7 @@
     position: fixed;
 
     .bgImg {
+      position: fixed;
       min-width: 100%;
       min-height: 100%;
       background-image: url(../images/cover.jpg);
@@ -33,10 +34,10 @@
     }
     .bgOverlay {
       //display: none;
-      position: absolute;
+      position: fixed;
       width: 100%;
       height: 100%;
-      background-color: rgba(0,0,0,0.75);
+      background-color: rgba(0,0,0,0.5);
     }
   }
 
@@ -50,6 +51,9 @@
       width: 100vw;
       height: 100vh;
 
+      > div {
+        margin-bottom: -3px;
+      }
       .control {
         display: inline-block;
         position: relative;
@@ -61,12 +65,19 @@
         opacity: 0.5;
         @include transition(opacity 500ms cubic-bezier(0.46, 0.03, 0.52, 0.96));
         box-shadow: 0 0 15px 2px #000;
-        cursor: pointer;
         z-index: 1;
       }
         .control:hover {
           opacity: 1;
         }
+      .lastSlide {
+        margin-right: -4px;
+        cursor: url(../images/last.cur), pointer;
+      }
+      .nextSlide {
+        margin-left: -4px;
+        cursor: url(../images/next.cur), pointer;
+      }
       .photos {
         position: relative;
         display: inline-block;
@@ -258,26 +269,124 @@
   .galNav {
     position: absolute;
     top: 0;
-    z-index: 1000;
+    z-index: 1001;
     width: 100vw;
     height: 5vh;
     font-family: Verdana;
     text-align: center;
     opacity: 0;
     padding: 5px 0;
+    margin: 0;
     @include transition(opacity 500ms ease-in);
-
-    h2 {
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: 0 0 10px #000;
+    
+    > li {
       display: inline-block;
-      margin: 0px 20px;
-      font-size: 2vw;
-      color: rgba(255,255,255,0.75);
+      line-height: 5vh;
+      padding-bottom: 6px;
       cursor: pointer;
-      text-shadow: 0 0 5px #000;
-      @include transition(transform 500ms ease-in-out, color 300ms ease-in);
-      //color: #92B5FF;  color when selected
+
+      .gallery {
+        position: absolute;
+        visibility: collapse;
+        width: 100vw;
+        height: calc(95vh - 10px);
+        left: 0;
+        margin-top: 6px;
+        background-color: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        @include transition(opacity 500ms ease-in-out);
+        cursor: default;
+
+        .container {
+          position: relative;
+          display: inline-block;
+          width: 93%;
+          height: 100%;
+          margin-bottom: -3px;
+
+          .thumbScroller {
+            position: relative;
+            display: inline-block;
+            width: 45%;
+            height: 100%;
+            float: left;
+            
+
+            .columns {
+              @include column(2, 5px);
+              padding-bottom: 50px;
+
+              .thumb {
+                display: inline-block;
+                margin: 3px;
+                opacity: 0;
+                @include transition(opacity 500ms ease-in);
+                cursor: pointer;
+                @include transform(translateZ(0));
+
+                .thumbnail {
+                  width: 100%;
+                  border: 1px solid #fff;
+                }
+              }
+              .thumb:hover {
+                opacity: 1 !important;
+              }
+            }
+          }
+          .preview {
+            position: absolute;
+            width: 49%;
+            height: 75%;
+            top: calc(50% - (75% / 2));
+            right: 0;
+            display: inline-block;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            float: right;
+            cursor: url(../images/zoom-in.cur), pointer;
+            opacity: 0;
+            @include transition(opacity 300ms ease-in-out);
+          }
+        }
+        .hideGallery {
+          position: absolute;
+          width: 100vw;
+          height: 5vh;
+          bottom: 0;
+          background-color: rgba(255, 0, 0, 0.75);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+          cursor: pointer;
+          opacity: 0.75;
+          @include transition(opacity 500ms ease-in);
+          z-index: 1002;
+
+          > h3 {
+            color: #fff;
+            margin: 0;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.65);
+          }
+        }
+          .hideGallery:hover {
+            opacity: 1;
+          }
+      }
+      h2 {
+        margin: 0px 20px;
+        font-size: 2vw;
+        color: rgba(255,255,255,0.75);
+        text-shadow: 0 0 5px #000;
+        @include transition(transform 500ms ease-in-out, color 300ms ease-in);
+        //color: #92B5FF;  color when selected
+      }
     }
-    h2:hover {
+    > li:hover .gallery {
+      //visibility: visible;
+    }
+    > li:hover h2 {
       color: rgba(255,255,255,1);
     }
   }
