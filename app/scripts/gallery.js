@@ -66,7 +66,11 @@ function Gallery () {
 	};
 
 	this.unload = function(id, callback){
-		if (id === 'featured') {slideShow.pause(true); if (callback) {setTimeout(function(){callback();}, 500);}}
+		if (id === 'featured'){ 
+			if (callback) {
+				setTimeout(function(){callback();}, 500);
+			}
+		}
 		else {
 			$('.'+id+' .gallery').css('opacity', ''); 
 			setTimeout(function(){
@@ -74,6 +78,7 @@ function Gallery () {
 				if (callback) {callback();}
 			}, 500);
 		}
+		slideShow.pause(true);
 	};
 
 	this.loaded = function(id) {
