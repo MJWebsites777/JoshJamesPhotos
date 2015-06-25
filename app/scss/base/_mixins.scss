@@ -22,3 +22,8 @@
   column-count: $count;
   column-gap: $gap;
 }
+
+@mixin animation($args...){
+  animation: $args;
+  -webkit-animation: $args;
+}
