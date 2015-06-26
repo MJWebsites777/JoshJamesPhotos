@@ -1,6 +1,10 @@
+//TODO
+//-organize all events from all files here
+//-------------
+
 var isAnimating = false;
 var bioOpen = false;
-$(document).on('mouseover', '.bioContainer', function(){
+$(document).on('click', '.bioDiamonds', function(){
 	if (!isAnimating && !bioOpen){
 		var bio = $('.bio');
 		bio.css({
