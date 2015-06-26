@@ -243,7 +243,6 @@
     @include transform(scale(0.6) rotateZ(-45deg));
     @include transition(transform 500ms ease-in-out, opacity 500ms ease-in, background-color 500ms ease-in);
     z-index: 1000;
-  	cursor: pointer;
   }
   /*.logo:hover {
   	opacity: 1 !important;
@@ -357,7 +356,7 @@
           width: 100vw;
           height: 5vh;
           bottom: 0;
-          background-color: rgba(255, 0, 0, 0.75);
+          background-color: rgba(224, 33, 33, 0.75);
           box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
           cursor: pointer;
           opacity: 0.75;
@@ -402,6 +401,26 @@
       z-index: 1;
       @include transform(scale(0.6));
 
+    > div {
+      position: relative;
+      width: 45%;
+      display: inline-block;
+      opacity: 0.75;
+      @include transition(opacity 300ms ease-in-out);
+      cursor: pointer;
+    }
+      > div:hover {
+        opacity: 1;
+      }
+    h3 {
+      position: absolute;
+      width: 100%;
+      font-size: 3vw;
+      font-family: Verdana;
+      color: #fff;
+      z-index: 100;
+      text-shadow: 0 3px 5px #000, 0 0 100px #fff;
+    }
     .diamond {
         width: 9vw;
         height: 9vw;
@@ -415,13 +434,23 @@
   }
 
   // Bio Styles
-  .bioHover {
-    position: absolute;
-    width: 100%;
-    height: 30%;
-    bottom: 0;
-    z-index: 1001;
+  .bio {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 100vh;
+    @include transition(transform 500ms ease-in-out);
+    //box-shadow: 0 0 5px rgba(255,255,255,0.5);
+    color: #fff;
+    text-align: center;
+    font-family: Verdana;
+    font-size: 1.5vh;
+    z-index: 1002;
+    //cursor: pointer;
 
+    h1 {
+      text-shadow: 0 0 10px #000;
+    }
     .bioOverlay {
       position: fixed;
       width: 100%;
@@ -432,75 +461,53 @@
       @include transition(opacity 300ms ease-in);
       background-color: rgba(0,0,0,0.5);
     }
-    .bio {
-      position: fixed;
-      width: 100vw;
-      height: 100vh;
-      top: 100vh;
-      @include transition(transform 500ms ease-in-out);
-      //box-shadow: 0 0 5px rgba(255,255,255,0.5);
-      color: #fff;
-      text-align: center;
-      font-family: Verdana;
-      font-size: 1.5vh;
-      z-index: 1002;
-      //cursor: pointer;
+    .bioContainer {
+      position: relative;
+      display: inline-block;
+      height: inherit;
+      width: 80%;
+      border-left: 1px solid #fff;
+      border-right: 1px solid #fff;
+      background-color: rgba(0,0,0,0.75);
 
-      h1 {
-        text-shadow: 0 0 10px #000;
+      .bioContent {
+        float: left;
+        width: 50vw;
+        margin-left: 20px;
+        text-align: left;
+        text-indent: 50px;
+        font-family: Verdana;
+        font-size: 1.3vw;
+        color: rgba(255,255,255,0.9);
+
+        p {
+
+        }
       }
-      .bioContainer {
+      .bioPic {
         position: relative;
-        display: inline-block;
-        height: inherit;
-        width: 80%;
-        border-left: 1px solid #fff;
-        border-right: 1px solid #fff;
-        background-color: rgba(0,0,0,0.75);
-
-        .bioContent {
-          float: left;
-          width: 50vw;
-          margin-left: 20px;
-          text-align: left;
-          text-indent: 50px;
-          font-family: Verdana;
-          font-size: 1.3vw;
-          color: rgba(255,255,255,0.9);
-
-          p {
-
-          }
-        }
-        .bioPic {
-          position: relative;
-          width: 20vw;
-          height: calc(20vw / 0.66667);
-          float: right;
-          background-image: url(../images/profile.jpg);
-          background-size: cover;
-          margin-right: 20px;
-        }
-        .hideBio {
-          position: absolute;
-          display: block;
-          bottom: 0;
-          padding: 20px 0;
-          background-color: rgba(255, 0, 0, 0.25);
-          @include transition(background-color 300ms ease-in);
-          width: 100%;
-          font-size: 2vh;
-          cursor: pointer;
-          text-shadow: 0 0 3px #000;
-        }
-        .hideBio:hover {
-          background-color: rgba(255, 0, 0, 0.5);
-        }
+        width: 20vw;
+        height: calc(20vw / 0.66667);
+        float: right;
+        background-image: url(../images/profile.jpg);
+        background-size: cover;
+        margin-right: 20px;
       }
-      
-    }
-  }
-  .bioHover:hover > .bio {
-    @include transform(translateY(-7%));
+      .hideBio {
+        position: absolute;
+        display: block;
+        bottom: 0;
+        padding: 20px 0;
+        background-color: rgba(255, 0, 0, 0.25);
+        @include transition(background-color 300ms ease-in);
+        width: 100%;
+        font-size: 2vh;
+        cursor: pointer;
+        text-shadow: 0 0 3px #000;
+      }
+      .hideBio:hover {
+        background-color: rgba(255, 0, 0, 0.5);
+      }
+    }  
   }
 }

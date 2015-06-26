@@ -289,14 +289,13 @@
     -o-transition: transform 500ms ease-in-out, opacity 500ms ease-in, background-color 500ms ease-in;
     transition: transform 500ms ease-in-out, opacity 500ms ease-in, background-color 500ms ease-in;
     z-index: 1000;
-    cursor: pointer;
   }
 
   /*.logo:hover {
   	opacity: 1 !important;
     background-color: rgba(255,255,255,1);
   }*/
-  /* line 252, ../scss/base/_base.scss */
+  /* line 251, ../scss/base/_base.scss */
   .logo:before {
     content: "";
     position: absolute;
@@ -321,7 +320,7 @@
   /*.logo:hover:before {
       opacity: 1;
   }*/
-  /* line 269, ../scss/base/_base.scss */
+  /* line 268, ../scss/base/_base.scss */
   .galNav {
     position: absolute;
     top: 0;
@@ -341,14 +340,14 @@
     background-color: rgba(0, 0, 0, 0.5);
     box-shadow: 0 0 10px #000;
   }
-  /* line 284, ../scss/base/_base.scss */
+  /* line 283, ../scss/base/_base.scss */
   .galNav > li {
     display: inline-block;
     line-height: 5vh;
     padding-bottom: 6px;
     cursor: pointer;
   }
-  /* line 290, ../scss/base/_base.scss */
+  /* line 289, ../scss/base/_base.scss */
   .galNav > li .gallery {
     position: absolute;
     visibility: collapse;
@@ -365,7 +364,7 @@
     transition: opacity 500ms ease-in-out;
     cursor: default;
   }
-  /* line 302, ../scss/base/_base.scss */
+  /* line 301, ../scss/base/_base.scss */
   .galNav > li .gallery .container {
     position: relative;
     display: inline-block;
@@ -373,7 +372,7 @@
     height: 100%;
     margin-bottom: -3px;
   }
-  /* line 309, ../scss/base/_base.scss */
+  /* line 308, ../scss/base/_base.scss */
   .galNav > li .gallery .container .thumbScroller {
     position: relative;
     display: inline-block;
@@ -381,7 +380,7 @@
     height: 100%;
     float: left;
   }
-  /* line 317, ../scss/base/_base.scss */
+  /* line 316, ../scss/base/_base.scss */
   .galNav > li .gallery .container .thumbScroller .columns {
     -webkit-column-count: 2;
     -webkit-column-gap: 5px;
@@ -391,7 +390,7 @@
     column-gap: 5px;
     padding-bottom: 50px;
   }
-  /* line 321, ../scss/base/_base.scss */
+  /* line 320, ../scss/base/_base.scss */
   .galNav > li .gallery .container .thumbScroller .columns .thumb {
     display: inline-block;
     margin: 3px;
@@ -408,16 +407,16 @@
     -o-transform: translateZ(0);
     transform: translateZ(0);
   }
-  /* line 329, ../scss/base/_base.scss */
+  /* line 328, ../scss/base/_base.scss */
   .galNav > li .gallery .container .thumbScroller .columns .thumb .thumbnail {
     width: 100%;
     border: 1px solid #fff;
   }
-  /* line 334, ../scss/base/_base.scss */
+  /* line 333, ../scss/base/_base.scss */
   .galNav > li .gallery .container .thumbScroller .columns .thumb:hover {
     opacity: 1 !important;
   }
-  /* line 339, ../scss/base/_base.scss */
+  /* line 338, ../scss/base/_base.scss */
   .galNav > li .gallery .container .preview {
     position: absolute;
     width: 49%;
@@ -437,13 +436,13 @@
     -o-transition: opacity 300ms ease-in-out;
     transition: opacity 300ms ease-in-out;
   }
-  /* line 355, ../scss/base/_base.scss */
+  /* line 354, ../scss/base/_base.scss */
   .galNav > li .gallery .hideGallery {
     position: absolute;
     width: 100vw;
     height: 5vh;
     bottom: 0;
-    background-color: rgba(255, 0, 0, 0.75);
+    background-color: rgba(224, 33, 33, 0.75);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     cursor: pointer;
     opacity: 0.75;
@@ -454,17 +453,17 @@
     transition: opacity 500ms ease-in;
     z-index: 1002;
   }
-  /* line 367, ../scss/base/_base.scss */
+  /* line 366, ../scss/base/_base.scss */
   .galNav > li .gallery .hideGallery > h3 {
     color: #fff;
     margin: 0;
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.65);
   }
-  /* line 373, ../scss/base/_base.scss */
+  /* line 372, ../scss/base/_base.scss */
   .galNav > li .gallery .hideGallery:hover {
     opacity: 1;
   }
-  /* line 377, ../scss/base/_base.scss */
+  /* line 376, ../scss/base/_base.scss */
   .galNav > li h2 {
     margin: 0px 20px;
     font-size: 2vw;
@@ -476,12 +475,12 @@
     -o-transition: transform 500ms ease-in-out, color 300ms ease-in;
     transition: transform 500ms ease-in-out, color 300ms ease-in;
   }
-  /* line 389, ../scss/base/_base.scss */
+  /* line 388, ../scss/base/_base.scss */
   .galNav > li:hover h2 {
     color: white;
   }
 
-  /* line 395, ../scss/base/_base.scss */
+  /* line 394, ../scss/base/_base.scss */
   .diamonds {
     width: 100%;
     height: 9vw;
@@ -496,7 +495,34 @@
     -o-transform: scale(0.6);
     transform: scale(0.6);
   }
-  /* line 405, ../scss/base/_base.scss */
+  /* line 404, ../scss/base/_base.scss */
+  .diamonds > div {
+    position: relative;
+    width: 45%;
+    display: inline-block;
+    opacity: 0.75;
+    -webkit-transition: opacity 300ms ease-in-out;
+    -moz-transition: opacity 300ms ease-in-out;
+    -ms-transition: opacity 300ms ease-in-out;
+    -o-transition: opacity 300ms ease-in-out;
+    transition: opacity 300ms ease-in-out;
+    cursor: pointer;
+  }
+  /* line 412, ../scss/base/_base.scss */
+  .diamonds > div:hover {
+    opacity: 1;
+  }
+  /* line 415, ../scss/base/_base.scss */
+  .diamonds h3 {
+    position: absolute;
+    width: 100%;
+    font-size: 3vw;
+    font-family: Verdana;
+    color: #fff;
+    z-index: 100;
+    text-shadow: 0 3px 5px #000, 0 0 100px #fff;
+  }
+  /* line 424, ../scss/base/_base.scss */
   .diamonds .diamond {
     width: 9vw;
     height: 9vw;
@@ -516,31 +542,8 @@
     transition: opacity 500ms ease-in;
   }
 
-  /* line 418, ../scss/base/_base.scss */
-  .bioHover {
-    position: absolute;
-    width: 100%;
-    height: 30%;
-    bottom: 0;
-    z-index: 1001;
-  }
-  /* line 425, ../scss/base/_base.scss */
-  .bioHover .bioOverlay {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    display: none;
-    opacity: 0;
-    -webkit-transition: opacity 300ms ease-in;
-    -moz-transition: opacity 300ms ease-in;
-    -ms-transition: opacity 300ms ease-in;
-    -o-transition: opacity 300ms ease-in;
-    transition: opacity 300ms ease-in;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-  /* line 435, ../scss/base/_base.scss */
-  .bioHover .bio {
+  /* line 437, ../scss/base/_base.scss */
+  .bio {
     position: fixed;
     width: 100vw;
     height: 100vh;
@@ -556,12 +559,27 @@
     font-size: 1.5vh;
     z-index: 1002;
   }
-  /* line 449, ../scss/base/_base.scss */
-  .bioHover .bio h1 {
+  /* line 451, ../scss/base/_base.scss */
+  .bio h1 {
     text-shadow: 0 0 10px #000;
   }
-  /* line 452, ../scss/base/_base.scss */
-  .bioHover .bio .bioContainer {
+  /* line 454, ../scss/base/_base.scss */
+  .bio .bioOverlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: none;
+    opacity: 0;
+    -webkit-transition: opacity 300ms ease-in;
+    -moz-transition: opacity 300ms ease-in;
+    -ms-transition: opacity 300ms ease-in;
+    -o-transition: opacity 300ms ease-in;
+    transition: opacity 300ms ease-in;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  /* line 464, ../scss/base/_base.scss */
+  .bio .bioContainer {
     position: relative;
     display: inline-block;
     height: inherit;
@@ -570,8 +588,8 @@
     border-right: 1px solid #fff;
     background-color: rgba(0, 0, 0, 0.75);
   }
-  /* line 461, ../scss/base/_base.scss */
-  .bioHover .bio .bioContainer .bioContent {
+  /* line 473, ../scss/base/_base.scss */
+  .bio .bioContainer .bioContent {
     float: left;
     width: 50vw;
     margin-left: 20px;
@@ -581,8 +599,8 @@
     font-size: 1.3vw;
     color: rgba(255, 255, 255, 0.9);
   }
-  /* line 475, ../scss/base/_base.scss */
-  .bioHover .bio .bioContainer .bioPic {
+  /* line 487, ../scss/base/_base.scss */
+  .bio .bioContainer .bioPic {
     position: relative;
     width: 20vw;
     height: calc(20vw / 0.66667);
@@ -591,8 +609,8 @@
     background-size: cover;
     margin-right: 20px;
   }
-  /* line 484, ../scss/base/_base.scss */
-  .bioHover .bio .bioContainer .hideBio {
+  /* line 496, ../scss/base/_base.scss */
+  .bio .bioContainer .hideBio {
     position: absolute;
     display: block;
     bottom: 0;
@@ -608,17 +626,8 @@
     cursor: pointer;
     text-shadow: 0 0 3px #000;
   }
-  /* line 496, ../scss/base/_base.scss */
-  .bioHover .bio .bioContainer .hideBio:hover {
+  /* line 508, ../scss/base/_base.scss */
+  .bio .bioContainer .hideBio:hover {
     background-color: rgba(255, 0, 0, 0.5);
-  }
-
-  /* line 503, ../scss/base/_base.scss */
-  .bioHover:hover > .bio {
-    -webkit-transform: translateY(-7%);
-    -moz-transform: translateY(-7%);
-    -ms-transform: translateY(-7%);
-    -o-transform: translateY(-7%);
-    transform: translateY(-7%);
   }
 }
