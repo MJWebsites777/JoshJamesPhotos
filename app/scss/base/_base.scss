@@ -14,6 +14,13 @@
     overflow: hidden;
   }
 
+  a:link {
+    color: #B8B8B8;
+  }
+  a:visited {
+    color: #B8B8B8;
+  }
+
   // Background Styles
   .background {
     width: 100%;
@@ -447,9 +454,25 @@
     font-size: 1.5vh;
     z-index: 1002;
     //cursor: pointer;
+    
+    .bioNav {
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.2);
 
-    h1 {
-      text-shadow: 0 0 10px #000;
+      h1 {
+        margin: 0;
+        padding: 0.67em 0;
+        width: 50%;
+        display: inline-block;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 1.5vw;
+        @include transition(background-color 300ms ease-in-out);
+        cursor: pointer;
+      }
+        h1:hover {
+          background-color: rgba(255, 255, 255, 0.2);
+        }
     }
     .bioOverlay {
       position: fixed;
@@ -465,20 +488,22 @@
       position: relative;
       display: inline-block;
       height: inherit;
-      width: 80%;
-      border-left: 1px solid #fff;
-      border-right: 1px solid #fff;
+      width: 70%;
+      box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
       background-color: rgba(0,0,0,0.75);
+      overflow: hidden;
 
       .bioContent {
         float: left;
-        width: 50vw;
+        width: 60%;
         margin-left: 20px;
-        text-align: left;
-        text-indent: 50px;
+        margin-top: 1%;
+        text-align: justify;
+        //text-indent: 50px;
         font-family: Verdana;
         font-size: 1.3vw;
-        color: rgba(255,255,255,0.9);
+        //color: rgba(255,255,255,0.9);
+        color: #B8B8B8;
 
         p {
 
@@ -488,10 +513,18 @@
         position: relative;
         width: 20vw;
         height: calc(20vw / 0.66667);
+        margin-top: 1%;
         float: right;
         background-image: url(../images/profile.jpg);
         background-size: cover;
         margin-right: 20px;
+      }
+      .quote {
+        position: absolute;
+        bottom: 100px;
+        width: 100%;
+        font-size: 1vw;
+        color: #B8B8B8;
       }
       .hideBio {
         position: absolute;

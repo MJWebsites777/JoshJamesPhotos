@@ -15,13 +15,23 @@
     overflow: hidden;
   }
 
-  /* line 18, ../scss/base/_base.scss */
+  /* line 17, ../scss/base/_base.scss */
+  a:link {
+    color: #B8B8B8;
+  }
+
+  /* line 20, ../scss/base/_base.scss */
+  a:visited {
+    color: #B8B8B8;
+  }
+
+  /* line 25, ../scss/base/_base.scss */
   .background {
     width: 100%;
     height: 100%;
     position: fixed;
   }
-  /* line 23, ../scss/base/_base.scss */
+  /* line 30, ../scss/base/_base.scss */
   .background .bgImg {
     position: fixed;
     min-width: 100%;
@@ -38,7 +48,7 @@
     -o-transition: opacity 500ms ease-in;
     transition: opacity 500ms ease-in;
   }
-  /* line 35, ../scss/base/_base.scss */
+  /* line 42, ../scss/base/_base.scss */
   .background .bgOverlay {
     position: fixed;
     width: 100%;
@@ -46,22 +56,22 @@
     background-color: rgba(0, 0, 0, 0.5);
   }
 
-  /* line 45, ../scss/base/_base.scss */
+  /* line 52, ../scss/base/_base.scss */
   .featured {
     position: absolute;
     width: 100vw;
     height: 100vh;
   }
-  /* line 50, ../scss/base/_base.scss */
+  /* line 57, ../scss/base/_base.scss */
   .featured .controls {
     width: 100vw;
     height: 100vh;
   }
-  /* line 54, ../scss/base/_base.scss */
+  /* line 61, ../scss/base/_base.scss */
   .featured .controls > div {
     margin-bottom: -3px;
   }
-  /* line 57, ../scss/base/_base.scss */
+  /* line 64, ../scss/base/_base.scss */
   .featured .controls .control {
     display: inline-block;
     position: relative;
@@ -79,21 +89,21 @@
     box-shadow: 0 0 15px 2px #000;
     z-index: 1;
   }
-  /* line 70, ../scss/base/_base.scss */
+  /* line 77, ../scss/base/_base.scss */
   .featured .controls .control:hover {
     opacity: 1;
   }
-  /* line 73, ../scss/base/_base.scss */
+  /* line 80, ../scss/base/_base.scss */
   .featured .controls .lastSlide {
     margin-right: -4px;
     cursor: url(../images/last.cur), pointer;
   }
-  /* line 77, ../scss/base/_base.scss */
+  /* line 84, ../scss/base/_base.scss */
   .featured .controls .nextSlide {
     margin-left: -4px;
     cursor: url(../images/next.cur), pointer;
   }
-  /* line 81, ../scss/base/_base.scss */
+  /* line 88, ../scss/base/_base.scss */
   .featured .controls .photos {
     position: relative;
     display: inline-block;
@@ -101,7 +111,7 @@
     height: 100vh;
     cursor: url(../images/zoom-in.cur), pointer;
   }
-  /* line 88, ../scss/base/_base.scss */
+  /* line 95, ../scss/base/_base.scss */
   .featured .controls .photos .image {
     position: absolute;
     width: 100%;
@@ -117,7 +127,7 @@
     transition: opacity 500ms ease-in;
   }
 
-  /* line 103, ../scss/base/_base.scss */
+  /* line 110, ../scss/base/_base.scss */
   .monitor {
     display: none;
     background-color: black;
@@ -132,7 +142,7 @@
     cursor: default;
   }
 
-  /* line 120, ../scss/base/_base.scss */
+  /* line 127, ../scss/base/_base.scss */
   .shadows .topShadow {
     position: fixed;
     width: 80vw;
@@ -146,7 +156,7 @@
     -o-transition: opacity 500ms ease-in;
     transition: opacity 500ms ease-in;
   }
-  /* line 129, ../scss/base/_base.scss */
+  /* line 136, ../scss/base/_base.scss */
   .shadows .topShadow:before {
     content: "";
     width: 100%;
@@ -158,7 +168,7 @@
     display: inline-block;
     border-radius: 250px;
   }
-  /* line 141, ../scss/base/_base.scss */
+  /* line 148, ../scss/base/_base.scss */
   .shadows .bottomShadow {
     position: fixed;
     width: 50vw;
@@ -172,7 +182,7 @@
     -o-transition: opacity 500ms ease-in;
     transition: opacity 500ms ease-in;
   }
-  /* line 150, ../scss/base/_base.scss */
+  /* line 157, ../scss/base/_base.scss */
   .shadows .bottomShadow::before {
     content: "";
     position: absolute;
@@ -184,7 +194,7 @@
     border-radius: 250px;
     z-index: 1000;
   }
-  /* line 162, ../scss/base/_base.scss */
+  /* line 169, ../scss/base/_base.scss */
   .shadows .leftShadow {
     position: fixed;
     width: 0vw;
@@ -198,7 +208,7 @@
     -o-transition: opacity 500ms ease-in;
     transition: opacity 500ms ease-in;
   }
-  /* line 171, ../scss/base/_base.scss */
+  /* line 178, ../scss/base/_base.scss */
   .shadows .leftShadow::before {
     content: "";
     position: absolute;
@@ -210,7 +220,7 @@
     border-radius: 250px;
     z-index: 1000;
   }
-  /* line 183, ../scss/base/_base.scss */
+  /* line 190, ../scss/base/_base.scss */
   .shadows .rightShadow {
     position: fixed;
     width: 0vw;
@@ -224,7 +234,7 @@
     -o-transition: opacity 500ms ease-in;
     transition: opacity 500ms ease-in;
   }
-  /* line 192, ../scss/base/_base.scss */
+  /* line 199, ../scss/base/_base.scss */
   .shadows .rightShadow::before {
     content: "";
     position: absolute;
@@ -237,7 +247,7 @@
     z-index: 1000;
   }
 
-  /* line 206, ../scss/base/_base.scss */
+  /* line 213, ../scss/base/_base.scss */
   .imgViewer {
     display: none;
     position: fixed;
@@ -254,7 +264,7 @@
     transition: opacity 500ms ease-in;
     text-align: center;
   }
-  /* line 218, ../scss/base/_base.scss */
+  /* line 225, ../scss/base/_base.scss */
   .imgViewer > div {
     height: 100%;
     width: 100%;
@@ -264,7 +274,7 @@
     cursor: url(../images/zoom-out.cur), pointer;
   }
 
-  /* line 229, ../scss/base/_base.scss */
+  /* line 236, ../scss/base/_base.scss */
   .logo {
     position: fixed;
     background-color: rgba(255, 255, 255, 0.75);
@@ -295,7 +305,7 @@
   	opacity: 1 !important;
     background-color: rgba(255,255,255,1);
   }*/
-  /* line 251, ../scss/base/_base.scss */
+  /* line 258, ../scss/base/_base.scss */
   .logo:before {
     content: "";
     position: absolute;
@@ -320,7 +330,7 @@
   /*.logo:hover:before {
       opacity: 1;
   }*/
-  /* line 268, ../scss/base/_base.scss */
+  /* line 275, ../scss/base/_base.scss */
   .galNav {
     position: absolute;
     top: 0;
@@ -340,14 +350,14 @@
     background-color: rgba(0, 0, 0, 0.5);
     box-shadow: 0 0 10px #000;
   }
-  /* line 283, ../scss/base/_base.scss */
+  /* line 290, ../scss/base/_base.scss */
   .galNav > li {
     display: inline-block;
     line-height: 5vh;
     padding-bottom: 6px;
     cursor: pointer;
   }
-  /* line 289, ../scss/base/_base.scss */
+  /* line 296, ../scss/base/_base.scss */
   .galNav > li .gallery {
     position: absolute;
     visibility: collapse;
@@ -364,7 +374,7 @@
     transition: opacity 500ms ease-in-out;
     cursor: default;
   }
-  /* line 301, ../scss/base/_base.scss */
+  /* line 308, ../scss/base/_base.scss */
   .galNav > li .gallery .container {
     position: relative;
     display: inline-block;
@@ -372,7 +382,7 @@
     height: 100%;
     margin-bottom: -3px;
   }
-  /* line 308, ../scss/base/_base.scss */
+  /* line 315, ../scss/base/_base.scss */
   .galNav > li .gallery .container .thumbScroller {
     position: relative;
     display: inline-block;
@@ -380,7 +390,7 @@
     height: 100%;
     float: left;
   }
-  /* line 316, ../scss/base/_base.scss */
+  /* line 323, ../scss/base/_base.scss */
   .galNav > li .gallery .container .thumbScroller .columns {
     -webkit-column-count: 2;
     -webkit-column-gap: 5px;
@@ -390,7 +400,7 @@
     column-gap: 5px;
     padding-bottom: 50px;
   }
-  /* line 320, ../scss/base/_base.scss */
+  /* line 327, ../scss/base/_base.scss */
   .galNav > li .gallery .container .thumbScroller .columns .thumb {
     display: inline-block;
     margin: 3px;
@@ -407,16 +417,16 @@
     -o-transform: translateZ(0);
     transform: translateZ(0);
   }
-  /* line 328, ../scss/base/_base.scss */
+  /* line 335, ../scss/base/_base.scss */
   .galNav > li .gallery .container .thumbScroller .columns .thumb .thumbnail {
     width: 100%;
     border: 1px solid #fff;
   }
-  /* line 333, ../scss/base/_base.scss */
+  /* line 340, ../scss/base/_base.scss */
   .galNav > li .gallery .container .thumbScroller .columns .thumb:hover {
     opacity: 1 !important;
   }
-  /* line 338, ../scss/base/_base.scss */
+  /* line 345, ../scss/base/_base.scss */
   .galNav > li .gallery .container .preview {
     position: absolute;
     width: 49%;
@@ -436,7 +446,7 @@
     -o-transition: opacity 300ms ease-in-out;
     transition: opacity 300ms ease-in-out;
   }
-  /* line 354, ../scss/base/_base.scss */
+  /* line 361, ../scss/base/_base.scss */
   .galNav > li .gallery .hideGallery {
     position: absolute;
     width: 100vw;
@@ -453,17 +463,17 @@
     transition: opacity 500ms ease-in;
     z-index: 1002;
   }
-  /* line 366, ../scss/base/_base.scss */
+  /* line 373, ../scss/base/_base.scss */
   .galNav > li .gallery .hideGallery > h3 {
     color: #fff;
     margin: 0;
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.65);
   }
-  /* line 372, ../scss/base/_base.scss */
+  /* line 379, ../scss/base/_base.scss */
   .galNav > li .gallery .hideGallery:hover {
     opacity: 1;
   }
-  /* line 376, ../scss/base/_base.scss */
+  /* line 383, ../scss/base/_base.scss */
   .galNav > li h2 {
     margin: 0px 20px;
     font-size: 2vw;
@@ -475,12 +485,12 @@
     -o-transition: transform 500ms ease-in-out, color 300ms ease-in;
     transition: transform 500ms ease-in-out, color 300ms ease-in;
   }
-  /* line 388, ../scss/base/_base.scss */
+  /* line 395, ../scss/base/_base.scss */
   .galNav > li:hover h2 {
     color: white;
   }
 
-  /* line 394, ../scss/base/_base.scss */
+  /* line 401, ../scss/base/_base.scss */
   .diamonds {
     width: 100%;
     height: 9vw;
@@ -495,7 +505,7 @@
     -o-transform: scale(0.6);
     transform: scale(0.6);
   }
-  /* line 404, ../scss/base/_base.scss */
+  /* line 411, ../scss/base/_base.scss */
   .diamonds > div {
     position: relative;
     width: 45%;
@@ -508,11 +518,11 @@
     transition: opacity 300ms ease-in-out;
     cursor: pointer;
   }
-  /* line 412, ../scss/base/_base.scss */
+  /* line 419, ../scss/base/_base.scss */
   .diamonds > div:hover {
     opacity: 1;
   }
-  /* line 415, ../scss/base/_base.scss */
+  /* line 422, ../scss/base/_base.scss */
   .diamonds h3 {
     position: absolute;
     width: 100%;
@@ -522,7 +532,7 @@
     z-index: 100;
     text-shadow: 0 3px 5px #000, 0 0 100px #fff;
   }
-  /* line 424, ../scss/base/_base.scss */
+  /* line 431, ../scss/base/_base.scss */
   .diamonds .diamond {
     width: 9vw;
     height: 9vw;
@@ -542,7 +552,7 @@
     transition: opacity 500ms ease-in;
   }
 
-  /* line 437, ../scss/base/_base.scss */
+  /* line 444, ../scss/base/_base.scss */
   .bio {
     position: fixed;
     width: 100vw;
@@ -559,11 +569,32 @@
     font-size: 1.5vh;
     z-index: 1002;
   }
-  /* line 451, ../scss/base/_base.scss */
-  .bio h1 {
-    text-shadow: 0 0 10px #000;
+  /* line 458, ../scss/base/_base.scss */
+  .bio .bioNav {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
   }
-  /* line 454, ../scss/base/_base.scss */
+  /* line 462, ../scss/base/_base.scss */
+  .bio .bioNav h1 {
+    margin: 0;
+    padding: 0.67em 0;
+    width: 50%;
+    display: inline-block;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.5vw;
+    -webkit-transition: background-color 300ms ease-in-out;
+    -moz-transition: background-color 300ms ease-in-out;
+    -ms-transition: background-color 300ms ease-in-out;
+    -o-transition: background-color 300ms ease-in-out;
+    transition: background-color 300ms ease-in-out;
+    cursor: pointer;
+  }
+  /* line 473, ../scss/base/_base.scss */
+  .bio .bioNav h1:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  /* line 477, ../scss/base/_base.scss */
   .bio .bioOverlay {
     position: fixed;
     width: 100%;
@@ -578,38 +609,47 @@
     transition: opacity 300ms ease-in;
     background-color: rgba(0, 0, 0, 0.5);
   }
-  /* line 464, ../scss/base/_base.scss */
+  /* line 487, ../scss/base/_base.scss */
   .bio .bioContainer {
     position: relative;
     display: inline-block;
     height: inherit;
-    width: 80%;
-    border-left: 1px solid #fff;
-    border-right: 1px solid #fff;
+    width: 70%;
+    box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
     background-color: rgba(0, 0, 0, 0.75);
+    overflow: hidden;
   }
-  /* line 473, ../scss/base/_base.scss */
+  /* line 496, ../scss/base/_base.scss */
   .bio .bioContainer .bioContent {
     float: left;
-    width: 50vw;
+    width: 60%;
     margin-left: 20px;
-    text-align: left;
-    text-indent: 50px;
+    margin-top: 1%;
+    text-align: justify;
     font-family: Verdana;
     font-size: 1.3vw;
-    color: rgba(255, 255, 255, 0.9);
+    color: #B8B8B8;
   }
-  /* line 487, ../scss/base/_base.scss */
+  /* line 512, ../scss/base/_base.scss */
   .bio .bioContainer .bioPic {
     position: relative;
     width: 20vw;
     height: calc(20vw / 0.66667);
+    margin-top: 1%;
     float: right;
     background-image: url(../images/profile.jpg);
     background-size: cover;
     margin-right: 20px;
   }
-  /* line 496, ../scss/base/_base.scss */
+  /* line 522, ../scss/base/_base.scss */
+  .bio .bioContainer .quote {
+    position: absolute;
+    bottom: 100px;
+    width: 100%;
+    font-size: 1vw;
+    color: #B8B8B8;
+  }
+  /* line 529, ../scss/base/_base.scss */
   .bio .bioContainer .hideBio {
     position: absolute;
     display: block;
@@ -626,7 +666,7 @@
     cursor: pointer;
     text-shadow: 0 0 3px #000;
   }
-  /* line 508, ../scss/base/_base.scss */
+  /* line 541, ../scss/base/_base.scss */
   .bio .bioContainer .hideBio:hover {
     background-color: rgba(255, 0, 0, 0.5);
   }
