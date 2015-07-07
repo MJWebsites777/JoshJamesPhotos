@@ -134,5 +134,6 @@ $(document).on('click', '.hideGallery', function(){
 	gallery.unload(gallery.current, function(){
 		$('.galNav h2').css('color', '');
 		slideShow.resume();
+		gallery.current = 'featured';
 	});
 });
