@@ -38,3 +38,18 @@ $(document).on('click', '.hideBio', function(){
 		slideShow.focused = true;
 	}
 });
+var t = 0;
+$(document).on("mousemove", function() {
+    if (t > 5) {
+        $(".protectP").each(function() {
+            $(this).children(".num").html("(" + $(this).data("a") + ") " + $(this).data("e") + "-" + $(this).data("s"));
+        });
+        $(".protectE").each(function() {
+            $(this).html($(this).data("e") + "@" + $(this).data("d") + "." + $(this).data("tld"));
+        });
+    }
+    t++;
+});
+$(document).on('click', '.bioContainer h1', function(){
+	
+});
