@@ -3,53 +3,65 @@
 //-------------
 
 var isAnimating = false;
-var bioOpen = false;
+var infoOpen = false;
 $(document).on('click', '.bioDiamonds', function(){
-	if (!isAnimating && !bioOpen){
-		var bio = $('.bio');
-		bio.css({
+	if (!isAnimating && !infoOpen){
+		Info.gotoBio();
+		var info = $('.info');
+		info.css({
 			'transform': 'translateY(-100%)',
 			'cursor': 'default'
 		});
-		$('.bioOverlay').css('display', 'block');
-		setTimeout(function(){$('.bioOverlay').css('opacity', '1');}, 50);
+		$('.infoOverlay').css('display', 'block');
+		setTimeout(function(){$('.infoOverlay').css('opacity', '1');}, 50);
 		if (slideShow.running){
 			slideShow.pause();
 			slideShow.focused = false;
 		}
-		bioOpen = true;
+		infoOpen = true;
 	}
 });
-$(document).on('click', '.hideBio', function(){
-	var bio = $('.bio');
-	bio.css({
+$(document).on('click', '.contactDiamonds', function(){
+	if (!isAnimating && !infoOpen){
+		Info.gotoContact();
+		var info = $('.info');
+		info.css({
+			'transform': 'translateY(-100%)',
+			'cursor': 'default'
+		});
+		$('.infoOverlay').css('display', 'block');
+		setTimeout(function(){$('.infoOverlay').css('opacity', '1');}, 50);
+		if (slideShow.running){
+			slideShow.pause();
+			slideShow.focused = false;
+		}
+		infoOpen = true;
+	}
+});
+$(document).on('click', '.infoContainer h1', function(){
+	var t = $(this);
+	if (t.attr('class').toLowerCase().indexOf('bio') != -1){
+		Info.gotoBio();
+	}
+	else {
+		Info.gotoContact();
+	}
+});
+$(document).on('click', '.hideInfo', function(){
+	var info = $('.info');
+	info.css({
 		'transform': '',
 		'cursor': ''
 	});
 	isAnimating = true;
-	$('.bioOverlay').css('opacity', '');
+	$('.infoOverlay').css('opacity', '');
 	setTimeout(function(){
-		$('.bioOverlay').css('display', ''); 
+		$('.infoOverlay').css('display', ''); 
 		isAnimating = false;
-		bioOpen = false;
+		infoOpen = false;
 	}, 550);
 	if (slideShow.paused && !slideShow.hidden){
 		slideShow.resume();
 		slideShow.focused = true;
 	}
-});
-var t = 0;
-$(document).on("mousemove", function() {
-    if (t > 5) {
-        $(".protectP").each(function() {
-            $(this).children(".num").html("(" + $(this).data("a") + ") " + $(this).data("e") + "-" + $(this).data("s"));
-        });
-        $(".protectE").each(function() {
-            $(this).html($(this).data("e") + "@" + $(this).data("d") + "." + $(this).data("tld"));
-        });
-    }
-    t++;
-});
-$(document).on('click', '.bioContainer h1', function(){
-	
 });
