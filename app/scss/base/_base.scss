@@ -235,7 +235,7 @@
   // Logo Styles
   .logo {
     position: fixed;
-  	background-color: $rgba-white-75;
+  	//background-color: $rgba-white-75;
   	width: 13.5vw;
     height: 13.5vw;
     top: 85%;
@@ -247,16 +247,11 @@
     border-radius: 25px;
     border: 5px solid #fff;
     opacity: 1;
-    @include transform(scale(0.6) rotateZ(-45deg));
+    @include transform(translateY(-35vh) scale(0.6) rotateZ(-45deg));
     @include transition(transform 500ms ease-in-out, opacity 500ms ease-in, background-color 500ms ease-in);
-    z-index: 1000;
-  }
-  /*.logo:hover {
-  	opacity: 1 !important;
-    background-color: rgba(255,255,255,1);
-  }*/
-  .logo:before {
-      content: "";
+    z-index: 1002;
+
+    .dove {
       position: absolute;
       width: 100%;
       height: 100%;
@@ -264,12 +259,40 @@
       background: url(../images/doveblack.png) center center no-repeat;
       background-size: 90%;
       @include transform(rotateY(180deg) translate(5%,0) rotateZ(-45deg));
-      opacity: 0.7;
-      @include transition(opacity 500ms ease-in);
+      opacity: 0; //0.7
+      @include transition(transform 500ms ease-in-out, opacity 500ms ease-in);
+    }
   }
-  /*.logo:hover:before {
+  /*.logo:hover {
+  	opacity: 1 !important;
+    background-color: rgba(255,255,255,1);
+  }
+  .logo:hover:before {
       opacity: 1;
   }*/
+
+  // Splash Screen Styles
+  .splash {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(26,26,26,1);
+    color: #fff;
+    font-family: Rodus;
+    text-align: center;
+    @include filter-gradient(#1a1a1a, #000000, horizontal);
+    @include background-image(radial-gradient(center, ellipse cover, rgba(26,26,26,1) 0%, rgba(0,0,0,1) 100%));
+    opacity: 1;
+    @include transition(opacity 500ms ease-in-out);
+    z-index: 1001;
+
+    .loading {
+      position: relative;
+      top: calc(50vh - 1.5vh);
+      line-height: 3vh;
+      margin: 0;
+    }
+  }
 
   // Gallery Navigation Styles
   .galNav {
@@ -278,7 +301,7 @@
     z-index: 1001;
     width: 100vw;
     height: 5vh;
-    font-family: Verdana;
+    font-family: $font-main;
     text-align: center;
     opacity: 0;
     padding: 5px 0;
@@ -423,7 +446,7 @@
       position: absolute;
       width: 100%;
       font-size: 3vw;
-      font-family: Verdana;
+      font-family: $font-main;
       color: #fff;
       z-index: 100;
       text-shadow: 0 3px 5px #000, 0 0 100px #fff;
@@ -461,9 +484,9 @@
     //box-shadow: 0 0 5px rgba(255,255,255,0.5);
     color: #fff;
     text-align: center;
-    font-family: Verdana;
+    font-family: $font-main;
     font-size: 1.5vh;
-    z-index: 1002;
+    z-index: 1003;
     //cursor: pointer;
     
     .infoNav {
@@ -528,7 +551,7 @@
             margin-top: 1%;
             text-align: justify;
             //text-indent: 50px;
-            font-family: Verdana;
+            font-family: $font-main;
             font-size: 1.3vw;
             //color: rgba(255,255,255,0.9);
             color: #B8B8B8;
