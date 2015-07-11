@@ -2,7 +2,7 @@
   "name": "joshjamesphotos",
   "private": true,
   "dependencies": {
-    "jquery": "~1.11.1",
+    "jquery": "~1.11.3",
     "nicescroll": "~3.5.6",
     "jquery-touchswipe": "~1.6.8"
   }
