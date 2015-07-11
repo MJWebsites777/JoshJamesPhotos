@@ -30,6 +30,17 @@ function Interval(){
 		clearTimeout(timeout);
 	};
 }
+var renderCount = 0;
+function renderLoaded(name, callback)  {
+	'use strict';
+    requestAnimationFrame(function(){
+    	requestAnimationFrame(function(){
+    		console.log(name+' rendered.');
+    		callback();
+			renderCount++;
+    	});
+	});
+}
 
 var interval = new Interval();
 function SlideShow (){
@@ -121,10 +132,11 @@ function SlideShow (){
 			parent.focused = false;
 		}
 		$('.logo').css('opacity', '');
-		//console.log('SlideShow Paused');
+		console.log('SlideShow Paused');
 	};
 
 	this.resume = function(){
+		if (parent.running) {return;}
 		$('.overlay').css('z-index', '');
 		$('.slideshow').css('opacity', '1');
 		//$('.logo').css('opacity', '0.1');
@@ -135,7 +147,7 @@ function SlideShow (){
 		parent.running = true;
 		parent.paused = false;
 		parent.focused = true;
-		//console.log('SlideShow Resumed');
+		console.log('SlideShow Resumed');
 	};
 
 	this.load = function(){
@@ -249,17 +261,6 @@ function SlideShow (){
 			$(window).unbind('mousemove');
 		}
 	};
-}
-var renderCount = 0;
-function renderLoaded(name, callback)  {
-	'use strict';
-    requestAnimationFrame(function(){
-    	requestAnimationFrame(function(){
-    		console.log(name+' rendered.');
-    		callback();
-			renderCount++;
-    	});
-	});
 }
 var loop = new Interval();
 function loopLoad(cmd){
