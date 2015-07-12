@@ -1,0 +1,548 @@
+@media Screen {
+  html
+  {
+  	width: 100%;
+  	height: 100%;
+  	background-color: #000;
+  }
+
+  body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  a:link {
+    color: #B8B8B8;
+  }
+  a:visited {
+    color: #B8B8B8;
+  }
+
+  // Background Styles
+  .background {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+
+    .bgImg {
+      position: fixed;
+      min-width: 100%;
+      min-height: 100%;
+      background-image: url(../images/logoFull.png);
+      background-repeat: no-repeat;
+      background-position: 50%;
+      background-size: 50%;
+      background-attachment: fixed;
+      opacity: 0;
+      @include transition(opacity 500ms ease-in);
+    }
+    .bgOverlay {
+      //display: none;
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background-color: #1a1a1a;
+      //@include filter-gradient(#1a1a1a, #000000, horizontal); // IE6-9 fallback on horizontal gradient
+      //@include background-image(radial-gradient(center, ellipse cover, rgba(26,26,26,1) 0%,rgba(0,0,0,1) 100%));
+      //@include filter-gradient(#1a1a1a, #000000, horizontal);
+      //@include background-image(radial-gradient(center, ellipse cover, rgba(26,26,26,1) 0%, rgba(0,0,0,1) 100%));
+      opacity: 0.90;
+      @include transition(opacity 500ms ease-in-out);
+    }
+  }
+
+  // Featured Photos Styles
+  .featured {
+    opacity: 0;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+
+    .controls {
+      width: 100vw;
+      height: 100vh;
+
+      > div {
+        margin-bottom: -3px;
+      }
+      .control {
+        display: inline-block;
+        position: relative;
+        width: 20vw;
+        height: 100vh;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        opacity: 0.5;
+        @include transition(opacity 500ms $quad-cubic-bezier);
+        box-shadow: 0 0 15px 2px #000;
+        z-index: 1;
+      }
+        .control:hover {
+          opacity: 1;
+        }
+      .lastSlide {
+        margin-right: -4px;
+        cursor: url(../images/last.cur), pointer;
+      }
+      .nextSlide {
+        margin-left: -4px;
+        cursor: url(../images/next.cur), pointer;
+      }
+      .photos {
+        position: relative;
+        display: inline-block;
+        width: 60vw;
+        height: 100vh;
+        cursor: url(../images/zoom-in.cur), pointer;
+
+        .image {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          opacity: 0;
+          @include transition(opacity 500ms ease-in);
+        }
+      }
+    }
+  }
+
+  // Monitor Styles
+  .monitor {
+    	display: none;
+    	background-color: black;
+    	color: green;
+    	width: 250px;
+    	height: auto;
+    	padding: 5px;
+    	position: fixed;
+    	top: 0;
+    	left: 0;
+    	z-index: 1000;
+    	cursor: default;
+  }
+
+  // Image Viewer Styles
+  .imgViewer {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    opacity: 0;
+    @include transition(opacity 500ms ease-in);
+    text-align: center;
+
+    > div {
+        height: 100%;
+        width: 100%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: url(../images/zoom-out.cur), pointer;
+    }
+  }
+
+  // Logo Styles
+  .logo {
+    position: fixed;
+  	//background-color: $rgba-white-75;
+  	width: 13.5vw;
+    height: 13.5vw;
+    //top: 85%;
+    left: 50%;
+    margin-top: calc(-6.75vw - 5px);
+    margin-left: calc(-6.75vw - 5px);
+    //box-shadow: 0 0 30px #000;
+    box-shadow: 0 0 10px #000, inset 0 0 5px #000;
+    border-radius: 25px;
+    border: 5px solid #fff;
+    opacity: 0;
+    @include transform(translateY(50vh) scale(1.25) rotateZ(-45deg));
+    @include transition(transform 500ms ease-in-out, opacity 500ms ease-in, background-color 500ms ease-in);
+    z-index: 1002;
+
+    .dove {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: url(../images/doveblack.png) center center no-repeat;
+      background-size: 90%;
+      @include transform(rotateY(180deg) translate(5%,0) rotateZ(-45deg));
+      opacity: 0; //0.7
+      @include transition(transform 500ms ease-in-out, opacity 500ms ease-in);
+    }
+  }
+  /*.logo:hover {
+  	opacity: 1 !important;
+    background-color: rgba(255,255,255,1);
+  }
+  .logo:hover:before {
+      opacity: 1;
+  }*/
+
+  // Splash Screen Styles
+  .splash {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    color: #fff;
+    font-family: Rodus;
+    text-align: center;
+    z-index: 1001;
+
+    .loading {
+      position: relative;
+      top: calc(85vh - 1.5vh);
+      font-size: 4vh;
+      line-height: 3vh;
+      margin: 0;
+      @include transition(opacity 500ms ease-in-out);
+
+      .ellipses {
+        position: absolute;
+        width: 100vw;
+        top: -32vh;
+        left:50%;
+        -moz-transform: translateX(-50vw);
+        -webkit-transform: translateX(-50vw);
+
+        > span {
+          position: absolute;
+          @include transform(translateY(37vh));
+          @include transition(opacity 500ms ease-in-out);
+        }
+      }
+    }
+  }
+
+  // Gallery Navigation Styles
+  .galNav {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    z-index: 1001;
+    width: 100vw;
+    height: 5vh;
+    font-family: $font-main;
+    text-align: center;
+    opacity: 0;
+    padding: 5px 0;
+    margin: 0;
+    @include transition(opacity 500ms ease-in);
+    background-color: $rgba-black-50;
+    box-shadow: 0 0 10px #000;
+    
+    > li {
+      display: inline-block;
+      line-height: 5vh;
+      padding-bottom: 6px;
+      cursor: pointer;
+
+      .gallery {
+        position: absolute;
+        visibility: collapse;
+        width: 100vw;
+        height: calc(95vh - 10px);
+        left: 0;
+        margin-top: 6px;
+        background-color: $rgba-black-50;
+        opacity: 0;
+        @include transition(opacity 500ms ease-in-out);
+        cursor: default;
+
+        .container {
+          position: relative;
+          display: inline-block;
+          width: 93%;
+          height: 100%;
+          margin-bottom: -3px;
+
+          .thumbScroller {
+            position: relative;
+            display: inline-block;
+            width: 45%;
+            height: 100%;
+            float: left;
+            
+
+            .columns {
+              @include column(2, 5px);
+              padding-bottom: 50px;
+
+              .thumb {
+                display: inline-block;
+                margin: 3px;
+                opacity: 0;
+                @include transition(opacity 500ms ease-in);
+                cursor: pointer;
+                @include transform(translateZ(0));
+
+                .thumbnail {
+                  width: 100%;
+                  border: 1px solid #fff;
+                }
+              }
+              .thumb:hover {
+                opacity: 1 !important;
+              }
+            }
+          }
+          .preview {
+            position: absolute;
+            width: 49%;
+            height: 75%;
+            top: calc(50% - (75% / 2));
+            right: 0;
+            display: inline-block;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            float: right;
+            cursor: url(../images/zoom-in.cur), pointer;
+            opacity: 0;
+            @include transition(opacity 300ms ease-in-out);
+          }
+        }
+        .hideGallery {
+          position: absolute;
+          width: 100vw;
+          height: 5vh;
+          bottom: 0;
+          background-color: rgba(224, 33, 33, 0.75);
+          box-shadow: 0 0 5px $rgba-black-50;
+          cursor: pointer;
+          opacity: 0.75;
+          @include transition(opacity 500ms ease-in);
+          z-index: 1002;
+
+          > h3 {
+            color: #fff;
+            margin: 0;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.65);
+          }
+        }
+          .hideGallery:hover {
+            opacity: 1;
+          }
+      }
+      h2 {
+        margin: 0px 20px;
+        font-size: 2vw;
+        color: $rgba-white-75;
+        text-shadow: 0 0 5px #000;
+        @include transition(transform 500ms ease-in-out, color 300ms ease-in);
+        //color: #92B5FF;  color when selected
+      }
+    }
+    > li:hover .gallery {
+      //visibility: visible;
+    }
+    > li:hover h2 {
+      color: #fff;
+    }
+  }
+
+  // Diamonds Styles
+  .diamonds {
+    opacity: 0;
+      width: 100%;
+      height: 9vw;
+      position: absolute;
+      text-align: center;
+      top: 85%;
+      margin-top: calc(-4.5vw - 3px);
+      z-index: 1;
+      @include transform(scale(0.6));
+
+    > div {
+      position: relative;
+      width: 45%;
+      display: inline-block;
+      opacity: 0.75;
+      @include transition(opacity 300ms ease-in-out);
+      cursor: pointer;
+    }
+      > div:hover {
+        opacity: 1;
+      }
+    h3 {
+      position: absolute;
+      width: 100%;
+      font-size: 3vw;
+      font-family: $font-main;
+      color: #fff;
+      z-index: 100;
+      text-shadow: 0 3px 5px #000, 0 0 100px #fff;
+    }
+    .diamond {
+        width: 9vw;
+        height: 9vw;
+        position: relative;
+        display: inline-block;
+        border: 3px solid #fff;
+        @include transform(rotate(45deg));
+        box-shadow: 0 0 10px #000, inset 0 0 5px #000;
+        @include transition(opacity 500ms ease-in);
+    }
+  }
+
+  // Info Styles
+  .infoOverlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: none;
+    opacity: 0;
+    @include transition(opacity 300ms ease-in);
+    background-color: $rgba-black-50;
+    z-index: 1001;
+  }
+  .info {
+    opacity: 0;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 100vh;
+    @include transition(transform 500ms ease-in-out);
+    //box-shadow: 0 0 5px rgba(255,255,255,0.5);
+    color: #fff;
+    text-align: center;
+    font-family: $font-main;
+    font-size: 1.5vh;
+    z-index: 1003;
+    //cursor: pointer;
+    
+    .infoNav {
+      width: 100%;
+      //background-color: rgba(255, 255, 255, 0.2);
+
+      h1 {
+        margin: 0;
+        padding: 0.67em 0;
+        width: 50%;
+        display: inline-block;
+        text-shadow: 0 0 10px $rgba-black-50;
+        box-shadow: 0 0 1px $rgba-white-50;
+        color: $rgba-white-75;
+        font-size: 3vh;
+        @include transition(background-color 300ms ease-in-out);
+        cursor: pointer;
+      }
+        h1:hover {
+          background-color: $rgba-white-25;
+        }
+      .navHighlight {
+        position: absolute;
+        top: 0;
+        width: 50%;
+        height: 7.8vh;
+        background-color: $rgba-white-75;
+        z-index: -1;
+        @include transition(transform 500ms $quad-cubic-bezier);
+      }
+    }
+    
+    .infoContainer {
+      position: relative;
+      display: inline-block;
+      height: inherit;
+      width: 70vw;
+      box-shadow: 0 0 1px $rgba-white-50;
+      background-color: $rgba-black-75;
+      overflow: hidden;
+      
+      .infoChanger {
+        position: absolute;
+        width: 200%;
+        height: 100%;
+        @include transition(transform 500ms $quad-cubic-bezier);
+
+        > div {
+          position: absolute;
+          display: inline-block;
+          margin: 0;
+          width: 50%;
+          height: 100%;
+        }
+        .bio {
+          left: 0;
+
+          .bioContent {
+            float: left;
+            width: 60%;
+            margin-left: 20px;
+            margin-top: 1%;
+            text-align: justify;
+            //text-indent: 50px;
+            font-family: $font-main;
+            font-size: 1.3vw;
+            //color: rgba(255,255,255,0.9);
+            color: #B8B8B8;
+
+            p {
+
+            }
+          }
+          .bioPic {
+            position: relative;
+            width: 23vw;
+            height: calc(23vw / 0.66667);
+            margin-top: 1%;
+            float: right;
+            background-image: url(../images/profile.jpg);
+            background-size: cover;
+            margin-right: 20px;
+          }
+          .quote {
+            position: absolute;
+            bottom: 150px;
+            width: 100%;
+            font-size: 1vw;
+            color: #B8B8B8;
+          }
+        }
+        .contact {
+          right: 0;
+
+          .contactPic {
+            position: relative;
+            width: 100%;
+            height: calc(50vw / 1.5);
+            margin-top: 1px;
+            background-image: url(../images/profile2.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 0% 40%;
+          }
+        }
+      }
+      
+      .hideInfo {
+        position: absolute;
+        display: block;
+        bottom: 0;
+        padding: 20px 0;
+        background-color: rgba(255, 0, 0, 0.25);
+        @include transition(background-color 300ms ease-in);
+        width: 100%;
+        font-size: 2vh;
+        cursor: pointer;
+        text-shadow: 0 0 3px #000;
+      }
+      .hideInfo:hover {
+        background-color: rgba(255, 0, 0, 0.5);
+      }
+    }  
+  }
+}

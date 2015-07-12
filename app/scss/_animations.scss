@@ -1,0 +1,31 @@
+.logoSplash {
+	@include animation(logosplash 1.5s infinite $quad-cubic-bezier);
+}
+.anim-ellipses {
+	@include animation(ellipses 3s infinite $quad-cubic-bezier);
+}
+
+// Keyframes
+@-webkit-keyframes logosplash {
+	  0% {-webkit-transform: scale(1.25) rotateZ(-45deg);top: 50vh;}
+	 50% {-webkit-transform: scale(1) rotateZ(135deg);top: 50vh;}
+	100% {-webkit-transform: scale(1.25) rotateZ(315deg);top: 50vh;}
+}
+@keyframes logosplash {
+	  0% {transform: scale(1.25) rotateZ(-45deg);top: 50vh;}
+	 50% {transform: scale(1) rotateZ(135deg);top: 50vh;}
+	100% {transform: scale(1.25) rotateZ(315deg);top: 50vh;}
+}
+
+@-webkit-keyframes ellipses {
+	  0% {-webkit-transform: rotate(0deg) translateY(37vh) rotate(0deg);}
+	 20% {-webkit-transform: rotate(0deg) translateY(37vh) rotate(0deg);}
+	 80% {-webkit-transform: rotate(-360deg) translateY(37vh) rotate(360deg);}
+	100% {-webkit-transform: rotate(-360deg) translateY(37vh) rotate(360deg);}
+}
+@keyframes ellipses {
+	  0% {transform: rotate(0deg) translateY(0vh) rotate(0deg);top:37vh;}
+	 20% {transform: rotate(0deg) translateY(37vh) rotate(0deg);top:0vh;}
+	 80% {transform: rotate(-360deg) translateY(37vh) rotate(360deg);top:0vh;}
+	100% {transform: rotate(-360deg) translateY(37vh) rotate(360deg);top:0vh;}
+}

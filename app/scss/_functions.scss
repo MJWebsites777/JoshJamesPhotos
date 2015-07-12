@@ -1,0 +1,11 @@
+@function radial-grad($string, $search, $replace: "") {
+  
+}
+@function transition-tostr($list){
+  $result: null;
+  @for $i from 1 through length($list) {
+    $e: nth($list, $i);
+    $result: if($i != length($list), $result#{$e}#{', '}, $result#{$e});
+  }
+  @return $result;
+}
