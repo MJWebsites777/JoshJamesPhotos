@@ -14,6 +14,10 @@
     overflow: hidden;
   }
 
+  .notransition {
+    @include transition(none !important);
+  }
+
   a:link {
     color: #B8B8B8;
   }
@@ -56,23 +60,29 @@
 
   // Featured Photos Styles
   .featured {
-    opacity: 0;
+    //display: none;
     position: absolute;
     width: 100vw;
-    height: 100vh;
+    height: 80vh;
+    top: 50%;
+    margin-top: -40vh;
+    opacity: 0;
+    @include transition(opacity 500ms ease-in-out);
+    box-shadow: 0 0 2px #fff;
 
     .controls {
-      width: 100vw;
-      height: 100vh;
+      width: 100%;
+      height: 100%;
 
       > div {
-        margin-bottom: -3px;
+        //margin-bottom: -3px;
       }
       .control {
         display: inline-block;
-        position: relative;
-        width: 20vw;
-        height: 100vh;
+        position: absolute;
+        width: 15vw;
+        height: 64vh;
+        top: calc(50% - 32vh);
         background-size: cover;
         background-repeat: no-repeat;
         background-position: 50% 50%;
@@ -85,18 +95,19 @@
           opacity: 1;
         }
       .lastSlide {
-        margin-right: -4px;
         cursor: url(../images/last.cur), pointer;
+        left: 0;
       }
       .nextSlide {
-        margin-left: -4px;
         cursor: url(../images/next.cur), pointer;
+        right: 0;
       }
       .photos {
-        position: relative;
+        position: absolute;
         display: inline-block;
         width: 60vw;
-        height: 100vh;
+        height: 100%;
+        left: calc(50% - 30vw);
         cursor: url(../images/zoom-in.cur), pointer;
 
         .image {
@@ -166,7 +177,8 @@
     border-radius: 25px;
     border: 5px solid #fff;
     opacity: 0;
-    @include transform(translateY(50vh) scale(1.25) rotateZ(-45deg));
+    //@include transform(translateY(50vh) scale(1.25) rotateZ(-45deg));
+    @include transform(translateY(85vh) scale(0.6) rotateZ(-45deg));
     @include transition(transform 500ms ease-in-out, opacity 500ms ease-in, background-color 500ms ease-in);
     z-index: 1002;
 
@@ -175,9 +187,10 @@
       width: 100%;
       height: 100%;
       z-index: -1;
-      background: url(../images/doveblack.png) center center no-repeat;
+      background: url(../images/logo.png) center center no-repeat;
       background-size: 90%;
-      @include transform(rotateY(180deg) translate(5%,0) rotateZ(-45deg));
+      //@include transform(rotateY(180deg) translate(5%,0) rotateZ(-45deg));
+      @include transform(translate(-1vw, 1vw) rotateZ(45deg));
       opacity: 0; //0.7
       @include transition(transform 500ms ease-in-out, opacity 500ms ease-in);
     }
@@ -212,9 +225,7 @@
         position: absolute;
         width: 100vw;
         top: -32vh;
-        left:50%;
-        -moz-transform: translateX(-50vw);
-        -webkit-transform: translateX(-50vw);
+        -ms-transform: translateX(50vw);
 
         > span {
           position: absolute;
@@ -227,9 +238,8 @@
 
   // Gallery Navigation Styles
   .galNav {
-    opacity: 0;
     position: absolute;
-    top: 0;
+    top: 2vh;
     z-index: 1001;
     width: 100vw;
     height: 5vh;
@@ -238,9 +248,9 @@
     opacity: 0;
     padding: 5px 0;
     margin: 0;
-    @include transition(opacity 500ms ease-in);
-    background-color: $rgba-black-50;
-    box-shadow: 0 0 10px #000;
+    @include transition(opacity 1s ease-in);
+    //background-color: $rgba-black-50;
+    //box-shadow: 0 0 10px #000;
     
     > li {
       display: inline-block;
@@ -337,9 +347,9 @@
       }
       h2 {
         margin: 0px 20px;
-        font-size: 2vw;
-        color: $rgba-white-75;
-        text-shadow: 0 0 5px #000;
+        font-size: 2.25vw;
+        color: $rgba-white-50;
+        text-shadow: 0 2px 5px #000;
         @include transition(transform 500ms ease-in-out, color 300ms ease-in);
         //color: #92B5FF;  color when selected
       }
@@ -354,7 +364,6 @@
 
   // Diamonds Styles
   .diamonds {
-    opacity: 0;
       width: 100%;
       height: 9vw;
       position: absolute;
@@ -363,6 +372,8 @@
       margin-top: calc(-4.5vw - 3px);
       z-index: 1;
       @include transform(scale(0.6));
+      opacity: 0;
+      @include transition(opacity 500ms ease-in-out);
 
     > div {
       position: relative;
@@ -383,6 +394,7 @@
       color: #fff;
       z-index: 100;
       text-shadow: 0 3px 5px #000, 0 0 100px #fff;
+      line-height: 4vw;
     }
     .diamond {
         width: 9vw;
