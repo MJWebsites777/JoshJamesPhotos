@@ -9,7 +9,9 @@ $(document).ready(function() {
 	img.onload = function() {
 		$('.bgImg').css('opacity','1');
 		//$('.nav').css('opacity', '1');
-		//slideShow.load();
+		slideShow.load(function(){
+			splash.end();
+		});
 		splash.begin();
 	};
 });
