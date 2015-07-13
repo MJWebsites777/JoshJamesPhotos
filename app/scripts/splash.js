@@ -15,6 +15,7 @@ function Splash() {
 	};
 
 	this.end = function(){
+		console.log('Ending Splash...');
 		var logo = $('.logo');
 		logo.css('opacity', '1');
 
@@ -29,10 +30,13 @@ function Splash() {
 				$('.loading').css('opacity', '0');
 				setTimeout(function(){
 					$('.splash').css('display', 'none');
-					$('.logoSplash').on('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(){
-						$('.logo').attr('class', 'logo');
-						console.log('logoSplash done');
-						//$('.logoSplash').off('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd');
+					$('.logoSplash').one('animationiteration webkitAnimationIteration oanimationiteration MSAnimationIteration', function(){
+						//$('.logo').attr('class', 'logo');
+						$('.logo').removeClass('logoSplash');
+						$('.galNav').css('opacity', '1');
+						$('.featured').css('display', '');
+						setTimeout(function(){$('.featured').css('opacity', '1');},10);
+						$('.diamonds').css('opacity', '1');
 					});
 				}, 500);
 			}
