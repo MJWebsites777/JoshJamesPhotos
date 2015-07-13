@@ -49,7 +49,6 @@ function SlideShow (){
 	this.running = false;
 	this.paused = false;
 	this.loaded = false;
-	this.waiting = false;
 	this.focused = true;
 	this.animating = false;
 
@@ -71,14 +70,9 @@ function SlideShow (){
 	}, 50);
 
 	this.start = function(){
-		if (!parent.loaded) { parent.waiting = true; return;}
-		else {
-			//$('.slideshow').css('opacity', '1');
-			//$('.nextSlide, .lastSlide').css('opacity', '0.5');
-    		parent.nextSlide();
-			interval.set(parent.nextSlide, 5000);
-			//slideShow.mouseListen(true);
-		}
+		parent.nextSlide();
+		interval.set(parent.nextSlide, 5000);
+
 		if (parent.running) {return;}
 		parent.running = true;
 		//currentSlide = 0; lastSlide = 0;
@@ -117,7 +111,7 @@ function SlideShow (){
 		$(document).off('click', '.lastSlide');
 		interval.clear();
 		$('.image').eq(lastSlide).css('opacity', '0');
-		$('.logo').css('opacity', '');
+		//$('.logo').css('opacity', '');
 		parent.running = false;
 		//console.log('SlideShow Stopped');
 	};
@@ -131,7 +125,7 @@ function SlideShow (){
 		if (defocus) {
 			parent.focused = false;
 		}
-		$('.logo').css('opacity', '');
+		//$('.logo').css('opacity', '');
 		console.log('SlideShow Paused');
 	};
 
@@ -150,15 +144,13 @@ function SlideShow (){
 		console.log('SlideShow Resumed');
 	};
 
-	this.load = function(){
+	this.load = function(callback){
 		//$('.gallery').css('opacity', '1');
-		setTimeout(function(){
-			$('.galNav').css('opacity', '1');
-		}, 300);
-		$('.logo').css('opacity', '1');
-		$('.playback p').css('display', 'inline-block');
-		$('.playback p').css('opacity', '0.5');
+		//$('.logo').css('opacity', '1');
+		//$('.playback p').css('display', 'inline-block');
+		//$('.playback p').css('opacity', '0.5');
 		//loopLoad(true);
+
 		//http://joshjamesphotos.com/
 		//this should read 'getImages.php' instead of 'http://joshjamesphotos.com/getImages.php'
 		$.post('http://joshjamesphotos.com/getImages.php', 'cmd=slideshow', function(data){
@@ -177,15 +169,12 @@ function SlideShow (){
 				image.onload = function(){
 					renderLoaded(this.src, function(){
 						if (renderCount === showLength){
-					    	console.log('All images are rendered.');
-					    	loopLoad(false);
-					    	parent.loaded = true;
-					    	if (parent.waiting){	
-					    		parent.start();
-					    	}	    	
-							$('.playback p').css('opacity', '0');
-							setTimeout(function(){$('.playback p').css('display', 'none');}, 500);
-							parent.waiting = false;
+							console.log('All images are rendered.');
+							callback();
+							parent.loaded = true;
+							setTimeout(function(){
+					    		parent.start();  
+							}, 2500);
 						}
 					});
 				};
@@ -262,6 +251,8 @@ function SlideShow (){
 		}
 	};
 }
+var slideShow = new SlideShow();
+
 var loop = new Interval();
 function loopLoad(cmd){
 	'use strict';
