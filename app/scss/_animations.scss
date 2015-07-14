@@ -1,5 +1,12 @@
 .logoSplash {
+	top: 85vh;
+	@include transform(translateY(-35vh) scale(1.25) rotateZ(315deg) !important);
+	background-color: rgba(0,0,0,0) !important;
 	@include animation(logosplash 1.5s infinite $quad-cubic-bezier);
+
+	.dove {
+		opacity: 0 !important;
+	}
 }
 .anim-ellipses {
 	@include animation(ellipses 3s infinite $quad-cubic-bezier);

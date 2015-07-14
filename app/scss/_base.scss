@@ -17,6 +17,9 @@
   .notransition {
     @include transition(none !important);
   }
+  .noAnimation {
+    @include animation(0 !important);
+  }
 
   a:link {
     color: #B8B8B8;
@@ -168,7 +171,7 @@
   	//background-color: $rgba-white-75;
   	width: 13.5vw;
     height: 13.5vw;
-    //top: 85%;
+    top: 85%;
     left: 50%;
     margin-top: calc(-6.75vw - 5px);
     margin-left: calc(-6.75vw - 5px);
@@ -178,9 +181,10 @@
     border: 5px solid #fff;
     opacity: 0;
     //@include transform(translateY(50vh) scale(1.25) rotateZ(-45deg));
-    @include transform(translateY(85vh) scale(0.6) rotateZ(-45deg));
+    @include transform(scale(0.6) rotateZ(-45deg));
     @include transition(transform 500ms ease-in-out, opacity 500ms ease-in, background-color 500ms ease-in);
     z-index: 1002;
+    background-color: $rgba-white-25;
 
     .dove {
       position: absolute;
@@ -191,8 +195,8 @@
       background-size: 90%;
       //@include transform(rotateY(180deg) translate(5%,0) rotateZ(-45deg));
       @include transform(translate(-1vw, 1vw) rotateZ(45deg));
-      opacity: 0; //0.7
-      @include transition(transform 500ms ease-in-out, opacity 500ms ease-in);
+      opacity: 1; //0.7
+      @include transition(opacity 500ms ease-in);
     }
   }
   /*.logo:hover {
