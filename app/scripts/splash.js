@@ -32,11 +32,15 @@ function Splash() {
 					$('.splash').css('display', 'none');
 					$('.logoSplash').one('animationiteration webkitAnimationIteration oanimationiteration MSAnimationIteration', function(){
 						//$('.logo').attr('class', 'logo');
-						$('.logo').removeClass('logoSplash');
+						//$('.logo').removeClass('logoSplash');
+						$('.logoSplash').addClass('noAnimation');
+    					setTimeout(function(){$('.logo').attr('class', 'logo');}, 200);
+
 						$('.galNav').css('opacity', '1');
 						$('.featured').css('display', '');
 						setTimeout(function(){$('.featured').css('opacity', '1');},10);
 						$('.diamonds').css('opacity', '1');
+						$('.bottomShadow').css('opacity', '1');
 					});
 				}, 500);
 			}
