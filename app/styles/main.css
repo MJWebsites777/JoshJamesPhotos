@@ -1,12 +1,20 @@
 @font-face {
-  font-family: 'Rodus';
+  font-family: 'RodusCut';
   src: url("../../fonts/roduscut700-webfont.eot");
   src: url("../../fonts/roduscut700-webfont.eot?#iefix") format("embedded-opentype"), url("../../fonts/roduscut700-webfont.woff2") format("woff2"), url("../../fonts/roduscut700-webfont.woff") format("woff"), url("../../fonts/roduscut700-webfont.ttf") format("truetype"), url("../../fonts/roduscut700-webfont.svg#roduscut700bold") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 
-/* line 1, C:/websites/JoshJamesPhotos/app/scss/_animations.scss */
+@font-face {
+  font-family: 'RodusRound';
+  src: url("../../fonts/rodusround500-webfont.eot");
+  src: url("../../fonts/rodusround500-webfont.eot?#iefix") format("embedded-opentype"), url("../../fonts/rodusround500-webfont.woff2") format("woff2"), url("../../fonts/rodusround500-webfont.woff") format("woff"), url("../../fonts/rodusround500-webfont.ttf") format("truetype"), url("../../fonts/rodusround500-webfont.svg#rodusround500thin") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* line 1, ../scss/_animations.scss */
 .logoSplash {
   top: 85vh;
   -webkit-transform: translateY(-35vh) scale(1.25) rotateZ(315deg) !important;
@@ -18,31 +26,31 @@
   animation: logosplash 1.5s infinite cubic-bezier(0.46, 0.03, 0.52, 0.96);
   -webkit-animation: logosplash 1.5s infinite cubic-bezier(0.46, 0.03, 0.52, 0.96);
 }
-/* line 7, C:/websites/JoshJamesPhotos/app/scss/_animations.scss */
+/* line 7, ../scss/_animations.scss */
 .logoSplash .dove {
   opacity: 0 !important;
 }
 
-/* line 11, C:/websites/JoshJamesPhotos/app/scss/_animations.scss */
+/* line 11, ../scss/_animations.scss */
 .anim-ellipses {
   animation: ellipses 3s infinite cubic-bezier(0.46, 0.03, 0.52, 0.96);
   -webkit-animation: ellipses 3s infinite cubic-bezier(0.46, 0.03, 0.52, 0.96);
 }
 
 @-webkit-keyframes logosplash {
-  /* line 17, C:/websites/JoshJamesPhotos/app/scss/_animations.scss */
+  /* line 17, ../scss/_animations.scss */
   0% {
     -webkit-transform: scale(1.25) rotateZ(-45deg);
     top: 50vh;
   }
 
-  /* line 18, C:/websites/JoshJamesPhotos/app/scss/_animations.scss */
+  /* line 18, ../scss/_animations.scss */
   50% {
     -webkit-transform: scale(1) rotateZ(135deg);
     top: 50vh;
   }
 
-  /* line 19, C:/websites/JoshJamesPhotos/app/scss/_animations.scss */
+  /* line 19, ../scss/_animations.scss */
   100% {
     -webkit-transform: scale(1.25) rotateZ(315deg);
     top: 50vh;
@@ -50,19 +58,19 @@
 }
 
 @keyframes logosplash {
-  /* line 22, C:/websites/JoshJamesPhotos/app/scss/_animations.scss */
+  /* line 22, ../scss/_animations.scss */
   0% {
     transform: scale(1.25) rotateZ(-45deg);
     top: 50vh;
   }
 
-  /* line 23, C:/websites/JoshJamesPhotos/app/scss/_animations.scss */
+  /* line 23, ../scss/_animations.scss */
   50% {
     transform: scale(1) rotateZ(135deg);
     top: 50vh;
   }
 
-  /* line 24, C:/websites/JoshJamesPhotos/app/scss/_animations.scss */
+  /* line 24, ../scss/_animations.scss */
   100% {
     transform: scale(1.25) rotateZ(315deg);
     top: 50vh;
@@ -70,47 +78,47 @@
 }
 
 @-webkit-keyframes ellipses {
-  /* line 28, C:/websites/JoshJamesPhotos/app/scss/_animations.scss */
+  /* line 28, ../scss/_animations.scss */
   0% {
     -webkit-transform: rotate(0deg) translateY(37vh) rotate(0deg);
   }
 
-  /* line 29, C:/websites/JoshJamesPhotos/app/scss/_animations.scss */
+  /* line 29, ../scss/_animations.scss */
   20% {
     -webkit-transform: rotate(0deg) translateY(37vh) rotate(0deg);
   }
 
-  /* line 30, C:/websites/JoshJamesPhotos/app/scss/_animations.scss */
+  /* line 30, ../scss/_animations.scss */
   80% {
     -webkit-transform: rotate(-360deg) translateY(37vh) rotate(360deg);
   }
 
-  /* line 31, C:/websites/JoshJamesPhotos/app/scss/_animations.scss */
+  /* line 31, ../scss/_animations.scss */
   100% {
     -webkit-transform: rotate(-360deg) translateY(37vh) rotate(360deg);
   }
 }
 
 @keyframes ellipses {
-  /* line 34, C:/websites/JoshJamesPhotos/app/scss/_animations.scss */
+  /* line 34, ../scss/_animations.scss */
   0% {
     transform: rotate(0deg) translateY(0vh) rotate(0deg);
     top: 37vh;
   }
 
-  /* line 35, C:/websites/JoshJamesPhotos/app/scss/_animations.scss */
+  /* line 35, ../scss/_animations.scss */
   20% {
     transform: rotate(0deg) translateY(37vh) rotate(0deg);
     top: 0vh;
   }
 
-  /* line 36, C:/websites/JoshJamesPhotos/app/scss/_animations.scss */
+  /* line 36, ../scss/_animations.scss */
   80% {
     transform: rotate(-360deg) translateY(37vh) rotate(360deg);
     top: 0vh;
   }
 
-  /* line 37, C:/websites/JoshJamesPhotos/app/scss/_animations.scss */
+  /* line 37, ../scss/_animations.scss */
   100% {
     transform: rotate(-360deg) translateY(37vh) rotate(360deg);
     top: 0vh;
@@ -118,14 +126,14 @@
 }
 
 @media Screen {
-  /* line 3, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 3, ../scss/_base.scss */
   html {
     width: 100%;
     height: 100%;
     background-color: #000;
   }
 
-  /* line 9, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 9, ../scss/_base.scss */
   body {
     width: 100%;
     height: 100%;
@@ -134,7 +142,7 @@
     overflow: hidden;
   }
 
-  /* line 17, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 17, ../scss/_base.scss */
   .notransition {
     -webkit-transition: none !important;
     -moz-transition: none !important;
@@ -143,29 +151,29 @@
     transition: none !important;
   }
 
-  /* line 20, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 20, ../scss/_base.scss */
   .noAnimation {
     animation: 0 !important;
     -webkit-animation: 0 !important;
   }
 
-  /* line 24, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 24, ../scss/_base.scss */
   a:link {
     color: #B8B8B8;
   }
 
-  /* line 27, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 27, ../scss/_base.scss */
   a:visited {
     color: #B8B8B8;
   }
 
-  /* line 32, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 32, ../scss/_base.scss */
   .background {
     width: 100%;
     height: 100%;
     position: fixed;
   }
-  /* line 37, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 37, ../scss/_base.scss */
   .background .bgImg {
     position: fixed;
     min-width: 100%;
@@ -182,7 +190,7 @@
     -o-transition: opacity 500ms ease-in;
     transition: opacity 500ms ease-in;
   }
-  /* line 49, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 49, ../scss/_base.scss */
   .background .bgOverlay {
     position: fixed;
     width: 100%;
@@ -196,7 +204,7 @@
     transition: opacity 500ms ease-in-out;
   }
 
-  /* line 65, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 65, ../scss/_base.scss */
   .featured {
     position: absolute;
     width: 100vw;
@@ -211,12 +219,12 @@
     transition: opacity 500ms ease-in-out;
     box-shadow: 0 0 2px #fff;
   }
-  /* line 76, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 76, ../scss/_base.scss */
   .featured .controls {
     width: 100%;
     height: 100%;
   }
-  /* line 83, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 83, ../scss/_base.scss */
   .featured .controls .control {
     display: inline-block;
     position: absolute;
@@ -235,21 +243,21 @@
     box-shadow: 0 0 15px 2px #000;
     z-index: 1;
   }
-  /* line 97, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 97, ../scss/_base.scss */
   .featured .controls .control:hover {
     opacity: 1;
   }
-  /* line 100, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 100, ../scss/_base.scss */
   .featured .controls .lastSlide {
     cursor: url(../images/last.cur), pointer;
     left: 0;
   }
-  /* line 104, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 104, ../scss/_base.scss */
   .featured .controls .nextSlide {
     cursor: url(../images/next.cur), pointer;
     right: 0;
   }
-  /* line 108, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 108, ../scss/_base.scss */
   .featured .controls .photos {
     position: absolute;
     display: inline-block;
@@ -258,7 +266,7 @@
     left: calc(50% - 30vw);
     cursor: url(../images/zoom-in.cur), pointer;
   }
-  /* line 116, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 116, ../scss/_base.scss */
   .featured .controls .photos .image {
     position: absolute;
     width: 100%;
@@ -274,7 +282,7 @@
     transition: opacity 500ms ease-in;
   }
 
-  /* line 131, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 131, ../scss/_base.scss */
   .monitor {
     display: none;
     background-color: black;
@@ -289,7 +297,7 @@
     cursor: default;
   }
 
-  /* line 146, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 146, ../scss/_base.scss */
   .imgViewer {
     display: none;
     position: fixed;
@@ -306,7 +314,7 @@
     transition: opacity 500ms ease-in;
     text-align: center;
   }
-  /* line 158, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 158, ../scss/_base.scss */
   .imgViewer > div {
     height: 100%;
     width: 100%;
@@ -316,7 +324,7 @@
     cursor: url(../images/zoom-out.cur), pointer;
   }
 
-  /* line 169, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 169, ../scss/_base.scss */
   .logo {
     position: fixed;
     width: 13.5vw;
@@ -342,7 +350,7 @@
     z-index: 1002;
     background-color: rgba(255, 255, 255, 0.25);
   }
-  /* line 189, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 189, ../scss/_base.scss */
   .logo .dove {
     position: absolute;
     width: 100%;
@@ -370,17 +378,17 @@
   .logo:hover:before {
       opacity: 1;
   }*/
-  /* line 211, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 211, ../scss/_base.scss */
   .splash {
     position: fixed;
     width: 100vw;
     height: 100vh;
     color: #fff;
-    font-family: Rodus;
+    font-family: RodusCut;
     text-align: center;
     z-index: 1001;
   }
-  /* line 220, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 220, ../scss/_base.scss */
   .splash .loading {
     position: relative;
     top: calc(85vh - 1.5vh);
@@ -393,14 +401,14 @@
     -o-transition: opacity 500ms ease-in-out;
     transition: opacity 500ms ease-in-out;
   }
-  /* line 228, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 228, ../scss/_base.scss */
   .splash .loading .ellipses {
     position: absolute;
     width: 100vw;
     top: -32vh;
     -ms-transform: translateX(50vw);
   }
-  /* line 234, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 234, ../scss/_base.scss */
   .splash .loading .ellipses > span {
     position: absolute;
     -webkit-transform: translateY(37vh);
@@ -415,14 +423,14 @@
     transition: opacity 500ms ease-in-out;
   }
 
-  /* line 244, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 244, ../scss/_base.scss */
   .galNav {
     position: absolute;
     top: 2vh;
-    z-index: 1001;
+    z-index: 1003;
     width: 100vw;
     height: 5vh;
-    font-family: Rodus;
+    font-family: RodusCut;
     text-align: center;
     opacity: 0;
     padding: 5px 0;
@@ -433,14 +441,14 @@
     -o-transition: opacity 1s ease-in;
     transition: opacity 1s ease-in;
   }
-  /* line 259, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 259, ../scss/_base.scss */
   .galNav > li {
     display: inline-block;
     line-height: 5vh;
     padding-bottom: 6px;
     cursor: pointer;
   }
-  /* line 265, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 265, ../scss/_base.scss */
   .galNav > li .gallery {
     position: absolute;
     visibility: collapse;
@@ -457,7 +465,7 @@
     transition: opacity 500ms ease-in-out;
     cursor: default;
   }
-  /* line 277, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 277, ../scss/_base.scss */
   .galNav > li .gallery .container {
     position: relative;
     display: inline-block;
@@ -465,7 +473,7 @@
     height: 100%;
     margin-bottom: -3px;
   }
-  /* line 284, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 284, ../scss/_base.scss */
   .galNav > li .gallery .container .thumbScroller {
     position: relative;
     display: inline-block;
@@ -473,7 +481,7 @@
     height: 100%;
     float: left;
   }
-  /* line 292, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 292, ../scss/_base.scss */
   .galNav > li .gallery .container .thumbScroller .columns {
     -webkit-column-count: 2;
     -webkit-column-gap: 5px;
@@ -483,7 +491,7 @@
     column-gap: 5px;
     padding-bottom: 50px;
   }
-  /* line 296, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 296, ../scss/_base.scss */
   .galNav > li .gallery .container .thumbScroller .columns .thumb {
     display: inline-block;
     margin: 3px;
@@ -500,16 +508,16 @@
     -o-transform: translateZ(0);
     transform: translateZ(0);
   }
-  /* line 304, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 304, ../scss/_base.scss */
   .galNav > li .gallery .container .thumbScroller .columns .thumb .thumbnail {
     width: 100%;
     border: 1px solid #fff;
   }
-  /* line 309, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 309, ../scss/_base.scss */
   .galNav > li .gallery .container .thumbScroller .columns .thumb:hover {
     opacity: 1 !important;
   }
-  /* line 314, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 314, ../scss/_base.scss */
   .galNav > li .gallery .container .preview {
     position: absolute;
     width: 49%;
@@ -529,7 +537,7 @@
     -o-transition: opacity 300ms ease-in-out;
     transition: opacity 300ms ease-in-out;
   }
-  /* line 330, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 330, ../scss/_base.scss */
   .galNav > li .gallery .hideGallery {
     position: absolute;
     width: 100vw;
@@ -546,17 +554,17 @@
     transition: opacity 500ms ease-in;
     z-index: 1002;
   }
-  /* line 342, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 342, ../scss/_base.scss */
   .galNav > li .gallery .hideGallery > h3 {
     color: #fff;
     margin: 0;
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.65);
   }
-  /* line 348, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 348, ../scss/_base.scss */
   .galNav > li .gallery .hideGallery:hover {
     opacity: 1;
   }
-  /* line 352, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 352, ../scss/_base.scss */
   .galNav > li h2 {
     margin: 0px 20px;
     font-size: 2.25vw;
@@ -568,12 +576,12 @@
     -o-transition: transform 500ms ease-in-out, color 300ms ease-in;
     transition: transform 500ms ease-in-out, color 300ms ease-in;
   }
-  /* line 364, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 364, ../scss/_base.scss */
   .galNav > li:hover h2 {
     color: #fff;
   }
 
-  /* line 370, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 370, ../scss/_base.scss */
   .diamonds {
     width: 100%;
     height: 9vw;
@@ -594,7 +602,7 @@
     -o-transition: opacity 500ms ease-in-out;
     transition: opacity 500ms ease-in-out;
   }
-  /* line 382, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 382, ../scss/_base.scss */
   .diamonds > div {
     position: relative;
     width: 45%;
@@ -607,22 +615,22 @@
     transition: opacity 300ms ease-in-out;
     cursor: pointer;
   }
-  /* line 390, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 390, ../scss/_base.scss */
   .diamonds > div:hover {
     opacity: 1;
   }
-  /* line 393, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 393, ../scss/_base.scss */
   .diamonds h3 {
     position: absolute;
     width: 100%;
     font-size: 3vw;
-    font-family: Rodus;
+    font-family: RodusCut;
     color: #fff;
     z-index: 100;
     text-shadow: 0 3px 5px #000, 0 0 100px #fff;
     line-height: 4vw;
   }
-  /* line 403, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 403, ../scss/_base.scss */
   .diamonds .diamond {
     width: 9vw;
     height: 9vw;
@@ -642,7 +650,7 @@
     transition: opacity 500ms ease-in;
   }
 
-  /* line 416, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 416, ../scss/_base.scss */
   .infoOverlay {
     position: fixed;
     width: 100%;
@@ -659,9 +667,8 @@
     z-index: 1001;
   }
 
-  /* line 427, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 427, ../scss/_base.scss */
   .info {
-    opacity: 0;
     position: fixed;
     width: 100vw;
     height: 100vh;
@@ -673,24 +680,24 @@
     transition: transform 500ms ease-in-out;
     color: #fff;
     text-align: center;
-    font-family: Rodus;
+    font-family: RodusCut;
     font-size: 1.5vh;
     z-index: 1003;
   }
-  /* line 442, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 441, ../scss/_base.scss */
   .info .infoNav {
     width: 100%;
   }
-  /* line 446, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 445, ../scss/_base.scss */
   .info .infoNav h1 {
     margin: 0;
-    padding: 0.67em 0;
+    padding: 0.3em 0;
     width: 50%;
     display: inline-block;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
     color: rgba(255, 255, 255, 0.75);
-    font-size: 3vh;
+    font-size: 3.5vh;
     -webkit-transition: background-color 300ms ease-in-out;
     -moz-transition: background-color 300ms ease-in-out;
     -ms-transition: background-color 300ms ease-in-out;
@@ -698,16 +705,16 @@
     transition: background-color 300ms ease-in-out;
     cursor: pointer;
   }
-  /* line 458, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 457, ../scss/_base.scss */
   .info .infoNav h1:hover {
     background-color: rgba(255, 255, 255, 0.25);
   }
-  /* line 461, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 460, ../scss/_base.scss */
   .info .infoNav .navHighlight {
     position: absolute;
     top: 0;
     width: 50%;
-    height: 7.8vh;
+    height: 7.6vh;
     background-color: rgba(255, 255, 255, 0.75);
     z-index: -1;
     -webkit-transition: transform 500ms cubic-bezier(0.46, 0.03, 0.52, 0.96);
@@ -716,7 +723,7 @@
     -o-transition: transform 500ms cubic-bezier(0.46, 0.03, 0.52, 0.96);
     transition: transform 500ms cubic-bezier(0.46, 0.03, 0.52, 0.96);
   }
-  /* line 472, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 471, ../scss/_base.scss */
   .info .infoContainer {
     position: relative;
     display: inline-block;
@@ -726,7 +733,7 @@
     background-color: rgba(0, 0, 0, 0.75);
     overflow: hidden;
   }
-  /* line 481, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 480, ../scss/_base.scss */
   .info .infoContainer .infoChanger {
     position: absolute;
     width: 200%;
@@ -737,7 +744,7 @@
     -o-transition: transform 500ms cubic-bezier(0.46, 0.03, 0.52, 0.96);
     transition: transform 500ms cubic-bezier(0.46, 0.03, 0.52, 0.96);
   }
-  /* line 487, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 486, ../scss/_base.scss */
   .info .infoContainer .infoChanger > div {
     position: absolute;
     display: inline-block;
@@ -745,22 +752,22 @@
     width: 50%;
     height: 100%;
   }
-  /* line 494, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 493, ../scss/_base.scss */
   .info .infoContainer .infoChanger .bio {
     left: 0;
   }
-  /* line 497, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 496, ../scss/_base.scss */
   .info .infoContainer .infoChanger .bio .bioContent {
     float: left;
     width: 60%;
     margin-left: 20px;
     margin-top: 1%;
     text-align: justify;
-    font-family: Rodus;
+    font-family: RodusRound;
     font-size: 1.3vw;
     color: #B8B8B8;
   }
-  /* line 513, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 512, ../scss/_base.scss */
   .info .infoContainer .infoChanger .bio .bioPic {
     position: relative;
     width: 23vw;
@@ -771,7 +778,7 @@
     background-size: cover;
     margin-right: 20px;
   }
-  /* line 523, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 522, ../scss/_base.scss */
   .info .infoContainer .infoChanger .bio .quote {
     position: absolute;
     bottom: 150px;
@@ -779,11 +786,11 @@
     font-size: 1vw;
     color: #B8B8B8;
   }
-  /* line 531, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 530, ../scss/_base.scss */
   .info .infoContainer .infoChanger .contact {
     right: 0;
   }
-  /* line 534, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 533, ../scss/_base.scss */
   .info .infoContainer .infoChanger .contact .contactPic {
     position: relative;
     width: 100%;
@@ -794,7 +801,7 @@
     background-repeat: no-repeat;
     background-position: 0% 40%;
   }
-  /* line 547, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 546, ../scss/_base.scss */
   .info .infoContainer .hideInfo {
     position: absolute;
     display: block;
@@ -811,7 +818,7 @@
     cursor: pointer;
     text-shadow: 0 0 3px #000;
   }
-  /* line 559, C:/websites/JoshJamesPhotos/app/scss/_base.scss */
+  /* line 558, ../scss/_base.scss */
   .info .infoContainer .hideInfo:hover {
     background-color: rgba(255, 0, 0, 0.5);
   }

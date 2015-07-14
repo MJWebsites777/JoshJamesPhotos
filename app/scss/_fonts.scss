@@ -1,5 +1,5 @@
 @font-face {
-    font-family: 'Rodus';
+    font-family: 'RodusCut';
     src: url('../../fonts/roduscut700-webfont.eot');
     src: url('../../fonts/roduscut700-webfont.eot?#iefix') format('embedded-opentype'),
          url('../../fonts/roduscut700-webfont.woff2') format('woff2'),
@@ -8,4 +8,16 @@
          url('../../fonts/roduscut700-webfont.svg#roduscut700bold') format('svg');
     font-weight: normal;
     font-style: normal;
+}
+@font-face {
+    font-family: 'RodusRound';
+    src: url('../../fonts/rodusround500-webfont.eot');
+    src: url('../../fonts/rodusround500-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../fonts/rodusround500-webfont.woff2') format('woff2'),
+         url('../../fonts/rodusround500-webfont.woff') format('woff'),
+         url('../../fonts/rodusround500-webfont.ttf') format('truetype'),
+         url('../../fonts/rodusround500-webfont.svg#rodusround500thin') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
 }
