@@ -3,7 +3,6 @@
 //animated nextSlide and lastSlide images
 //--------------------------------
 
-var slideShow = new SlideShow();
 function Gallery () {
 	'use strict';
 	this.current = 'featured';
