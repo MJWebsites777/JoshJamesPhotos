@@ -1,13 +1,13 @@
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
-<svg xmlns="http://www.w3.org/2000/svg">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
 <metadata></metadata>
 <defs>
 <font id="roduscut700bold" horiz-adv-x="1454" >
 <font-face units-per-em="2048" ascent="1638" descent="-410" />
 <missing-glyph horiz-adv-x="500" />
 <glyph horiz-adv-x="0" />
-<glyph unicode="&#xd;" horiz-adv-x="2048" />
+<glyph horiz-adv-x="682" />
 <glyph unicode="!" horiz-adv-x="598" d="M94 0h144h2h143v287h-143h-2h-144v-287zM94 369h287v143v778v144h-287v-144v-778v-143z" />
 <glyph unicode="&#x22;" horiz-adv-x="960" d="M102 860h287v144v286v144h-287v-144v-286v-144zM489 860h287v144v286v144h-287v-144v-286v-144z" />
 <glyph unicode="#" horiz-adv-x="1310" d="M-41 57l270 -98l50 135l70 193h114l-35 -94l-49 -136l270 -98l49 135l71 193h214h143v286h-143h-109l105 287h4h143v287h-42l34 94l49 135l-270 99l-49 -136l-71 -192h-113l34 94l50 135l-271 99l-49 -136l-70 -192h-215h-143v-287h143h110l-105 -287h-5h-143v-286h43 l-35 -94zM454 573l105 287h113l-105 -287h-113z" />
